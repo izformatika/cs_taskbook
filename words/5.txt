@@ -1,0 +1,575 @@
+<question type="shortanswer">
+<name>
+<text>вьюга</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "вьюга", если буквы "в" и "ь" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>дубьё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "дубьё", если буквы "д" и "у" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>живьё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "живьё", если буквы "ж" и "и" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>жильё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "жильё", если буквы "ж" и "и" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>житьё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "житьё", если буквы "ж" и "и" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>келья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "келья", если буквы "к" и "е" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ладья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "ладья", если буквы "л" и "а" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>литьё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "литьё", если буквы "л" и "и" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ничья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "ничья", если буквы "н" и "и" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>озимь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "озимь", если буквы "о" и "з" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>окунь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "окунь", если буквы "о" и "к" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>олень</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "олень", если буквы "о" и "л" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ольха</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "ольха", если буквы "о" и "л" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>опись</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "опись", если буквы "о" и "п" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>осень</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "осень", если буквы "о" и "с" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>отель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "отель", если буквы "о" и "т" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>питьё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "питьё", если буквы "п" и "и" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>рытьё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "рытьё", если буквы "р" и "ы" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>семья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "семья", если буквы "с" и "е" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>убыль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "убыль", если буквы "у" и "б" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>удаль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "удаль", если буквы "у" и "д" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>эмаль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "эмаль", если буквы "э" и "м" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>юдоль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "юдоль", если буквы "ю" и "д" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ягель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "ягель", если буквы "я" и "г" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ясень</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "ясень", если буквы "я" и "с" должны встречаться ровно по одному разу, и обязательно рядом, а остальные буквы могут использоваться любое количество раз?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>216</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
