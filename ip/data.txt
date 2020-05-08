@@ -1,0 +1,2200 @@
+<question type="shortanswer">
+<name>
+<text>197.50.138.105</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 197.50.138.105 и 197.50.136.64 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>252.7.91.161</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 252.7.91.161 и 252.12.166.249 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>138.76.56.203</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 138.76.56.203 и 138.76.117.12 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>32.225.140.101</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 32.225.140.101 и 32.225.185.29 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>171.29.79.240</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 171.29.79.240 и 171.29.116.42 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>12.114.172.232</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 12.114.172.232 и 12.119.187.108 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.248.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>10.148.251.121</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 10.148.251.121 и 10.148.230.162 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.224.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>169.76.52.217</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 169.76.52.217 и 169.76.53.132 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.254.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>83.244.174.40</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 83.244.174.40 и 83.252.59.82 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>1.252.121.170</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 1.252.121.170 и 1.252.123.79 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>101.29.227.160</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 101.29.227.160 и 101.30.63.190 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.252.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>218.151.25.66</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 218.151.25.66 и 218.151.30.187 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.248.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>19.209.119.147</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 19.209.119.147 и 19.209.114.137 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.248.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>250.111.153.38</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 250.111.153.38 и 250.100.63.75 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>175.197.48.81</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 175.197.48.81 и 175.199.156.70 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.252.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>71.152.228.15</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 71.152.228.15 и 71.230.131.234 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>123.30.155.200</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 123.30.155.200 и 123.60.19.191 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.192.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>59.187.225.84</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 59.187.225.84 и 59.187.179.235 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>191.4.124.225</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 191.4.124.225 и 191.4.37.187 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>92.20.171.248</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 92.20.171.248 и 92.75.45.156 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>216.93.9.132</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 216.93.9.132 и 216.78.26.73 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.224.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>1.144.241.104</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 1.144.241.104 и 1.222.215.187 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>23.146.245.102</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 23.146.245.102 и 23.150.91.15 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.248.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>81.150.206.64</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 81.150.206.64 и 81.210.71.33 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>80.200.130.31</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 80.200.130.31 и 80.192.229.153 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>154.239.108.22</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 154.239.108.22 и 154.239.106.47 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.248.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>149.220.112.4</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 149.220.112.4 и 149.222.66.220 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.252.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>216.183.118.60</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 216.183.118.60 и 216.183.127.129 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.240.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>141.195.4.91</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 141.195.4.91 и 141.195.6.8 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>245.15.75.146</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 245.15.75.146 и 245.15.72.51 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>11.191.192.115</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 11.191.192.115 и 11.141.36.101 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.192.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>139.251.43.65</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 139.251.43.65 и 139.251.33.83 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.240.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>97.251.177.32</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 97.251.177.32 и 97.251.190.15 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.240.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>211.128.27.169</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 211.128.27.169 и 211.128.3.227 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.224.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>12.75.219.172</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 12.75.219.172 и 12.75.217.83 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>179.229.112.36</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 179.229.112.36 и 179.229.53.77 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>183.200.21.91</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 183.200.21.91 и 183.194.224.168 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>216.178.121.16</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 216.178.121.16 и 216.178.113.223 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.240.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>120.5.235.156</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 120.5.235.156 и 120.5.204.223 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>213.67.38.174</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 213.67.38.174 и 213.66.99.50 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.254.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>236.73.161.35</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 236.73.161.35 и 236.73.166.50 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.248.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>174.46.119.196</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 174.46.119.196 и 174.46.118.8 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.254.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>242.120.143.56</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 242.120.143.56 и 242.120.208.64 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>49.188.123.204</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 49.188.123.204 и 49.188.120.84 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>174.11.230.108</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 174.11.230.108 и 174.11.228.242 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>158.213.54.120</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 158.213.54.120 и 158.213.55.67 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.254.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>134.36.239.77</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 134.36.239.77 и 134.36.130.197 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>87.200.157.5</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 87.200.157.5 и 87.222.222.43 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.224.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>246.158.11.67</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 246.158.11.67 и 246.158.9.175 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>78.1.151.221</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 78.1.151.221 и 78.1.132.1 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.224.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>99.166.64.194</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 99.166.64.194 и 99.164.229.113 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.252.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>139.18.76.246</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 139.18.76.246 и 139.18.126.8 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>245.93.135.50</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 245.93.135.50 и 245.93.133.89 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.252.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>24.154.108.253</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 24.154.108.253 и 24.250.218.189 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>77.202.135.61</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 77.202.135.61 и 77.206.195.160 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.248.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>85.141.26.218</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 85.141.26.218 и 85.141.1.64 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.224.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>174.90.233.41</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 174.90.233.41 и 174.90.171.7 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>245.171.112.33</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 245.171.112.33 и 245.171.11.2 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>251.61.132.109</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 251.61.132.109 и 251.63.72.56 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.252.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>241.124.183.37</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 241.124.183.37 и 241.26.192.172 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>167.45.204.82</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 167.45.204.82 и 167.53.86.153 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.224.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>72.230.135.27</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 72.230.135.27 и 72.193.7.106 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.192.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>148.3.95.199</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 148.3.95.199 и 148.2.65.241 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.254.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>248.58.88.140</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 248.58.88.140 и 248.58.70.57 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.224.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>229.132.51.108</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 229.132.51.108 и 229.147.47.199 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.224.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>242.51.112.177</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 242.51.112.177 и 242.50.218.67 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.254.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>23.204.138.85</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 23.204.138.85 и 23.204.246.96 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>87.154.204.25</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 87.154.204.25 и 87.196.104.138 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>190.57.211.98</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 190.57.211.98 и 190.57.251.82 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>159.243.49.115</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 159.243.49.115 и 159.242.95.179 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.254.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>97.19.191.253</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 97.19.191.253 и 97.17.66.183 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.252.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>253.12.135.107</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 253.12.135.107 и 253.12.130.15 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.248.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>229.155.39.96</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 229.155.39.96 и 229.159.187.111 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.248.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>196.44.142.101</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 196.44.142.101 и 196.44.155.222 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.224.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>96.36.229.176</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 96.36.229.176 и 96.43.87.226 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>146.118.213.25</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 146.118.213.25 и 146.118.243.202 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>76.227.19.132</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 76.227.19.132 и 76.226.7.209 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.254.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>28.218.70.153</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 28.218.70.153 и 28.218.82.249 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.224.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>98.137.9.240</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 98.137.9.240 и 98.136.15.204 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.254.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>46.153.123.221</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 46.153.123.221 и 46.140.19.154 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.224.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>126.229.15.158</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 126.229.15.158 и 126.227.173.225 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.248.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>154.94.217.22</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 154.94.217.22 и 154.94.255.68 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>20.106.166.238</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 20.106.166.238 и 20.106.163.139 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.248.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>238.154.90.44</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 238.154.90.44 и 238.159.113.225 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.248.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>16.80.132.251</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 16.80.132.251 и 16.80.207.61 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>243.33.70.171</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 243.33.70.171 и 243.33.66.38 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.248.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>167.66.215.48</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 167.66.215.48 и 167.66.222.233 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.240.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>254.84.52.129</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 254.84.52.129 и 254.84.77.135 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.128.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>54.125.237.176</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 54.125.237.176 и 54.5.232.56 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>12.170.126.202</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 12.170.126.202 и 12.157.190.48 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.192.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>199.180.127.17</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 199.180.127.17 и 199.186.179.238 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>150.83.41.246</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 150.83.41.246 и 150.82.181.246 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.254.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>216.165.77.36</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 216.165.77.36 и 216.162.177.224 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.248.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>101.241.27.166</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 101.241.27.166 и 101.252.199.179 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>240.140.98.53</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 240.140.98.53 и 240.140.74.73 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.192.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>69.129.222.8</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 69.129.222.8 и 69.138.171.5 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>69.146.28.195</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 69.146.28.195 и 69.218.220.101 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.128.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>123.243.142.35</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 123.243.142.35 и 123.253.231.68 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.240.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>164.231.34.88</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 164.231.34.88 и 164.229.61.216 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.252.0.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+<question type="shortanswer">
+<name>
+<text>192.216.30.78</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Узлы 192.216.30.78 и 192.216.20.138 находятся в одном сегменте сети, причём его размер минимально возможный. Определите маску сети и укажите её в полном десятичном формате.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>255.255.240.0</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
