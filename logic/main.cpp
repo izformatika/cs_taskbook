@@ -290,17 +290,23 @@ int main()
     bool (*F)(dynamic_bitset<>,int)=t->val;
     int maxval=pow(2,names.size())-1;
     int shift=1;
+    int solutions=0;
+    for (int start_var=0; start_var<=names.size()-t->len; start_var+=shift)
+    {
+        for (int j=0; j<t->len; j++) cout << t->out[j] << names[start_var+j];
+        cout<<t->out[t->len] <<endl;
+    }
     for (int i=0; i<=maxval; i++)
     {
+        bool solves=true;
         dynamic_bitset<> db{names.size(),i};
-        for (int j=0; j<db.size(); j++) cout << db[j]; cout<<endl;
         for (int start_var=0; start_var<=names.size()-t->len; start_var+=shift)
         {
-            for (int j=0; j<t->len; j++) cout << t->out[j] << names[start_var+j];
-            cout << t->out[t->len] <<"="<< F(db,start_var) << endl;
+            if (!F(db,start_var)) {solves=false;break;}
         }
-        cout << endl;
+        if (solves) solutions++;
     }
+    cout << solutions <<endl;
 
 
     return 0;
