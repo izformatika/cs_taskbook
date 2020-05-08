@@ -4,317 +4,90 @@
 #include <time.h>
 #include <memory>
 #include <boost/dynamic_bitset/dynamic_bitset.hpp>
+
 using boost::dynamic_bitset;
 using namespace std;
-/*
-class expr
-{
-public:
-    virtual bool value()=0;
-    virtual string str(bool hide=true)=0;
-    virtual string type(){return "logic";}
-    virtual ~expr(){};
-    virtual string wrap(bool hide=true, bool walpha=false)=0;
-    virtual int priority()=0;
-    virtual void populate(int depth, float cut_chance)=0;
-    virtual shared_ptr<expr> clone()=0;
-};
-vector<shared_ptr<expr> > catalogue;
-class var:public expr
-{
-public:
-    virtual bool value()
-    {
-        return *m_a;
-    }
-    virtual string str(bool hide=true)
-    {
-        if (hide) return m_name;
-        if (m_a) return "1";
-        return "0";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false) {return str(hide);}
-    var(bool *a, string name):m_a(a),m_name(name){}
-    var(shared_ptr<bool>a, string name):m_a(a),m_name(name){}
-    virtual ~var(){}
-    virtual int priority() {return 6;}
-    virtual void populate(int depth, float cut_chance) {};
-    virtual shared_ptr<expr> clone(){return make_shared<var>(m_a,m_name);};
-private:
-    shared_ptr<bool> m_a;
-    string m_name;
-    var(){};
-    var(const var&){};
-    //var operator=(const var){return *this;}
-};
-vector<shared_ptr<var> > vars;
 
-shared_ptr<var> choose_var()
-{
-    if (rand()%5>0 and rand()%3<vars.size())
-    {
-        int which=rand()%(vars.size());
-        return vars[which];
-    }
-    else
-    {
-        vars.push_back(make_shared<var>(new bool(rand()%2), string(1,vars.size()+'a')));
-        return (vars[vars.size()-1]);
-    }
-}
-
-shared_ptr<expr> pop_one(int depth, float cut_chance)
-{
-    if ((rand()%100)<(cut_chance*100) or depth==0)
-    {
-        return choose_var();
-    }
-    else//not the time to stop, we need to generate deeper
-    {
-        shared_ptr<expr> tmp=catalogue[rand()%catalogue.size()]->clone();
-        tmp->populate(depth-1, cut_chance);
-        return tmp;
-    }
-}
-
-
-class disj:public expr
-{
-public:
-    virtual bool value()
-    {
-        return m_a->value() or m_b->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") \\/ ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide)+(m_a->priority()<priority()?")":"")
-        +(walpha?" or ":" \\/ ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide)+(m_b->priority()<priority()?")":"");
-    }
-    disj(expr * a, expr * b):m_a(a),m_b(b){}
-    disj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
-    virtual ~disj(){}
-    virtual int priority() {return 2;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<disj>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    disj(){};
-    disj(const disj&){};
-    //disj operator=(const disj){}
-};
-class conj:public expr
-{
-public:
-    virtual bool value()
-    {
-        return m_a->value() and m_b->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") /\\ ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide)+(m_a->priority()<priority()?")":"")
-        +(walpha?" and ":" /\\ ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide)+(m_b->priority()<priority()?")":"");
-    }
-    conj(expr * a, expr * b):m_a(a),m_b(b){}
-    conj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
-    ~conj(){}
-    virtual int priority() {return 4;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<conj>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    conj();
-    conj(const conj&){};
-    //conj operator=(const conj){}
-};
-class impl:public expr
-{
-public:
-    virtual bool value()
-    {
-        return not m_a->value() or m_b->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") -> ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide)+(m_a->priority()<priority()?")":"")
-        +(walpha?" implies ":" -> ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide)+(m_b->priority()<priority()?")":"");
-    }
-    impl(expr * a, expr * b):m_a(a),m_b(b){};
-    impl(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
-    virtual ~impl(){}
-    virtual int priority() {return 3;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<impl>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    impl(){};
-    impl(const impl&){};
-    //impl operator=(const impl){};
-};
-class eq:public expr
-{
-public:
-    virtual bool value()
-    {
-        return m_a->value() and m_b->value() or (not m_a->value() and not m_b->value());
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") = ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide)+(m_a->priority()<priority()?")":"")
-        +(walpha?" equals ":" = ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide)+(m_b->priority()<priority()?")":"");
-    }
-    eq(expr * a, expr * b):m_a(a),m_b(b){};
-    eq(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
-    virtual ~eq(){}
-    virtual int priority() {return 3;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<eq>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    eq(){};
-    eq(const impl&){};
-
-};
-class neg:public expr
-{
-public:
-    virtual bool value()
-    {
-        return not m_a->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "(!"+m_a->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority()?"(":"")+string((walpha?"not ":"!"))+m_a->wrap(hide)+(m_a->priority()<priority()?")":"");
-    }
-    neg(expr * a):m_a(a){};
-    neg(shared_ptr<expr> a):m_a(a){};
-    virtual ~neg(){}
-    virtual int priority() {return 5;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<neg>(m_a);};
-private:
-    shared_ptr<expr> m_a;
-    neg(){};
-    neg(const neg&){};
-    //neg operator=(const neg){};
-};
-
-*/
 class task
 {
 public:
-    task(vector<string> s, bool (*v)(dynamic_bitset<>,int shift),int l):out(s),val(v),len(l){};
+    task(vector<string> s, bool (*v)(dynamic_bitset<>)):out(s),val(v){};
     vector<string> out;
-    bool (*val)(dynamic_bitset<>,int shift);
-    int len;
+    bool (*val)(dynamic_bitset<>);
+    int len(){return out.size()-1;};
 };
 
-task * t;
+vector<task> tasks;
 
 void populate_tasks()
 {
-    t=new task(vector<string>{"","&","=1"},[](dynamic_bitset<>db,int shift=0){return (db[shift+0] or db[shift+1]==1);},2);
+    //tasks.push_back(task(vector<string>{""," v "," = 1"},[](dynamic_bitset<>db){return (db[0] or db[1]==1);}));
+    ///this only works if we have ONLY xs. x1x2x3y1 shifts not to x2x3x4y2 but to x2x3y1x4
+    tasks.push_back(task(vector<string>{"("," v ",") & ("," & "," -> ",") & (!"," v ",") = 1" },[](dynamic_bitset<>db){return ((db[0] or db[1]) and (not (db[0] and db[1]) or db[2]) and (not db[0] or db[4]) ==1);}));
 }
+
+string print_whole(vector<string>names,int shift, int extra, int t)
+{
+    ostringstream os;
+    for (int j=0; j<baselines; j++)
+    {
+        for (int k=0; k<db.size(); k++) db[k]=gdb[ind[k]++];
+        for (int i=0; i<tasks[t].len(); i++) os << tasks[t].out[i] << names[ind[i]];
+        os<<tasks[t].out[tasks[t].len()] <<endl;
+    }
+
+
+    os << names[extra] << " = 1" <<endl;
+    return os.str();
+}
+/*
+class var
+{
+public:
+    int cur=0;
+    dynamic_bitset<> * db;
+
+}*/
 
 int main()
 {
-    /*srand(time(0));
-    catalogue.push_back(make_shared<conj>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<disj>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<impl>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<eq>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<neg>(new var(NULL, "")));
-    bool a=false;
-    bool b=true;
-    bool c=true;
-    //(a or b) and (c -> a)
-    shared_ptr<expr> e(new conj(new disj(new var(&a,"a"), new var(&b,"b")), new impl(new var(&c,"c"),new var(&a,"a"))));
-    //cout << e->str(true) << " = " << e->value() << endl;
-    a=true;
-    //cout << e->str(true) << " = " << e->value() << endl;
-    cout << e->wrap(true) << endl;
-    shared_ptr<conj> root=make_shared<conj>(new var(NULL, ""), new var(NULL, ""));
-    root->populate(3,0.1);
-    cout << root->wrap(true,true) << endl;*/
-
+    int t=0;
     populate_tasks();
-    vector<string> names={"x1","x2","x3","x4"};
-    bool (*F)(dynamic_bitset<>,int)=t->val;
+    vector<string> names={"x1","x2","x3","x4", "x5", "y1", "y2", "y3","y4","y5","y6"};
+    vector<int> orig_ind={0,1,2,6};
+    vector<int> ind=orig_ind;
+    int baselines=6;
+    bool (*F)(dynamic_bitset<>)=tasks[t].val;
     int maxval=pow(2,names.size())-1;
     int shift=1;
-    bool (*G)(dynamic_bitset<>,int)=[](dynamic_bitset<> db, int s){return (bool)db[s];};
+    //bool (*G)(dynamic_bitset<>,int)=[](dynamic_bitset<> db, int s){return (bool)db[s];};
 
-    int extra=0;
-
-    for (int start_var=0; start_var<=names.size()-t->len; start_var+=shift)
+    set<int> sol_hist;
+    for (int extra=0; extra<names.size(); extra++)
     {
-        for (int j=0; j<t->len; j++) cout << t->out[j] << names[start_var+j];
-        cout<<t->out[t->len] <<endl;
-    }
-    cout << names[extra] << "=1" <<endl;
+        int solutions=0;
 
-    int solutions=0;
-
-    for (int i=0; i<=maxval; i++)
-    {
-        bool solves=true;
-        dynamic_bitset<> db{names.size(),i};
-        if (!G(db,extra)) continue;
-        for (int start_var=0; start_var<=names.size()-t->len; start_var+=shift)
+        for (int i=0; i<=maxval; i++)
         {
-            if (!F(db,start_var)) {solves=false;break;}
+            bool solves=true;
+            dynamic_bitset<> gdb{names.size(),i};
+            dynamic_bitset<> db{ind.size(),i};
+            //if (!G(gdb,extra)) continue;
+            for (int j=0; j<baselines; j++)
+            {
+                for (int k=0; k<db.size(); k++) {db[k]=gdb[ind[k]];ind[k]+=shift;}
+                if (!F(db)) {solves=false; break;}
+            }
+            if (solves) solutions++;
         }
-        if (solves) solutions++;
+        //if (sol_hist.find(solutions)==sol_hist.end())
+        {
+            cout << print_whole(names,shift,extra,t);
+            cout << solutions <<endl;
+            sol_hist.insert(solutions);
+        }
+
     }
-    cout << solutions <<endl;
 
 
     return 0;
