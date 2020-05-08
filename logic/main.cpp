@@ -3,9 +3,10 @@
 #include <cstdlib>
 #include <time.h>
 #include <memory>
-
+#include <boost/dynamic_bitset/dynamic_bitset.hpp>
+using boost::dynamic_bitset;
 using namespace std;
-
+/*
 class expr
 {
 public:
@@ -246,12 +247,26 @@ private:
     //neg operator=(const neg){};
 };
 
+*/
+class task
+{
+public:
+    task(vector<string> s, bool (*v)(dynamic_bitset<>,int shift),int l):out(s),val(v),len(l){};
+    vector<string> out;
+    bool (*val)(dynamic_bitset<>,int shift);
+    int len;
+};
 
+task * t;
 
+void populate_tasks()
+{
+    t=new task(vector<string>{"","&","=1"},[](dynamic_bitset<>db,int shift=0){return (db[shift+0] or db[shift+1]==1);},2);
+}
 
 int main()
 {
-    srand(time(0));
+    /*srand(time(0));
     catalogue.push_back(make_shared<conj>(new var(NULL, ""), new var(NULL, "")));
     catalogue.push_back(make_shared<disj>(new var(NULL, ""), new var(NULL, "")));
     catalogue.push_back(make_shared<impl>(new var(NULL, ""), new var(NULL, "")));
@@ -268,7 +283,25 @@ int main()
     cout << e->wrap(true) << endl;
     shared_ptr<conj> root=make_shared<conj>(new var(NULL, ""), new var(NULL, ""));
     root->populate(3,0.1);
-    cout << root->wrap(true,true) << endl;
+    cout << root->wrap(true,true) << endl;*/
+
+    populate_tasks();
+    vector<string> names={"x1","x2","x3","x4"};
+    bool (*F)(dynamic_bitset<>,int)=t->val;
+    int maxval=pow(2,names.size())-1;
+    int shift=1;
+    for (int i=0; i<=maxval; i++)
+    {
+        dynamic_bitset<> db{names.size(),i};
+        for (int j=0; j<db.size(); j++) cout << db[j]; cout<<endl;
+        for (int start_var=0; start_var<=names.size()-t->len; start_var+=shift)
+        {
+            for (int j=0; j<t->len; j++) cout << t->out[j] << names[start_var+j];
+            cout << t->out[t->len] <<"="<< F(db,start_var) << endl;
+        }
+        cout << endl;
+    }
+
 
     return 0;
 }
