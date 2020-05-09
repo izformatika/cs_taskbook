@@ -218,7 +218,8 @@ n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){return c?(c=Sa(a,b),Oa.test(c)?n(
 	}
 	
 	function add_row() {
-		if ($("#task").val()[$("#task").val().length-1]!='\n') $("#task").val($("#task").val()+"\n");
+		$("#task").val($("#task").val().trim()+'\n');
+		
 		var step = prompt("Сдвиг", 1);
 		var strc_f = prompt("Строк от", 3);
 		var strc_t = prompt("Строк до", 4);
@@ -408,7 +409,7 @@ n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){return c?(c=Sa(a,b),Oa.test(c)?n(
 					if(!ansSet.has(result[0])) {
 					//alert();
 						var mys="";
-						mys+='&lt;question type="shortanswer">\n&lt;name>&lt;text>&lt;br/>'+orig.match(/[^\n]+\n[^\n]+/)[0].replace(/\n/g," ")+"+"+(orig.match(/\n/g)||[]).length+'&lt;/text>&lt;/name>&lt;questiontext format=\"html\">&lt;text>&lt;![CDATA[&lt;p>Сколько различных решений имеет система логических уравнений <br>';
+						mys+='&lt;question type="shortanswer">\n&lt;name>&lt;text>&lt;br/>'+orig.match(/[^\n]+\n/)[0].replace(/\n/g,"")+", "+(orig.match(/\n/g)||[]).length+' lines&lt;/text>&lt;/name>&lt;questiontext format=\"html\">&lt;text>&lt;![CDATA[&lt;p>Сколько различных решений имеет система логических уравнений <br>';
 						
 						mys+=orig.replace(/\n/g,"<br>")+"<br>";
 						mys+="где " + logvars;
@@ -416,7 +417,7 @@ n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){return c?(c=Sa(a,b),Oa.test(c)?n(
 						
 						mys+=(" – логические переменные? В ответе не нужно перечислять все различные наборы значений переменных, при которых выполнено данное равенство. В качестве ответа нужно указать количество таких наборов.&lt;br>&lt;br>"+$('#result').val());
 						mys+=('&lt;/p>]]>&lt;/text>&lt;/questiontext>&lt;generalfeedback format=\"html\">&lt;text>&lt;/text>&lt;/generalfeedback>&lt;defaultgrade>1.0000000&lt;/defaultgrade>&lt;penalty>0.3333333&lt;/penalty>&lt;hidden>0&lt;/hidden>&lt;idnumber>&lt;/idnumber>&lt;usecase>0&lt;/usecase>&lt;answer fraction=\"100\" format=\"moodle_auto_format\">&lt;text>');
-						mys+=(result[0]);
+						mys+=""+(result[0]);
 						ansSet.add(result[0]);
 						
 						mys+=("&lt;/text>&lt;feedback format=\"html\">&lt;text>&lt;/text>&lt;/feedback>&lt;/answer>&lt;/question><br><br>");
