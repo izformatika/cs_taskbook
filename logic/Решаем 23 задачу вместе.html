@@ -184,15 +184,18 @@ n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){return c?(c=Sa(a,b),Oa.test(c)?n(
 	function start()
 	{
 		
-		$("#calculateBtn").addClass("hidden");
+		//$("#calculateBtn").addClass("hidden");
 		//setTimeout('calc()', 500);
 		calc();
 	}
 
 	function finish()
 	{
-		
-		$("#calculateBtn").removeClass("hidden");
+		//var r=$('#solutions').val();
+		//r=r./*replace(/=/g,'≡').*/replace(/!/g,'¬').replace(/-/g,'→').replace(/\+/g,'∨').replace(/\*/g,'∧');//cant make it work... something to do with concurrency i guess
+		//alert(r);
+		//$("#solutions").val(r);
+		//$("#calculateBtn").removeClass("hidden");
 	}
 	
 	function generate_one(s2,step)
@@ -289,7 +292,8 @@ n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){return c?(c=Sa(a,b),Oa.test(c)?n(
 		return s;
 	}
 	function calc() {
-
+		var r=$("#task").val().replace(/≡/g,'=').replace(/¬/g,'!').replace(/→/g,'-').replace(/&/g,'*').replace(/∨/g,'+').replace(/∧/g,'*').replace(/\r\n\r\n/g,'\r\n').replace(/\n\n/g,'\n').replace(/ /g,'');
+		$("#task").val(r);
 		var ansSet=new Set();
 		var vc1 = $("#task").val().match(/([A-Za-z]+[0-9]+)/g);
 		var vSet1 = new Object();
@@ -305,7 +309,7 @@ n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){return c?(c=Sa(a,b),Oa.test(c)?n(
 		logvars=logvars.slice(0,logvars.length-2);
 		
 		for (var one in vSet1){
-			var orig=one+" = 1\n"+$("#task").val();
+			var orig=one+"=1\n"+$("#task").val();
 			var s = orig.replace(/ /g,"").trim();
 			var i2 = s.indexOf("-");
 			while (i2 >= 0)
@@ -406,12 +410,12 @@ n.cssHooks[b]=Ua(l.pixelPosition,function(a,c){return c?(c=Sa(a,b),Oa.test(c)?n(
 					location.reload();
 				}
 				else {
-					if(!ansSet.has(result[0])) {
+					if (!ansSet.has(result[0]) && result[0]>16 && result[0]<1024) {
 					//alert();
 						var mys="";
 						mys+='&lt;question type="shortanswer">\n&lt;name>&lt;text>&lt;br/>'+orig.match(/[^\n]+\n/)[0].replace(/\n/g,"")+", "+(orig.match(/\n/g)||[]).length+' lines&lt;/text>&lt;/name>&lt;questiontext format=\"html\">&lt;text>&lt;![CDATA[&lt;p>Сколько различных решений имеет система логических уравнений <br>';
 						
-						mys+=orig.replace(/\n/g,"<br>")+"<br>";
+						mys+=orig.replace(/\n/g,"<br>").replace(/!/g,'¬').replace(/-/g,' → ').replace(/\+/g,' ∨ ').replace(/\*/g,' ∧ ').replace(/=/g,' = ')+"<br>";
 						mys+="где " + logvars;
 						
 						
