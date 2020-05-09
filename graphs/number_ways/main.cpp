@@ -6,7 +6,7 @@
 #include <random>
 #include <ctime>
 #include "moodle_texts.hpp"
-#define moodle true
+#define moodle false
 using namespace std;
 
 string alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -139,6 +139,11 @@ void init_graph_1()
     graph.push_back(vertex('O', vector<int>{6}));
 }
 
+
+
+
+
+
 void init_graph_2()
 {
     picno=2;
@@ -148,7 +153,7 @@ void init_graph_2()
     graph.push_back(vertex('D', vector<int>{5}));
     graph.push_back(vertex('E', vector<int>{2,9}));
     graph.push_back(vertex('F', vector<int>{4,6,8}));
-    graph.push_back(vertex('G', vector<int>{2,4,7,8,9}));
+    graph.push_back(vertex('G', vector<int>{2,4,7,8,9,10}));
     graph.push_back(vertex('H', vector<int>{2,13}));
     graph.push_back(vertex('I', vector<int>{7,11,15}));
     graph.push_back(vertex('J', vector<int>{2,10}));
@@ -157,6 +162,7 @@ void init_graph_2()
     graph.push_back(vertex('M', vector<int>{14}));
     graph.push_back(vertex('N', vector<int>{12,14,15}));
     graph.push_back(vertex('O', vector<int>{}));
+    graph.push_back(vertex('P', vector<int>{14}));
 }
 
 
@@ -222,7 +228,7 @@ int main()
                                             fs << txts[1] << "Сколькими способами можно попасть из вершины "<<graph[from].label << " в вершину "<<graph[to].label << ", если по рёбрам можно двигаться только в направлениях, указанных стрелками, и при этом путь должен либо содержать обе вершины "<<graph[a].label << " и "<<graph[b].label << ", либо не содержать ни одну из них?";
                                             fs << txts[2] << pics[picno] << txts[3] << r.size() + q.size() << txts[4] <<endl <<endl;
                                         #else
-                                            cout << graph[from].label << "->" << graph[to].label << " with both " << graph[a].label << ", " << graph[b].label << " - " << r.size() <<", without both - " << q.size() <<endl;
+                                            cout << graph[from].label << "->" << graph[to].label << " with both " << graph[a].label << ", " << graph[b].label << " - " << r.size() <<", without both - " << q.size() <<", total " << r.size()+q.size()<<endl;
                                         #endif
                                     }
                                 }
@@ -239,7 +245,7 @@ int main()
                                             fs << txts[1] << "Сколькими способами можно попасть из вершины "<<graph[from].label << " в вершину "<<graph[to].label << ", если по рёбрам можно двигаться только в направлениях, указанных стрелками, и при этом путь должен либо содержать вершину "<<graph[a].label << ", либо содержать вершину "<<graph[b].label << ", но не обе вершины одновременно?";
                                             fs << txts[2] << pics[picno] << txts[3] << r.size() + q.size() << txts[4] <<endl <<endl;
                                         #else
-                                        cout << graph[from].label << "->" << graph[to].label << " +" << graph[a].label << ", -" << graph[b].label << " - " << r.size() <<", reverse - " << q.size() <<endl;
+                                        cout << graph[from].label << "->" << graph[to].label << " +" << graph[a].label << ", -" << graph[b].label << " - " << r.size() <<", reverse - " << q.size() <<", total " << r.size()+q.size()<<endl;
                                         #endif
                                     }
                                 }
