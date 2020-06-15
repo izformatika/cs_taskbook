@@ -36,3 +36,6 @@
 /filetree/3
 /filetree/4
 /filetree/files.zip
+*.depend
+*.layout
+data.txt
