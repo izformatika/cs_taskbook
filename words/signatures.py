@@ -9,6 +9,17 @@ def vowcount(str):
     return c
 l=[]
 
+def letters(n):
+    if 5 <= n%100 <= 20:
+        return "букв"
+    elif n % 10 == 1:
+        return "буква"
+    elif 2 <= n % 10 <= 4:
+        return "буквы"
+    else:
+        return "букв"
+    
+
 def all_to_uniq_nuniq():
     f=open("russian_nouns.txt","r",encoding="UTF8")
     l=f.readlines()
@@ -77,15 +88,18 @@ def nuniq_to_sig():
             print(str(j) + ' of ' + str(len(l)))
 from os import walk
 from math import factorial
-def Q_uniq_spec_position(mode):
+def Q_uniq_spec_position(mode, difficulty):
     '''
     mode 0 after vow
     mode 1 before vow
     mode 2 not after vow
     mode 3 not before vow
+    diff 0 50 < answer < 500
+    diff 1 5000 < answer < 30000
     '''
+    ansdict = {}
     flist = []
-    for(dirpath, dirnames, filenames) in walk('sig/debug'):#debug -> uniq
+    for(dirpath, dirnames, filenames) in walk('sig/uniq'):
         flist.extend(filenames)
     for filename in flist:
         spec = int(filename[-6:-4].replace('.',''))#unsafe
@@ -94,11 +108,6 @@ def Q_uniq_spec_position(mode):
         vows = int(filename[4:6])#unsafe
         cons = int(filename[10:13].replace('.',''))#unsafe
         length = vows + cons + spec
-        f = open("sig/debug/" + filename, "r", encoding = "UTF8")#debug -> uniq
-        l = f.readlines()
-        f.close()
-        if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
-            continue
         ans = -1
         if mode == 0 or mode == 1:
             ans = vows * factorial(length - 2) * (length - 1)
@@ -106,10 +115,20 @@ def Q_uniq_spec_position(mode):
             ans = factorial(length) - vows * factorial(length - 2) * (length - 1)
         else:
             ans = -1
-        print(len(l))
-        file = open("questions.txt", "w")
+        if difficululty == 1 and (ans < 5000 or ans > 30000) \
+           or difficulty == 0 and (ans < 50 or ans > 500):
+            continue
+        if ans not in ansdict.keys():
+            ansdict[ans] = 0
+        elif ansdict[ans] > 100:
+        f = open("sig/uniq/" + filename, "r", encoding = "UTF8")
+        l = f.readlines()
+        f.close()
+        if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
+            continue
+        file = open("spec pos " + str(mode) + " " + str(difficulty) + ".txt", "a+")
         for i in l:
-            question = str(vows) + " " + str(cons) + " " + str(spec) + " Сколько слов длиной в "+str(length)+" букв (не обязательно осмысленных) можно составить " + \
+            question = "Сколько слов длиной в "+str(length)+ " " + letters(length) + " (не обязательно осмысленных) можно составить " + \
                 "из букв слова \""+i[:-1]+"\", если в них " + ("мягкий" if "ь" in i else "твёрдый") + " знак должен стоять строго "
             if mode == 0:
                 question += "после гласной"
@@ -124,6 +143,35 @@ def Q_uniq_spec_position(mode):
             question += ", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
             shortanswer(i[:-1], question, ans, file)
         file.close()
+def Q_not_two_conseq(difficulty):
+    '''
+    diff 0 50 < answer < 500
+    diff 1 5000 < answer < 30000
+    '''
+    flist = []
+    for(dirpath, dirnames, filenames) in walk('sig/uniq'):
+        flist.extend(filenames)
+    for filename in flist:
+        spec = int(filename[-6:-4].replace('.',''))
+        vows = int(filename[4:6])
+        cons = int(filename[10:13].replace('.',''))
+        length = vows + cons + spec
+        ans = (length - 2) * factorial(length - 2)
+        '''if difficulty == 1 and (ans < 5000 or ans > 30000) \
+           or difficulty == 0 and (ans < 50 or ans > 500):
+            continue'''
+        f = open("sig/uniq/" + filename, "r", encoding = "UTF8")
+        l = f.readlines()
+        f.close()
+        if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
+            continue
+        file = open("not two conseq " + str(difficulty) + ".txt", "a+")
+        for i in l:
+            question = "Сколько слов длиной в "+str(length)+ " " + letters(length) + " (не обязательно осмысленных) можно составить " + \
+                "из букв слова \""+i[:-1]+"\", если в них не должно встречаться сочетание \"" + i[:2] + "\", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
+            shortanswer(i[:-1], question, ans, file)
+        file.close()
+
 def shortanswer(name, question, answer, file):
     file.write("<question type=\"shortanswer\">\n")
     file.write("<name>\n")
@@ -150,6 +198,6 @@ def shortanswer(name, question, answer, file):
         
 #uniq_spec_position()
 #print(factorial(5))
-uniq_to_sig()
-            
-#Q_uniq_spec_position(0)
+#uniq_to_sig()
+
+Q_not_two_conseq(0)
