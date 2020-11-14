@@ -150,18 +150,17 @@ def Q_uniq_spec_position(mode, difficulty):
             question += ", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
             shortanswer(i[:-1], question, ans, file)
         file.close()
-def Q_uniq_two_conseq(mode, difficulty):# Q_uniq_several_seq , seq, not_first):
+def Q_uniq_several_seq(difficulty, last, first):
     '''
-    mode 0 l1l2 not allowed
-    mode 1 l1l2 necessary
     diff 0 50 < answer < 500
     diff 1 5000 < answer < 30000
-    seq length of postfix that has to be/has to be missing
-    not_first length of prefix - those letters cant be in first not_first letters
+    last length of postfix that has to be (positive)/has to be missing (negative)
+    first length of prefix - those letters must (positive)/cant (negative) be in first not_first letters
     '''
-    not_first = 2
+    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
     ansdict = {}#in every question
     flist = []
+    from itertools import permutations
     for(dirpath, dirnames, filenames) in walk('sig/uniq'):
         flist.extend(filenames)
     for filename in flist:
@@ -169,39 +168,55 @@ def Q_uniq_two_conseq(mode, difficulty):# Q_uniq_several_seq , seq, not_first):
         vows = int(filename[4:6])
         cons = int(filename[10:13].replace('.',''))
         length = vows + cons + spec
-        if length <= 2:
+        if length <= 2 or last > length or first > length:
             continue
         ans = 0
-        if mode == 0:
-            ans = (length - 1)*factorial(length - 1)
-        else:
-            ans = factorial(length - 1)
+        
+        #direct counting doesnt work, too much memory needed...
+        #todo: formulas!
+        wrd = alphabet[:length]
+        lst = list(map(''.join, list(permutations(wrd))))
+        for i in lst:
+            if (last < 0 and wrd[last:] in i) or (last > 0 and wrd[-last:] not in i):
+                continue
+            good = True
+            for j in wrd[:abs(first)]:
+                if (first > 0 and i.find(j) >= first) or (first < 0 and i.find(j) < -first):
+                    good = False
+                    break
+            if good:
+                ans+=1
+        
         if difficulty == 1 and (ans < 5000 or ans > 30000) \
            or difficulty == 0 and (ans < 50 or ans > 500):
             continue
-        if ans not in ansdict.keys():#in every question
-            ansdict[ans] = 0
-        elif ansdict[ans] > 30:
+        if length not in ansdict.keys():#in every question
+            ansdict[length] = 0
+        elif ansdict[length] > 30:
             continue
         f = open("sig/uniq/" + filename, "r", encoding = "UTF8")
         l = f.readlines()
         f.close()
         if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
             continue
-        file = open("uniq two conseq " +str(mode) + ' ' + str(difficulty) + ' ' + str(not_first) + ".txt", "a+")
+        file = open("uniq two conseq " +str(first) + ' ' +str(last) + ' ' + str(difficulty) + ".txt", "a+")
         for i in l:
-            if ans not in ansdict.keys():#in every question
-                ansdict[ans] = 0
-            elif ansdict[ans] < 30:
-                ansdict[ans] = ansdict[ans] + 1
+            if length not in ansdict.keys():#in every question
+                ansdict[length] = 0
+            elif ansdict[length] < 30:
+                ansdict[length] += 1
             else:
                 break
             question = "Сколько слов длиной в "+str(length)+ " " + letters(length) + " (не обязательно осмысленных) можно составить " + \
-                "из букв слова \""+i[:-1]+"\", если в них " + ("не" if mode == 0 else "обязательно") + " должно встречаться сочетание \"" + i[-3:-1] + "\", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
-            if not_first == 1:
-                question +=" При этом слова не должны начинаться с буквы " + i[0]+ "."
-            elif not_first > 1:
-                question +=" При этом буквы " + str(['\'' + str(j) + '\'' for j in i[:not_first]])[2:-2].replace("\"","") + " не должны встречаться на первых " + str(not_first) + " позициях."
+                "из букв слова \""+i[:-1]+"\", если в них " + \
+                ("не" if last < 0 else "обязательно") + " должно встречаться сочетание \"" + i[length-abs(last):-1] + \
+                "\", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
+            if abs(first) == 1:
+                question +=" При этом слова " + ("не" if first < 0 else "обязательно") + " должны начинаться с буквы " + i[0]+ "."
+            else:
+                question +=" При этом буквы " + str(['\'' + str(j) + '\'' for j in i[:abs(first)]])[2:-2].replace("\"","") + \
+                            (" не должны встречаться" if first < 0 else " обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
+            
             shortanswer(i[:-1], question, ans, file)
         file.close()
 
@@ -240,7 +255,4 @@ for i in range(4):
     Q_uniq_spec_position(i, 1)
 '''
 for i in range(1):
-    Q_uniq_two_conseq(0, 0)#, i)
-    Q_uniq_two_conseq(1, 0)#, i)
-    Q_uniq_two_conseq(0, 1)#, i)
-    Q_uniq_two_conseq(1, 1)#, i)
+    Q_uniq_several_seq(0, 2, 2)
