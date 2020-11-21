@@ -150,13 +150,16 @@ def Q_uniq_spec_position(mode, difficulty):
             question += ", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
             shortanswer(i[:-1], question, ans, file)
         file.close()
-def Q_uniq_several_seq(difficulty, last, first):
+def Q_uniq_several_seq(first, last, difficulty):
     '''
     diff 0 50 < answer < 500
     diff 1 5000 < answer < 30000
     last length of postfix that has to be (positive)/has to be missing (negative)
     first length of prefix - those letters must (positive)/cant (negative) be in first not_first letters
     '''
+    if abs(last) < 2:
+        print("an ending sequence must be at least 2 letters long (otherwise its not a sequence)")
+        return
     alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
     ansdict = {}#in every question
     flist = []
@@ -168,12 +171,65 @@ def Q_uniq_several_seq(difficulty, last, first):
         vows = int(filename[4:6])
         cons = int(filename[10:13].replace('.',''))
         length = vows + cons + spec
+        mid = length - first - last
         if length <= 2 or last > length or first > length:
             continue
+        if first > 0 and length - first < first:
+            #print("not enough letters to fill in starting slots")
+            continue
+
         ans = 0
-        
+        if last > 0 and first < 0:
+            ffirst = -first
+            if last >= ffirst:
+                pre = []#i am well aware this can be done simpler, but im too stupid for it
+                after = [i for i in range(1, mid + ffirst + 1)]
+                ans = 0
+                cur = 1
+                while len(pre) <= ffirst:
+                    #print(*pre, '\t', *after)
+                    cur = 1
+                    for i in pre:
+                        cur *= i
+                    for i in after:
+                        cur *= i
+                    #print(cur)
+                    ans += cur
+                    if len(pre)==0:
+                        pre.append(mid)
+                    else:
+                        pre.append(pre[-1] - 1)
+                    after.pop()
+                
+                ans += cur * mid
+            else: #last < first
+                pre = []#i am well aware this can be done simpler, but im too stupid for it
+                after = [i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid + ffirst - 1, 0, -1)]
+                ans = 0
+                cur = 1
+                while len(pre) <= ffirst:
+                    #print(*pre, '\t', *after)
+                    cur = 1
+                    for i in pre:
+                        cur *= i
+                    for i in after:
+                        cur *= i
+                    
+                    ans += cur
+                    if len(pre)==0:
+                        pre.append(mid)
+                    else:
+                        pre.append(pre[-1] - 1)
+                    after.pop(0)
+                                    
+                ans += cur * mid
+        #elif last > 0 and first > 0:
+        else:#todo other formulas
+            ans = -1
+            
+        '''
         #direct counting doesnt work, too much memory needed...
-        #todo: formulas!
+
         wrd = alphabet[:length]
         lst = list(map(''.join, list(permutations(wrd))))
         for i in lst:
@@ -186,7 +242,7 @@ def Q_uniq_several_seq(difficulty, last, first):
                     break
             if good:
                 ans+=1
-        
+        '''
         if difficulty == 1 and (ans < 5000 or ans > 30000) \
            or difficulty == 0 and (ans < 50 or ans > 500):
             continue
@@ -212,7 +268,7 @@ def Q_uniq_several_seq(difficulty, last, first):
                 ("не" if last < 0 else "обязательно") + " должно встречаться сочетание \"" + i[length-abs(last):-1] + \
                 "\", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
             if abs(first) == 1:
-                question +=" При этом слова " + ("не" if first < 0 else "обязательно") + " должны начинаться с буквы " + i[0]+ "."
+                question +=" При этом слова " + ("не" if first < 0 else "обязательно") + " должны начинаться с буквы \"" + i[0]+ "\"."
             else:
                 question +=" При этом буквы " + str(['\'' + str(j) + '\'' for j in i[:abs(first)]])[2:-2].replace("\"","") + \
                             (" не должны встречаться" if first < 0 else " обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
@@ -254,5 +310,7 @@ for i in range(4):
     Q_uniq_spec_position(i, 0)
     Q_uniq_spec_position(i, 1)
 '''
-for i in range(1):
-    Q_uniq_several_seq(0, 2, 2)
+for i in range(-5,5):
+    for j in range(-5,5):
+        print('go')
+        Q_uniq_several_seq(i, j, 0)#doesnt work, wrong answers
