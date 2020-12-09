@@ -166,13 +166,13 @@ def Q_uniq_several_seq(first, last, difficulty):
     from itertools import permutations
     for(dirpath, dirnames, filenames) in walk('sig/uniq'):
         flist.extend(filenames)
-    for filename in flist:
+    for filename in flist[:-1]:
         spec = int(filename[-6:-4].replace('.',''))
         vows = int(filename[4:6])
         cons = int(filename[10:13].replace('.',''))
         length = vows + cons + spec
-        mid = length - first - last
-        if length <= 2 or last > length or first > length:
+        mid = length - abs(first) - abs(last)
+        if length <= 2 or abs(last) > length or abs(first) > length or abs(first)+abs(last)>=length:
             continue
         if first > 0 and length - first < first:
             #print("not enough letters to fill in starting slots")
@@ -187,7 +187,7 @@ def Q_uniq_several_seq(first, last, difficulty):
                 ans = 0
                 cur = 1
                 while len(pre) <= ffirst:
-                    #print(*pre, '\t', *after)
+                    print(*pre, '\t', *after)
                     cur = 1
                     for i in pre:
                         cur *= i
@@ -226,29 +226,14 @@ def Q_uniq_several_seq(first, last, difficulty):
         #elif last > 0 and first > 0:
         else:#todo other formulas
             ans = -1
-            
-        '''
-        #direct counting doesnt work, too much memory needed...
-
-        wrd = alphabet[:length]
-        lst = list(map(''.join, list(permutations(wrd))))
-        for i in lst:
-            if (last < 0 and wrd[last:] in i) or (last > 0 and wrd[-last:] not in i):
-                continue
-            good = True
-            for j in wrd[:abs(first)]:
-                if (first > 0 and i.find(j) >= first) or (first < 0 and i.find(j) < -first):
-                    good = False
-                    break
-            if good:
-                ans+=1
-        '''
+            '''
         if difficulty == 1 and (ans < 5000 or ans > 30000) \
            or difficulty == 0 and (ans < 50 or ans > 500):
             continue
+            '''
         if length not in ansdict.keys():#in every question
             ansdict[length] = 0
-        elif ansdict[length] > 30:
+        elif ansdict[length] > 1:
             continue
         f = open("sig/uniq/" + filename, "r", encoding = "UTF8")
         l = f.readlines()
@@ -259,7 +244,7 @@ def Q_uniq_several_seq(first, last, difficulty):
         for i in l:
             if length not in ansdict.keys():#in every question
                 ansdict[length] = 0
-            elif ansdict[length] < 30:
+            elif ansdict[length] < 1:
                 ansdict[length] += 1
             else:
                 break
@@ -270,8 +255,8 @@ def Q_uniq_several_seq(first, last, difficulty):
             if abs(first) == 1:
                 question +=" При этом слова " + ("не" if first < 0 else "обязательно") + " должны начинаться с буквы \"" + i[0]+ "\"."
             else:
-                question +=" При этом буквы " + str(['\'' + str(j) + '\'' for j in i[:abs(first)]])[2:-2].replace("\"","") + \
-                            (" не должны встречаться" if first < 0 else " обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
+                question +=" При этом буквы \"" + '\", \"'.join(i[:abs(first)]) + \
+                            ("\" не должны встречаться" if first < 0 else " обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
             
             shortanswer(i[:-1], question, ans, file)
         file.close()
