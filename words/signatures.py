@@ -1,6 +1,7 @@
+# coding=cp1251
 from collections import Counter
-vowels=["Р°","СЏ","Сѓ","СЋ","СЌ","Рµ","Рѕ","С‘","С‹","Рё"]
-special=["СЊ", "СЉ"]
+vowels=["а","я","у","ю","э","е","о","ё","ы","и"]
+special=["ь", "ъ"]
 def vowcount(str):
     c=0
     for i in str:
@@ -11,13 +12,13 @@ l=[]
 
 def letters(n):
     if 5 <= n%100 <= 20:
-        return "Р±СѓРєРІ"
+        return "букв"
     elif n % 10 == 1:
-        return "Р±СѓРєРІР°"
+        return "буква"
     elif 2 <= n % 10 <= 4:
-        return "Р±СѓРєРІС‹"
+        return "буквы"
     else:
-        return "Р±СѓРєРІ"
+        return "букв"
     
 
 def all_to_uniq_nuniq():
@@ -135,19 +136,19 @@ def Q_uniq_spec_position(mode, difficulty):
                 ansdict[ans] = ansdict[ans] + 1
             else:
                 break
-            question = "РЎРєРѕР»СЊРєРѕ СЃР»РѕРІ РґР»РёРЅРѕР№ РІ "+str(length)+ " " + letters(length) + " (РЅРµ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РѕСЃРјС‹СЃР»РµРЅРЅС‹С…) РјРѕР¶РЅРѕ СЃРѕСЃС‚Р°РІРёС‚СЊ " + \
-                "РёР· Р±СѓРєРІ СЃР»РѕРІР° \""+i[:-1]+"\", РµСЃР»Рё РІ РЅРёС… " + ("РјСЏРіРєРёР№" if "СЊ" in i else "С‚РІС‘СЂРґС‹Р№") + " Р·РЅР°Рє РґРѕР»Р¶РµРЅ СЃС‚РѕСЏС‚СЊ СЃС‚СЂРѕРіРѕ "
+            question = "Сколько слов длиной в "+str(length)+ " " + letters(length) + " (не обязательно осмысленных) можно составить " + \
+                "из букв слова \""+i[:-1]+"\", если в них " + ("мягкий" if "ь" in i else "твёрдый") + " знак должен стоять строго "
             if mode == 0:
-                question += "РїРѕСЃР»Рµ РіР»Р°СЃРЅРѕР№"
+                question += "после гласной"
             elif mode == 1:
-                question += "РїРµСЂРµРґ РіР»Р°СЃРЅРѕР№"
+                question += "перед гласной"
             elif mode == 2:
-                question += "РЅРµ РїРѕСЃР»Рµ РіР»Р°СЃРЅРѕР№"
+                question += "не после гласной"
             elif mode == 3:
-                question += "РЅРµ РїРµСЂРµРґ РіР»Р°СЃРЅРѕР№"
+                question += "не перед гласной"
             else:
-                question += "РћРЁРР‘РљРђ"
-            question += ", Рё РїСЂРё СЌС‚РѕРј Р±СѓРєРІС‹ РёР· РёСЃС…РѕРґРЅРѕРіРѕ СЃР»РѕРІР° РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ СЂРѕРІРЅРѕ РїРѕ РѕРґРЅРѕРјСѓ СЂР°Р·Сѓ?"
+                question += "ОШИБКА"
+            question += ", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
             shortanswer(i[:-1], question, ans, file)
         file.close()
 def Q_uniq_several_seq(first, last, difficulty):
@@ -160,13 +161,13 @@ def Q_uniq_several_seq(first, last, difficulty):
     if abs(last) < 2:
         print("an ending sequence must be at least 2 letters long (otherwise its not a sequence)")
         return
-    alphabet = "Р°Р±РІРіРґРµС‘Р¶Р·РёР№РєР»РјРЅРѕРїСЂСЃС‚СѓС„С…С†С‡С€С‰СЉС‹СЊСЌСЋСЏ"
+    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
     ansdict = {}#in every question
     flist = []
     from itertools import permutations
     for(dirpath, dirnames, filenames) in walk('sig/uniq'):
         flist.extend(filenames)
-    for filename in flist[:-1]:
+    for filename in flist:
         spec = int(filename[-6:-4].replace('.',''))
         vows = int(filename[4:6])
         cons = int(filename[10:13].replace('.',''))
@@ -174,66 +175,49 @@ def Q_uniq_several_seq(first, last, difficulty):
         mid = length - abs(first) - abs(last)
         if length <= 2 or abs(last) > length or abs(first) > length or abs(first)+abs(last)>=length:
             continue
-        if first > 0 and length - first < first:
+        if first < 0 and mid+last < -first:
             #print("not enough letters to fill in starting slots")
             continue
 
         ans = 0
+        def two_lists(m,after):
+            pre=[]
+            ans = 0
+            cur = 1
+            while len(pre) <= ffirst:
+                print(*pre, '\t', *after)
+                cur = 1
+                for i in pre:
+                    cur *= i
+                for i in after:
+                    cur *= i
+                
+                ans += cur
+                if len(pre)==0:
+                    pre.append(m)
+                else:
+                    if pre[-1]==0:
+                        break
+                    pre.append(pre[-1] - 1)
+                after.pop(0)
+            return ans+cur*m
         if last > 0 and first < 0:
             ffirst = -first
-            if last >= ffirst:
-                pre = []#i am well aware this can be done simpler, but im too stupid for it
-                after = [i for i in range(1, mid + ffirst + 1)]
-                ans = 0
-                cur = 1
-                while len(pre) <= ffirst:
-                    print(*pre, '\t', *after)
-                    cur = 1
-                    for i in pre:
-                        cur *= i
-                    for i in after:
-                        cur *= i
-                    #print(cur)
-                    ans += cur
-                    if len(pre)==0:
-                        pre.append(mid)
-                    else:
-                        pre.append(pre[-1] - 1)
-                    after.pop()
-                
-                ans += cur * mid
-            else: #last < first
-                pre = []#i am well aware this can be done simpler, but im too stupid for it
-                after = [i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid + ffirst - 1, 0, -1)]
-                ans = 0
-                cur = 1
-                while len(pre) <= ffirst:
-                    #print(*pre, '\t', *after)
-                    cur = 1
-                    for i in pre:
-                        cur *= i
-                    for i in after:
-                        cur *= i
-                    
-                    ans += cur
-                    if len(pre)==0:
-                        pre.append(mid)
-                    else:
-                        pre.append(pre[-1] - 1)
-                    after.pop(0)
-                                    
-                ans += cur * mid
+            if last >= ffirst:#--------------------------------------OK
+                ans=two_lists(mid,[i for i in range(1, mid + ffirst + 1)])#i am well aware this can be done simpler, but im too stupid for it
+            else: #last < first#--------------------------------------OK
+                ans=two_lists(mid,[i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid-(ffirst-last) + ffirst, 0, -1)])
         #elif last > 0 and first > 0:
         else:#todo other formulas
             ans = -1
-            '''
+            
         if difficulty == 1 and (ans < 5000 or ans > 30000) \
-           or difficulty == 0 and (ans < 50 or ans > 500):
+           or difficulty == 0 and (ans < 50 or ans > 2000):
             continue
-            '''
+            
         if length not in ansdict.keys():#in every question
             ansdict[length] = 0
-        elif ansdict[length] > 1:
+        elif ansdict[length] > 1:#TODO: 30 when all debugged, unique answers for now
             continue
         f = open("sig/uniq/" + filename, "r", encoding = "UTF8")
         l = f.readlines()
@@ -244,19 +228,19 @@ def Q_uniq_several_seq(first, last, difficulty):
         for i in l:
             if length not in ansdict.keys():#in every question
                 ansdict[length] = 0
-            elif ansdict[length] < 1:
+            elif ansdict[length] < 1:#TODO: 30
                 ansdict[length] += 1
             else:
                 break
-            question = "РЎРєРѕР»СЊРєРѕ СЃР»РѕРІ РґР»РёРЅРѕР№ РІ "+str(length)+ " " + letters(length) + " (РЅРµ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РѕСЃРјС‹СЃР»РµРЅРЅС‹С…) РјРѕР¶РЅРѕ СЃРѕСЃС‚Р°РІРёС‚СЊ " + \
-                "РёР· Р±СѓРєРІ СЃР»РѕРІР° \""+i[:-1]+"\", РµСЃР»Рё РІ РЅРёС… " + \
-                ("РЅРµ" if last < 0 else "РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ") + " РґРѕР»Р¶РЅРѕ РІСЃС‚СЂРµС‡Р°С‚СЊСЃСЏ СЃРѕС‡РµС‚Р°РЅРёРµ \"" + i[length-abs(last):-1] + \
-                "\", Рё РїСЂРё СЌС‚РѕРј Р±СѓРєРІС‹ РёР· РёСЃС…РѕРґРЅРѕРіРѕ СЃР»РѕРІР° РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ СЂРѕРІРЅРѕ РїРѕ РѕРґРЅРѕРјСѓ СЂР°Р·Сѓ?"
+            question = "Сколько слов длиной в "+str(length)+ " " + letters(length) + " (не обязательно осмысленных) можно составить " + \
+                "из букв слова \""+i[:-1]+"\", если в них " + \
+                ("не" if last < 0 else "обязательно") + " должно встречаться сочетание \"" + i[length-abs(last):-1] + \
+                "\", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
             if abs(first) == 1:
-                question +=" РџСЂРё СЌС‚РѕРј СЃР»РѕРІР° " + ("РЅРµ" if first < 0 else "РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ") + " РґРѕР»Р¶РЅС‹ РЅР°С‡РёРЅР°С‚СЊСЃСЏ СЃ Р±СѓРєРІС‹ \"" + i[0]+ "\"."
+                question +=" При этом слова " + ("не" if first < 0 else "обязательно") + " должны начинаться с буквы \"" + i[0]+ "\"."
             else:
-                question +=" РџСЂРё СЌС‚РѕРј Р±СѓРєРІС‹ \"" + '\", \"'.join(i[:abs(first)]) + \
-                            ("\" РЅРµ РґРѕР»Р¶РЅС‹ РІСЃС‚СЂРµС‡Р°С‚СЊСЃСЏ" if first < 0 else " РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РґРѕР»Р¶РЅС‹ РІСЃС‚СЂРµС‡Р°С‚СЊСЃСЏ С‚РѕР»СЊРєРѕ") + " РЅР° РїРµСЂРІС‹С… " + str(abs(first)) + " РїРѕР·РёС†РёСЏС…."
+                question +=" При этом буквы \"" + '\", \"'.join(i[:abs(first)]) + \
+                            ("\" не должны встречаться" if first < 0 else " обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
             
             shortanswer(i[:-1], question, ans, file)
         file.close()
@@ -294,8 +278,11 @@ def shortanswer(name, question, answer, file):
 for i in range(4):
     Q_uniq_spec_position(i, 0)
     Q_uniq_spec_position(i, 1)
-'''
+
+
 for i in range(-5,5):
     for j in range(-5,5):
         print('go')
         Q_uniq_several_seq(i, j, 0)#doesnt work, wrong answers
+        '''
+Q_uniq_several_seq(-4,2,0)
