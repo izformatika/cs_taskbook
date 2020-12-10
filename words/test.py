@@ -1,9 +1,10 @@
+# coding=cp1251
 def f1():
     from collections import Counter
-    s="Р°СѓРєС†РёРѕРЅРµСЂ"
+    s="алчность"
     plus=0
     minus = 0
-    print(s[:2])
+    #print(s[:2])
     for i1 in s:
         print(i1)
         for i2 in s.replace(i1, ''):
@@ -13,26 +14,29 @@ def f1():
                         for i6 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, ''):
                             for i7 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, ''):
                                 for i8 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, ''):
-                                    for i9 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, ''):
-                                        s1=i1+i2+i3+i4+i5+i6+i7+i8+i9#+i10+i11+i12+i13+i14
-                                            #signature=list(Counter(s1).values())
-                                                #if len(signature) == len(s1) - 1 and
-                                        if s[0] not in s1[:2] and s[1] not in s1[:2] and "РЅРµСЂ" in s1:
-                                            #print(s1)
-                                            plus+=1
-                                        else:
-                                            minus +=1
+                                    #for i9 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, ''):
+                                        #for i10 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, '').replace(i9, ''):
+                                    s1=i1+i2+i3+i4+i5+i6+i7+i8#+i9#+i10#+i11+i12+i13+i14
+                                        #signature=list(Counter(s1).values())
+                                            #if len(signature) == len(s1) - 1 and
+                                    if s[0] not in s1[:3] and s[1] not in s1[:3] and s[2] not in s1[:3] and "ть" not in s1:
+                                        #print(s1)
+                                        plus+=1
+                                    else:
+                                        minus +=1
 
     print (plus, minus)
     
 def f2(first, last):
     from itertools import permutations
     ans = 0
-    wrd = "РІРѕРґРёС‡РєР°"
+    wrd = "власть"
     lst = list(map(''.join, list(permutations(wrd))))
     #print(len(lst))
-    #print(wrd[-3:])
+    print(wrd[-last:])
     for i in lst:
+        if wrd[-last:] not in i:
+            continue
         good = True
         for j in range(first):
             if wrd[j] in i[:first]:
@@ -40,9 +44,8 @@ def f2(first, last):
                 break
         if not good:
             continue
-        if wrd[-last:] in i:
-            #print(i)
-            ans += 1
+    
+        ans += 1
     print(ans)
     
 def f3():
@@ -198,6 +201,8 @@ def Q_uniq_several_seq(first, last, difficulty):
 
 def shortanswer(name, question, answer, file):
     print (question, answer)
-        
+'''        
 Q_uniq_several_seq(-3, 2, 0)
 f2(3,2)
+'''
+f1()

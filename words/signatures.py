@@ -175,18 +175,19 @@ def Q_uniq_several_seq(first, last, difficulty):
         mid = length - abs(first) - abs(last)
         if length <= 2 or abs(last) > length or abs(first) > length or abs(first)+abs(last)>=length:
             continue
-        if first < 0 and mid+last < -first:
+        if first < 0 and last>0 and mid+last < -first:
             #print("not enough letters to fill in starting slots")
             continue
 
         ans = 0
-        def two_lists(m,after):
+        def two_lists(f,m,after):
             pre=[]
             ans = 0
             cur = 1
-            while len(pre) <= ffirst:
+            while len(pre) <= f:
                 print(*pre, '\t', *after)
                 cur = 1
+                alarm = False
                 for i in pre:
                     cur *= i
                 for i in after:
@@ -196,21 +197,33 @@ def Q_uniq_several_seq(first, last, difficulty):
                 if len(pre)==0:
                     pre.append(m)
                 else:
-                    if pre[-1]==0:
+                    if pre[-1]==1 and len(pre)!=f-1:#todo: not sure here
+                        alarm = True
                         break
                     pre.append(pre[-1] - 1)
                 after.pop(0)
-            return ans+cur*m
+            print()
+            return ans + (cur*m if not alarm else 0)#todo: and here
         if last > 0 and first < 0:
             ffirst = -first
             if last >= ffirst:#--------------------------------------OK
-                ans=two_lists(mid,[i for i in range(1, mid + ffirst + 1)])#i am well aware this can be done simpler, but im too stupid for it
+                ans=two_lists(ffirst,mid,[i for i in range(mid + ffirst, 0, -1)])#i think this can be done simpler, but im too stupid for it
             else: #last < first#--------------------------------------OK
-                ans=two_lists(mid,[i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid-(ffirst-last) + ffirst, 0, -1)])
-        #elif last > 0 and first > 0:
+                ans=two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid-(ffirst-last) + ffirst, 0, -1)])
+        elif last > 0 and first > 0:
+            ans=factorial(first)*(mid+1)*factorial(mid)#--------------OK
+        elif last < 0 and first < 0:
+            llast=-last
+            ffirst=-first#todo: wrong answer alchnost -3 -2 must be 6192, says 1500
+            if llast >= ffirst:
+                ans=factorial(llast+mid)//factorial(ffirst)*factorial(llast+mid) - two_lists(ffirst,mid,[i for i in range(mid + ffirst, 0, -1)])
+            else: #last < first
+                ans=factorial(llast+mid)//factorial(ffirst)*factorial(llast+mid) - two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-llast]+[i for i in range(mid-(ffirst-llast) + ffirst, 0, -1)])            
         else:#todo other formulas
             ans = -1
             
+        if ans < 0:
+            continue
         if difficulty == 1 and (ans < 5000 or ans > 30000) \
            or difficulty == 0 and (ans < 50 or ans > 2000):
             continue
@@ -240,7 +253,7 @@ def Q_uniq_several_seq(first, last, difficulty):
                 question +=" При этом слова " + ("не" if first < 0 else "обязательно") + " должны начинаться с буквы \"" + i[0]+ "\"."
             else:
                 question +=" При этом буквы \"" + '\", \"'.join(i[:abs(first)]) + \
-                            ("\" не должны встречаться" if first < 0 else " обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
+                            ("\" не должны встречаться" if first < 0 else "\" обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
             
             shortanswer(i[:-1], question, ans, file)
         file.close()
@@ -285,4 +298,4 @@ for i in range(-5,5):
         print('go')
         Q_uniq_several_seq(i, j, 0)#doesnt work, wrong answers
         '''
-Q_uniq_several_seq(-4,2,0)
+Q_uniq_several_seq(-3,-2,0)
