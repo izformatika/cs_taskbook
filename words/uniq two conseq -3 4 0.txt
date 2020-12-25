@@ -1,0 +1,1380 @@
+<question type="shortanswer">
+<name>
+<text>бледность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "бледность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "л", "е" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вальдшнеп</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "вальдшнеп", если в них обязательно должно встречаться сочетание "шнеп", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "а", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>влажность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "влажность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "л", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вредность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "вредность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "р", "е" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гладкость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "гладкость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "г", "л", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>грузность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "грузность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "г", "р", "у" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>древность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "древность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "д", "р", "е" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>дружность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "дружность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "д", "р", "у" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>дряблость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "дряблость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "д", "р", "я" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>дряхлость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "дряхлость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "д", "р", "я" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>желчность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "желчность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "ж", "е", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>жёлчность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "жёлчность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "ж", "ё", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>звучность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "звучность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "з", "в", "у" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>здравость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "здравость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "з", "д", "р" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>констебль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "констебль", если в них обязательно должно встречаться сочетание "ебль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "к", "о", "н" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>крайность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "крайность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "к", "р", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>круглость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "круглость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "к", "р", "у" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>крупность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "крупность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "к", "р", "у" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>мёрзлость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "мёрзлость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "м", "ё", "р" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>мерклость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "мерклость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "м", "е", "р" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>мрачность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "мрачность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "м", "р", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>плавкость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "плавкость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "п", "л", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>плавность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "плавность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "п", "л", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>скульптор</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "скульптор", если в них обязательно должно встречаться сочетание "птор", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "с", "к", "у" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ствольщик</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "ствольщик", если в них обязательно должно встречаться сочетание "ьщик", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "с", "т", "в" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>фальшборт</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "фальшборт", если в них обязательно должно встречаться сочетание "борт", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "ф", "а", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>чарльстон</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "чарльстон", если в них обязательно должно встречаться сочетание "стон", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "ч", "а", "р" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>встречник</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "встречник", если в них обязательно должно встречаться сочетание "чник", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "с", "т" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ландштурм</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "ландштурм", если в них обязательно должно встречаться сочетание "турм", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "л", "а", "н" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>скейтборд</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 9 букв (не обязательно осмысленных) можно составить из букв слова "скейтборд", если в них обязательно должно встречаться сочетание "борд", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "с", "к", "е" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>180</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>брюзглость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "брюзглость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "р", "ю" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>взрачность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "взрачность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "з", "р" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>брандспойт</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "брандспойт", если в них обязательно должно встречаться сочетание "пойт", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "р", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>здравпункт</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "здравпункт", если в них обязательно должно встречаться сочетание "ункт", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "з", "д", "р" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>подъельник</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "подъельник", если в них обязательно должно встречаться сочетание "ьник", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "п", "о", "д" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>азбучность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "азбучность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "а", "з", "б" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>альпеншток</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "альпеншток", если в них обязательно должно встречаться сочетание "шток", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "а", "л", "ь" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>безликость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "безликость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "е", "з" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>безрукость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "безрукость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "е", "з" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>безумность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "безумность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "е", "з" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>большегруз</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "большегруз", если в них обязательно должно встречаться сочетание "груз", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "о", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>бульварчик</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "бульварчик", если в них обязательно должно встречаться сочетание "рчик", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "б", "у", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>взаимность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "взаимность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "з", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вздыхатель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "вздыхатель", если в них обязательно должно встречаться сочетание "тель", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "з", "д" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вольфрамит</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "вольфрамит", если в них обязательно должно встречаться сочетание "амит", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "о", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вульгаризм</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "вульгаризм", если в них обязательно должно встречаться сочетание "ризм", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "у", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>выпуклость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "выпуклость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "ы", "п" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вычурность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "вычурность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "в", "ы", "ч" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гвоздильня</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "гвоздильня", если в них обязательно должно встречаться сочетание "льня", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "г", "в", "о" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гидропульт</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "гидропульт", если в них обязательно должно встречаться сочетание "ульт", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "г", "и", "д" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>дальтонизм</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "дальтонизм", если в них обязательно должно встречаться сочетание "низм", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "д", "а", "л" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>душевность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "душевность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "д", "у", "ш" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>журнальчик</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "журнальчик", если в них обязательно должно встречаться сочетание "ьчик", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "ж", "у", "р" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>замшелость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "замшелость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "з", "а", "м" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>застольник</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "застольник", если в них обязательно должно встречаться сочетание "ьник", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "з", "а", "с" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>значимость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "значимость", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "з", "н", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>извечность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "извечность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "и", "з", "в" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>измальство</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "измальство", если в них обязательно должно встречаться сочетание "ство", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "и", "з", "м" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>камерность</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "камерность", если в них обязательно должно встречаться сочетание "ость", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "к", "а", "м" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>квадрильон</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 10 букв (не обязательно осмысленных) можно составить из букв слова "квадрильон", если в них обязательно должно встречаться сочетание "льон", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом буквы "к", "в", "а" не должны встречаться на первых 3 позициях.</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>1368</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+

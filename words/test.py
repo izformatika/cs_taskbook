@@ -1,7 +1,7 @@
 # coding=cp1251
 def f1():
     from collections import Counter
-    s="��������"
+    s="���������"
     plus=0
     minus = 0
     #print(s[:2])
@@ -14,16 +14,16 @@ def f1():
                         for i6 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, ''):
                             for i7 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, ''):
                                 for i8 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, ''):
-                                    #for i9 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, ''):
+                                    for i9 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, ''):
                                         #for i10 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, '').replace(i9, ''):
-                                    s1=i1+i2+i3+i4+i5+i6+i7+i8#+i9#+i10#+i11+i12+i13+i14
-                                        #signature=list(Counter(s1).values())
-                                            #if len(signature) == len(s1) - 1 and
-                                    if s[0] not in s1[:3] and s[1] not in s1[:3] and s[2] not in s1[:3] and "��" not in s1:
-                                        #print(s1)
-                                        plus+=1
-                                    else:
-                                        minus +=1
+                                        s1=i1+i2+i3+i4+i5+i6+i7+i8+i9#+i10#+i11+i12+i13+i14
+                                    #signature=list(Counter(s1).values())
+                                        #if len(signature) == len(s1) - 1 and
+                                        if s[0]  in s1[:3] and s[1]  in s1[:3] and s[2]  in s1[:3] and "��" not in s1:
+                                            #print(s1)
+                                            plus+=1
+                                        else:
+                                            minus +=1
 
     print (plus, minus)
     
@@ -88,121 +88,87 @@ def letters(n):
     else:
         return "букв"
 
-def Q_uniq_several_seq(first, last, difficulty):
-    '''
-    diff 0 50 < answer < 500
-    diff 1 5000 < answer < 30000
-    last length of postfix that has to be (positive)/has to be missing (negative)
-    first length of prefix - those letters must (positive)/cant (negative) be in first not_first letters
-    '''
-    if abs(last) < 2:
-        print("an ending sequence must be at least 2 letters long (otherwise its not a sequence)")
+def f4(length, first, last, difficulty):
+    mid = length - abs(first) - abs(last)
+    if length <= 2 or abs(last) > length or abs(first) > length or abs(first)+abs(last)>=length:
         return
-    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
-    ansdict = {}#in every question
-    flist = []
-    from itertools import permutations
-    for(dirpath, dirnames, filenames) in walk('sig/debug'):
-        flist.extend(filenames)
-    for filename in flist[:-1]:
-        spec = int(filename[-6:-4].replace('.',''))
-        vows = int(filename[4:6])
-        cons = int(filename[10:13].replace('.',''))
-        length = vows + cons + spec
-        mid = length - abs(first) - abs(last)
-        if length <= 2 or abs(last) > length or abs(first) > length or abs(first)+abs(last)>=length:
-            continue
-        if first > 0 and length - first < first:
-            #print("not enough letters to fill in starting slots")
-            continue
+    if first < 0 and last>0 and mid+last < -first:
+        #print("not enough letters to fill in starting slots")
+        return
 
+    ans = 0
+    def two_lists(f,m,after):
+        pre=[]
         ans = 0
-        if last > 0 and first < 0:
-            ffirst = -first
-            if last >= ffirst:
-                pre = []#i am well aware this can be done simpler, but im too stupid for it
-                after = [i for i in range(1, mid + ffirst + 1)]
-                ans = 0
-                cur = 1
-                while len(pre) <= ffirst:
-                    print(*pre, '\t', *after)
-                    cur = 1
-                    for i in pre:
-                        cur *= i
-                    for i in after:
-                        cur *= i
-                    #print(cur)
-                    ans += cur
-                    if len(pre)==0:
-                        pre.append(mid)
-                    else:
-                        pre.append(pre[-1] - 1)
-                    after.pop()
-                
-                ans += cur * mid
-            else: #last < first
-                pre = []#i am well aware this can be done simpler, but im too stupid for it
-                after = [i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid + ffirst - 1, 0, -1)]
-                ans = 0
-                cur = 1
-                while len(pre) <= ffirst:
-                    #print(*pre, '\t', *after)
-                    cur = 1
-                    for i in pre:
-                        cur *= i
-                    for i in after:
-                        cur *= i
-                    
-                    ans += cur
-                    if len(pre)==0:
-                        pre.append(mid)
-                    else:
-                        pre.append(pre[-1] - 1)
-                    after.pop(0)
-                                    
-                ans += cur * mid
-        #elif last > 0 and first > 0:
-        else:#todo other formulas
-            ans = -1
-            '''
-        if difficulty == 1 and (ans < 5000 or ans > 30000) \
-           or difficulty == 0 and (ans < 50 or ans > 500):
-            continue
-            '''
-        if length not in ansdict.keys():#in every question
-            ansdict[length] = 0
-        elif ansdict[length] > 1:
-            continue
-        f = open("sig/debug/" + filename, "r", encoding = "UTF8")
-        l = f.readlines()
-        f.close()
-        if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
-            continue
-        file = open("uniq two conseq " +str(first) + ' ' +str(last) + ' ' + str(difficulty) + ".txt", "a+")
-        for i in l:
-            if length not in ansdict.keys():#in every question
-                ansdict[length] = 0
-            elif ansdict[length] < 1:
-                ansdict[length] += 1
-            else:
-                break
-            question = "Сколько слов длиной в "+str(length)+ " " + letters(length) + " (не обязательно осмысленных) можно составить " + \
-                "из букв слова \""+i[:-1]+"\", если в них " + \
-                ("не" if last < 0 else "обязательно") + " должно встречаться сочетание \"" + i[length-abs(last):-1] + \
-                "\", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
-            if abs(first) == 1:
-                question +=" При этом слова " + ("не" if first < 0 else "обязательно") + " должны начинаться с буквы \"" + i[0]+ "\"."
-            else:
-                question +=" При этом буквы \"" + '\", \"'.join(i[:abs(first)]) + \
-                            ("\" не должны встречаться" if first < 0 else " обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
+        cur = 1
+        while len(pre) <= f:
+            #print(*pre, '\t', *after)
+            cur = 1
+            alarm = False
+            for i in pre:
+                cur *= i
+            for i in after:
+                cur *= i
             
-            shortanswer(i[:-1], question, ans, file)
-        file.close()
-
+            ans += cur
+            if len(pre)==0:
+                pre.append(m)
+            else:
+                if pre[-1]==1:#todo: not sure here
+                    if len(pre)<f:
+                        #print('alarm')
+                        alarm=True
+                    break
+                pre.append(pre[-1] - 1)
+            after.pop(0)
+        #print(cur,m)
+        return ans + (cur*m if not alarm else 0)#todo: and here
+    if last > 0 and first < 0:
+        ffirst = -first
+        if last >= ffirst:
+            ans=two_lists(ffirst,mid,[i for i in range(mid + ffirst, 0, -1)])#i think this can be done simpler, but im too stupid for it
+        else: #last < first
+            ans=two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid-(ffirst-last) + ffirst, 0, -1)])
+    elif last > 0 and first > 0:
+        ans=factorial(first)*(mid+1)*factorial(mid)
+    elif last < 0 and first < 0:# ----------------------------------------------------------------------------------------------------fuck!
+        llast=-last
+        ffirst=-first
+        if llast >= ffirst:
+            tmp=two_lists(ffirst,mid,[i for i in range(mid + ffirst, 0, -1)])
+            #print(tmp)
+            ans=factorial(llast+mid)//factorial(llast+mid-ffirst)*factorial(llast+mid) - tmp
+        else: #last < first
+            tmp=two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-llast]+[i for i in range(mid-(ffirst-llast) + ffirst, 0, -1)])
+            #print(tmp,'!')
+            ans=factorial(llast+mid)//factorial(llast+mid-ffirst)*factorial(llast+mid) - tmp
+    elif last < 0 and first > 0:
+        #print(mid-last)
+        ans = factorial(first)*factorial(mid-last) - factorial(first)*factorial(mid)*(mid+1)
+    else:
+        ans = -1
+    return(ans)
 def shortanswer(name, question, answer, file):
     print (question, answer)
-'''        
-Q_uniq_several_seq(-3, 2, 0)
-f2(3,2)
-'''
-f1()
+
+
+#print(f4(8, -3, -2, 0),'=6192')
+#print(f4(8, -2, -3, 0),'=21264')
+
+print(f4(9, 3, 2, 0),'=720')
+print(f4(9, 2, 3, 0),'=240')
+print(f4(9, -3, 2, 0),'=10080')
+print(f4(9, 2, -3, 0),'=9840')
+print(f4(9, 3, -2, 0),'=3600')
+print(f4(9, -2, 3, 0),'=2640')
+print(f4(9, -3, -2, 0),'=76320')
+print(f4(9, -2, -3, 0),'=209040')
+
+#print(f4(9, -3, 4, 0),'=180')
+#print(f4(9, -3, -4, 0),'=WAT')
+#print(f4(9, -3, -2, 0),'=76320')
+#print(f4(9, 3, -2, 0),'=3600')
+#print(f4(8, -3, 2, 0),'=1008')
+#print(f4(8, -3, 4, 0),'=30')
+
+#f1()

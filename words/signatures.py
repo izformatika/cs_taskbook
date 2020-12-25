@@ -175,7 +175,7 @@ def Q_uniq_several_seq(first, last, difficulty):
         mid = length - abs(first) - abs(last)
         if length <= 2 or abs(last) > length or abs(first) > length or abs(first)+abs(last)>=length:
             continue
-        if first < 0 and last>0 and mid+last < -first:
+        if first < 0 and -first>length//2:
             #print("not enough letters to fill in starting slots")
             continue
 
@@ -185,7 +185,7 @@ def Q_uniq_several_seq(first, last, difficulty):
             ans = 0
             cur = 1
             while len(pre) <= f:
-                print(*pre, '\t', *after)
+                #print(*pre, '\t', *after)
                 cur = 1
                 alarm = False
                 for i in pre:
@@ -197,31 +197,40 @@ def Q_uniq_several_seq(first, last, difficulty):
                 if len(pre)==0:
                     pre.append(m)
                 else:
-                    if pre[-1]==1 and len(pre)!=f-1:#todo: not sure here
-                        alarm = True
+                    if pre[-1]==1:
+                        if len(pre)<f:
+                            #print('alarm')
+                            alarm=True
                         break
                     pre.append(pre[-1] - 1)
                 after.pop(0)
-            print()
-            return ans + (cur*m if not alarm else 0)#todo: and here
+            #print(cur,m)
+            return ans + (cur*m if not alarm else 0)
         if last > 0 and first < 0:
             ffirst = -first
-            if last >= ffirst:#--------------------------------------OK
+            if last >= ffirst:
                 ans=two_lists(ffirst,mid,[i for i in range(mid + ffirst, 0, -1)])#i think this can be done simpler, but im too stupid for it
-            else: #last < first#--------------------------------------OK
+            else: #last < first
                 ans=two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid-(ffirst-last) + ffirst, 0, -1)])
         elif last > 0 and first > 0:
-            ans=factorial(first)*(mid+1)*factorial(mid)#--------------OK
-        elif last < 0 and first < 0:
+            ans=factorial(first)*(mid+1)*factorial(mid)
+        elif last < 0 and first < 0:# ----------------------------------------------------------------------------------------------------fuck!
             llast=-last
-            ffirst=-first#todo: wrong answer alchnost -3 -2 must be 6192, says 1500
+            ffirst=-first
             if llast >= ffirst:
-                ans=factorial(llast+mid)//factorial(ffirst)*factorial(llast+mid) - two_lists(ffirst,mid,[i for i in range(mid + ffirst, 0, -1)])
+                tmp=two_lists(ffirst,mid,[i for i in range(mid + ffirst, 0, -1)])
+                #print(tmp)
+                ans=factorial(llast+mid)//factorial(llast+mid-ffirst)*factorial(llast+mid) - tmp
             else: #last < first
-                ans=factorial(llast+mid)//factorial(ffirst)*factorial(llast+mid) - two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-llast]+[i for i in range(mid-(ffirst-llast) + ffirst, 0, -1)])            
-        else:#todo other formulas
+                tmp=two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-llast]+[i for i in range(mid-(ffirst-llast) + ffirst, 0, -1)])
+                #print(tmp,'!')
+                ans=factorial(llast+mid)//factorial(llast+mid-ffirst)*factorial(llast+mid) - tmp
+        elif last < 0 and first > 0:
+            #print(mid-last)
+            ans = factorial(first)*factorial(mid-last) - factorial(first)*factorial(mid)*(mid+1)
+        else:
             ans = -1
-            
+        
         if ans < 0:
             continue
         if difficulty == 1 and (ans < 5000 or ans > 30000) \
@@ -230,18 +239,18 @@ def Q_uniq_several_seq(first, last, difficulty):
             
         if length not in ansdict.keys():#in every question
             ansdict[length] = 0
-        elif ansdict[length] > 1:#TODO: 30 when all debugged, unique answers for now
+        elif ansdict[length] > 30:
             continue
         f = open("sig/uniq/" + filename, "r", encoding = "UTF8")
         l = f.readlines()
         f.close()
         if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
             continue
-        file = open("uniq two conseq " +str(first) + ' ' +str(last) + ' ' + str(difficulty) + ".txt", "a+")
+        file = open("uniq two conseq " +str(first) + ' ' +str(last) + ' ' + str(difficulty) + ".txt", "a+",encoding = "UTF8")
         for i in l:
             if length not in ansdict.keys():#in every question
                 ansdict[length] = 0
-            elif ansdict[length] < 1:#TODO: 30
+            elif ansdict[length] < 30:
                 ansdict[length] += 1
             else:
                 break
@@ -292,10 +301,9 @@ for i in range(4):
     Q_uniq_spec_position(i, 0)
     Q_uniq_spec_position(i, 1)
 
+'''
+#Q_uniq_several_seq(-3,-2,0)
 
 for i in range(-5,5):
     for j in range(-5,5):
-        print('go')
-        Q_uniq_several_seq(i, j, 0)#doesnt work, wrong answers
-        '''
-Q_uniq_several_seq(-3,-2,0)
+        Q_uniq_several_seq(i, j, 0)

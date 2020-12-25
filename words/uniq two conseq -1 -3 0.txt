@@ -1,0 +1,1380 @@
+<question type="shortanswer">
+<name>
+<text>баснь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "баснь", если в них не должно встречаться сочетание "снь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>близь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "близь", если в них не должно встречаться сочетание "изь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>борть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "борть", если в них не должно встречаться сочетание "рть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>брань</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "брань", если в них не должно встречаться сочетание "ань", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>брешь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "брешь", если в них не должно встречаться сочетание "ешь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>бриль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "бриль", если в них не должно встречаться сочетание "иль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>бровь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "бровь", если в них не должно встречаться сочетание "овь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>брошь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "брошь", если в них не должно встречаться сочетание "ошь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "б".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вальс</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "вальс", если в них не должно встречаться сочетание "льс", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вепрь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "вепрь", если в них не должно встречаться сочетание "прь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>верфь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "верфь", если в них не должно встречаться сочетание "рфь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>весть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "весть", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вихрь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "вихрь", если в них не должно встречаться сочетание "хрь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вождь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "вождь", если в них не должно встречаться сочетание "ждь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вольт</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "вольт", если в них не должно встречаться сочетание "льт", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вопль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "вопль", если в них не должно встречаться сочетание "пль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>враль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "враль", если в них не должно встречаться сочетание "аль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>въезд</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "въезд", если в них не должно встречаться сочетание "езд", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гжель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "гжель", если в них не должно встречаться сочетание "ель", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гладь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "гладь", если в них не должно встречаться сочетание "адь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>глубь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "глубь", если в них не должно встречаться сочетание "убь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>глушь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "глушь", если в них не должно встречаться сочетание "ушь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гниль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "гниль", если в них не должно встречаться сочетание "иль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гольф</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "гольф", если в них не должно встречаться сочетание "льф", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "гость", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>грань</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "грань", если в них не должно встречаться сочетание "ань", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гриль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "гриль", если в них не должно встречаться сочетание "иль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>грудь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "грудь", если в них не должно встречаться сочетание "удь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>грязь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "грязь", если в них не должно встречаться сочетание "язь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>дверь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 5 букв (не обязательно осмысленных) можно составить из букв слова "дверь", если в них не должно встречаться сочетание "ерь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "д".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>92</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>власть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "власть", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гвоздь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "гвоздь", если в них не должно встречаться сочетание "здь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>горсть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "горсть", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гроздь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "гроздь", если в них не должно встречаться сочетание "здь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>груздь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "груздь", если в них не должно встречаться сочетание "здь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>грусть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "грусть", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "г".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>злость</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "злость", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "з".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>кремль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "кремль", если в них не должно встречаться сочетание "мль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "к".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>льстец</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "льстец", если в них не должно встречаться сочетание "тец", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "л".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>мангль</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "мангль", если в них не должно встречаться сочетание "гль", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "м".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>персть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "персть", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "п".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>полсть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "полсть", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "п".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>скальд</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "скальд", если в них не должно встречаться сочетание "льд", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "с".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>скальп</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "скальп", если в них не должно встречаться сочетание "льп", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "с".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>стернь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "стернь", если в них не должно встречаться сочетание "рнь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "с".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>стильб</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "стильб", если в них не должно встречаться сочетание "льб", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "с".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>стлань</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "стлань", если в них не должно встречаться сочетание "ань", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "с".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>твердь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "твердь", если в них не должно встречаться сочетание "рдь", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "т".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>фильтр</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "фильтр", если в них не должно встречаться сочетание "ьтр", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "ф".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>шерсть</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "шерсть", если в них не должно встречаться сочетание "сть", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "ш".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>взброс</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "взброс", если в них не должно встречаться сочетание "рос", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>взбрык</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "взбрык", если в них не должно встречаться сочетание "рык", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>взгляд</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "взгляд", если в них не должно встречаться сочетание "ляд", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>впрыск</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "впрыск", если в них не должно встречаться сочетание "ыск", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>всхлип</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "всхлип", если в них не должно встречаться сочетание "лип", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>всхрап</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "всхрап", если в них не должно встречаться сочетание "рап", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>всхрип</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "всхрип", если в них не должно встречаться сочетание "рип", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "в".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ксёндз</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "ксёндз", если в них не должно встречаться сочетание "ндз", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "к".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>монстр</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "монстр", если в них не должно встречаться сочетание "стр", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "м".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>плектр</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 6 букв (не обязательно осмысленных) можно составить из букв слова "плектр", если в них не должно встречаться сочетание "ктр", и при этом буквы из исходного слова можно использовать ровно по одному разу? При этом слова не должны начинаться с буквы "п".</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>582</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+

@@ -1,0 +1,828 @@
+<question type="shortanswer">
+<name>
+<text>альбинос</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "альбинос", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>альбомец</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "альбомец", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>альбумин</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "альбумин", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>апельсин</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "апельсин", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>баловень</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "баловень", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>баульчик</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "баульчик", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>бельдюга</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "бельдюга", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>бельэтаж</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "бельэтаж", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>богатырь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "богатырь", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>болтунья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "болтунья", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>больница</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "больница", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вазопись</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "вазопись", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вельможа</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "вельможа", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>веяльщик</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "веяльщик", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>водитель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "водитель", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вольница</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "вольница", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>воркунья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "воркунья", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>ворчунья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "ворчунья", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вьюночек</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "вьюночек", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>вьюшечка</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "вьюшечка", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гаситель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "гаситель", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>глазунья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "глазунья", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гонитель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "гонитель", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>горбунья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "горбунья", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>государь</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "государь", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>грызунья</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "грызунья", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>губитель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "губитель", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гуленька</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "гуленька", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>гульбище</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "гульбище", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>давильня</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "давильня", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>25200</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>обаятель</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "обаятель", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>20160</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>обезьяна</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "обезьяна", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>20160</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>офицерьё</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "офицерьё", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>20160</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>разъятие</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "разъятие", если в них твёрдый знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>20160</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>сеньория</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "сеньория", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>20160</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>эмульсия</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Сколько слов длиной в 8 букв (не обязательно осмысленных) можно составить из букв слова "эмульсия", если в них мягкий знак должен стоять строго не перед гласной, и при этом буквы из исходного слова можно использовать ровно по одному разу?</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>20160</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
