@@ -214,7 +214,7 @@ def Q_uniq_several_seq(first, last, difficulty):
                 ans=two_lists(ffirst,mid,[i for i in range(mid, 0, -1)][:ffirst-last]+[i for i in range(mid-(ffirst-last) + ffirst, 0, -1)])
         elif last > 0 and first > 0:
             ans=factorial(first)*(mid+1)*factorial(mid)
-        elif last < 0 and first < 0:# ----------------------------------------------------------------------------------------------------fuck!
+        elif last < 0 and first < 0:
             llast=-last
             ffirst=-first
             if llast >= ffirst:
@@ -246,7 +246,9 @@ def Q_uniq_several_seq(first, last, difficulty):
         f.close()
         if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
             continue
-        file = open("uniq two conseq " +str(first) + ' ' +str(last) + ' ' + str(difficulty) + ".txt", "a+",encoding = "UTF8")
+        file = open("questions/uniq two conseq " +str(first) + ' ' +str(last) + ' ' + str(difficulty) + ".xml", "a+",encoding = "UTF8")
+        
+        
         for i in l:
             if length not in ansdict.keys():#in every question
                 ansdict[length] = 0
@@ -265,6 +267,7 @@ def Q_uniq_several_seq(first, last, difficulty):
                             ("\" не должны встречаться" if first < 0 else "\" обязательно должны встречаться только") + " на первых " + str(abs(first)) + " позициях."
             
             shortanswer(i[:-1], question, ans, file)
+        
         file.close()
 
 def shortanswer(name, question, answer, file):
@@ -304,6 +307,34 @@ for i in range(4):
 '''
 #Q_uniq_several_seq(-3,-2,0)
 
-for i in range(-5,5):
-    for j in range(-5,5):
-        Q_uniq_several_seq(i, j, 0)
+def header_and_footer_to_xmls():
+    from re import sub
+    flist = []
+    for(dirpath, dirnames, filenames) in walk('./questions'):
+        flist.extend(filenames)
+    for filename in flist:
+        first,last,dif=map(int,sub(r"[a-z\.]","",filename).split())
+        file = open('./questions/'+filename, "r",encoding = "UTF8")
+        txt = file.readlines()
+        file.close()
+        file = open('./questions/'+filename, "w",encoding = "UTF8")
+        file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+        file.write("<quiz>")
+        file.write("<!-- question: 0  -->")
+        file.write("<question type=\"category\">")
+        file.write("<category>")
+        file.write("<text>общая информатика/количество информации/комбинаторика/на словах/eq:большие/eq: uniq two sequences/eq: "+('+ ' if first>0 else '- ')+('+' if last>0 else '-')+"/eq: "+str(abs(first))+' '+str(abs(last))+"</text>")
+        file.write("</category>")
+        file.write("<info format=\"moodle_auto_format\">")
+        file.write("<text></text>")
+        file.write("</info>")
+        file.write("</question>")
+        for i in txt:
+            file.write(i)
+        file.write("</quiz>")
+        
+#for i in range(-5,5):
+#    for j in range(-5,5):
+#        Q_uniq_several_seq(i, j, 1)
+            
+#header_and_footer_to_xmls()
