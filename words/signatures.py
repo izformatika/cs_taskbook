@@ -323,7 +323,7 @@ def header_and_footer_to_xmls():
         file.write("<!-- question: 0  -->")
         file.write("<question type=\"category\">")
         file.write("<category>")
-        file.write("<text>общая информатика/количество информации/комбинаторика/на словах/eq:большие/eq: uniq two sequences/eq: "+('+ ' if first>0 else '- ')+('+' if last>0 else '-')+"/eq: "+str(abs(first))+' '+str(abs(last))+"</text>")
+        file.write("<text>общая информатика/количество информации/комбинаторика/на словах/eq: "+("большие" if dif == 1 else "небольшие")+"/eq: uniq two sequences/eq: "+('+ ' if first>0 else '- ')+('+' if last>0 else '-')+"/eq: "+str(abs(first))+' '+str(abs(last))+"</text>")
         file.write("</category>")
         file.write("<info format=\"moodle_auto_format\">")
         file.write("<text></text>")
