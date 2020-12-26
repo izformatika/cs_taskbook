@@ -1,7 +1,8 @@
 # coding=cp1251
 def f1():
     from collections import Counter
-    s="бледность"
+    vowels=["а","я","у","ю","э","е","о","ё","ы","и"]
+    s="айцкшж"
     plus=0
     minus = 0
     #print(s[:2])
@@ -12,20 +13,25 @@ def f1():
                 for i4 in s.replace(i1, '').replace(i2, '').replace(i3, ''):
                     for i5 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, ''):
                         for i6 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, ''):
-                            for i7 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, ''):
-                                for i8 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, ''):
-                                    for i9 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, ''):
+                            #for i7 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, ''):
+                                #for i8 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, ''):
+                                    #for i9 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, ''):
                                         #for i10 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, '').replace(i9, ''):
-                                        s1=i1+i2+i3+i4+i5+i6+i7+i8+i9#+i10#+i11+i12+i13+i14
-                                    #signature=list(Counter(s1).values())
-                                        #if len(signature) == len(s1) - 1 and
-                                        if s[0]  in s1[:3] and s[1]  in s1[:3] and s[2]  in s1[:3] and "ть" not in s1:
-                                            #print(s1)
-                                            plus+=1
-                                        else:
-                                            minus +=1
-
+                            s1=i1+i2+i3+i4+i5+i6#+i7#+i8+i9+i10#+i11+i12+i13+i14
+                            found = False
+                            for i in range(len(s1)-1):
+                                if s1[i] in vowels and s1[i+1] in vowels:
+                                    plus+=1
+                                    found = True
+                                    break
+                            if not found:
+                                minus+=1
     print (plus, minus)
+'''
+4 6 2 True	2574720
+'''
+
+    
     
 def f2(first, last):
     from itertools import permutations
@@ -155,7 +161,7 @@ def shortanswer(name, question, answer, file):
 #print(f4(8, -3, -2, 0),'=6192')
 #print(f4(8, -2, -3, 0),'=21264')
 
-print(f4(9, 3, 2, 0),'=720')
+'''print(f4(9, 3, 2, 0),'=720')
 print(f4(9, 2, 3, 0),'=240')
 print(f4(9, -3, 2, 0),'=10080')
 print(f4(9, 2, -3, 0),'=9840')
@@ -163,7 +169,7 @@ print(f4(9, 3, -2, 0),'=3600')
 print(f4(9, -2, 3, 0),'=2640')
 print(f4(9, -3, -2, 0),'=76320')
 print(f4(9, -2, -3, 0),'=209040')
-
+'''
 #print(f4(9, -3, 4, 0),'=180')
 #print(f4(9, -3, -4, 0),'=WAT')
 #print(f4(9, -3, -2, 0),'=76320')
@@ -172,3 +178,29 @@ print(f4(9, -2, -3, 0),'=209040')
 #print(f4(8, -3, 4, 0),'=30')
 
 #f1()
+
+#восьмёркаы 3024000 604800
+
+from math import factorial
+
+def seq(tgt, other, qtty, must,lvl=0):
+    if tgt == 2 and other == 5 and qtty == 2:
+        a=1
+    ans = 0
+    length = tgt+other
+    if must:
+        for i in range(qtty, tgt+1):
+            ans+=2*factorial(tgt)//factorial(tgt-i)*(other)*seq(tgt-i, other-1, qtty, False,lvl+1)
+            ans+=factorial(tgt)//factorial(tgt-i)*(other)*(other-1)*(length-i-1)*seq(tgt-i, other-2, qtty, False,lvl+1)
+        print(lvl*'\t',tgt, other, qtty, must, '\t',ans)
+        return(ans)
+    else:#not must
+        if tgt<qtty:
+            ans = factorial(tgt+other)
+        else:
+            ans = factorial(tgt+other) - seq(tgt,other,qtty,True,lvl+1)
+        print(lvl*'\t',tgt, other, qtty, must, '\t',ans)
+        return(ans)
+
+
+print(seq(4, 6, 2, True))

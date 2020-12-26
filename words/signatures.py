@@ -1,5 +1,6 @@
 # coding=cp1251
 from collections import Counter
+alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 vowels=["а","я","у","ю","э","е","о","ё","ы","и"]
 special=["ь", "ъ"]
 def vowcount(str):
@@ -161,10 +162,10 @@ def Q_uniq_several_seq(first, last, difficulty):
     if abs(last) < 2:
         print("an ending sequence must be at least 2 letters long (otherwise its not a sequence)")
         return
-    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+    
     ansdict = {}#in every question
     flist = []
-    from itertools import permutations
+    #from itertools import permutations
     for(dirpath, dirnames, filenames) in walk('sig/uniq'):
         flist.extend(filenames)
     for filename in flist:
@@ -294,11 +295,41 @@ def shortanswer(name, question, answer, file):
     file.write("</answer>\n")
     file.write("</question>\n\n" )
         
-#uniq_spec_position()
-#print(factorial(5))
-#uniq_to_sig()
 
-#Q_not_two_conseq(1)
+def Q_uniq_several_vows(vow, qtty, must, difficulty):
+    '''
+    vow = True - several vows in a row, False - consonants
+    qtty - how many in a row
+    must - True/False
+    diff 0 50 < answer < 500
+    diff 1 5000 < answer < 30000
+    '''
+    if qtty <= 1:
+        return
+    ansdict = {}
+    flist = []
+   
+    for(dirpath, dirnames, filenames) in walk('sig/uniq'):
+        flist.extend(filenames)
+    for filename in flist:
+        spec = int(filename[-6:-4].replace('.',''))
+        vows = int(filename[4:6])
+        cons = int(filename[10:13].replace('.',''))
+        length = vows + cons + spec
+        mid = length - abs(first) - abs(last)
+        if must and (vow and vows < qtty or not vow and cons + special < qtty):
+            continue
+        ans = 0
+        if (vows, cons, spec) in d:
+            if d[(vows,cons,spec)]>=30:
+                continue
+            else:
+                ans = d[(vows,cons,spec)]
+        else:
+            if must:
+                if vow:
+                    for i in range(must):
+            else:
 '''
 for i in range(4):
     Q_uniq_spec_position(i, 0)
