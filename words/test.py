@@ -1,19 +1,67 @@
 # coding=cp1251
-def f1():
-    def good(s2):
-        isgood = False
-        ''' if s[2] not in vowels and s[3] in vowels and s[4] in vowels and s[5] not in vowels:
-            isgood=True
-        else:
-            return False'''
-        for i in range(len(s2)-3):
-            if (i == 0 or s2[i-1] not in vowels) and s2[i] in vowels and s2[i+1] in vowels and s2[i+2] in vowels and s2[i+3] in vowels and (i == len(s2)-4 or s2[i+4] not in vowels):
-                isgood = True
+def good(s2, qtty):
+    #has only exact number of vowels in a row
+    vowels=["а","я","у","ю","э","е","о","ё","ы","и"]
+    isgood = False
+    ''' if s[2] not in vowels and s[3] in vowels and s[4] in vowels and s[5] not in vowels:
+        isgood=True
+    else:
+        return False'''
+    '''
+    for i in range(len(s2)-1):#only 2 432
+        if (i == 0 or s2[i-1] not in vowels) and s2[i] in vowels and s2[i+1] in vowels and (i == len(s2)-2 or s2[i+2] not in vowels):
+            isgood = True
+            break
+    for i in range(len(s2)-2):
+        if s2[i] in vowels and s2[i+1] in vowels and s2[i+2] in vowels:
+            isgood = False
+            break    
+    '''  
+
+    for i in range(len(s2)-qtty+1):
+        #print(s2[max(0,i-1):min(i+qtty+1, len(s2))])
+        if not ((i == 0 or s2[i-1] not in vowels) and (i == len(s2)-qtty or s2[i+qtty] not in vowels)):
+            isgood = False
+            continue
+        isgood = True
+        for j in range(i, i+qtty):
+            if s2[j] not in vowels:
+                isgood = False
                 break
-        return isgood
+        if isgood:
+            break
+    if isgood:
+        vowcount = 0
+        for i in s2:
+            if i in vowels:
+                vowcount+=1    
+        if vowcount>qtty:
+            toomuch = False
+            for i in range(len(s2)-qtty):
+                gotcha = True
+                for j in range(i, i+qtty+1):
+                    if s2[j] not in vowels:
+                        gotcha = False
+                        break
+                if gotcha:
+                    toomuch = True
+                    break
+            if toomuch:
+                isgood = False
+                
+    return isgood
+def good1(s2):
+    #has minimum two vowels in a row
+    vowels=["а","я","у","ю","э","е","о","ё","ы","и"]
+    for i in range(len(s2)-1):
+        if s2[i] in vowels and s2[i+1] in vowels:
+            return True
+    return False
+
+def f1(qtty):
     from collections import Counter
     vowels=["а","я","у","ю","э","е","о","ё","ы","и"]
-    s="ауыежцфхкъ"
+    s="бумаженция"
     plus=0
     minus = 0
     #print(s[:2])
@@ -29,14 +77,15 @@ def f1():
                                     for i9 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, ''):
                                         for i10 in s.replace(i1, '').replace(i2, '').replace(i3, '').replace(i4, '').replace(i5, '').replace(i6, '').replace(i7, '').replace(i8, '').replace(i9, ''):
                                             s1=i1+i2+i3+i4+i5+i6+i7+i8+i9+i10#+i11+i12+i13+i14                   
-                                            if good(s1):
-                                                #print(s1)
+                                            if good1(s1):
+                                                #print("+",s1)
                                                 plus+=1
                                             else:
-                                                #print(s1)
+                                                #print("-",s1)
                                                 minus+=1
                                     
     print (plus, minus)
+    return (plus)
 '''
 4 6 2 True	2574720
 '''
@@ -193,6 +242,8 @@ print(f4(9, -2, -3, 0),'=209040')
 from math import factorial
 
 def seq(tgt, other, qtty, must,lvl=0):
+    #print("QTTY: "+str(qtty))
+    assert(qtty*2>=tgt)#otherwise the task becomes MUCH harder
     if other<0:
         return 0
     ans = 0
@@ -203,32 +254,37 @@ def seq(tgt, other, qtty, must,lvl=0):
         elif tgt == qtty:
             ans = factorial(other+1)*factorial(tgt)
         else:
-            tmp=factorial(tgt)//factorial(tgt-qtty)*(other)*factorial(length-qtty-1)
-            print(tmp)
+            tmp=factorial(tgt)//factorial(tgt-qtty)*(other)*factorial(length-qtty-1)#5 5 2 + - 504000 ok
+            #print('\t'*lvl+f'tto - factorial({tgt})//factorial({tgt-qtty})*({other})*factorial({length-qtty-1})')
+            #print('\t'*lvl+str(tmp))
             ans+=tmp
-            tmp=factorial(tgt)//factorial(tgt-qtty)*(other)*seq(tgt-qtty,other-1,qtty,False)
-            print(tmp)
+            tmp=factorial(tgt)//factorial(tgt-qtty)*(other)*seq(tgt-qtty,other-1,qtty,False)#5 5 2 + - 144000 ok
+            #print('\t'*lvl+f'ott - factorial({tgt})//factorial({tgt-qtty})*({other})*seq({tgt-qtty},{other-1},{qtty},False)')
+            #print('\t'*lvl+str(tmp))
             ans+=tmp
             for j in range(length-qtty-2+1):#before otto
                 after = length-qtty-j-2
-                print(f'[{j}][{after}]')
+                ttmp = 0
+                #print('\t'*lvl+f'[{j}][{after}]')
                 for k in range(max(0,tgt-qtty-after), min(tgt-qtty+1, j+1)):#how many tgt goes to before otto
-                    tmp=factorial(tgt)//factorial(tgt-qtty)*(other)*(other-1)*seq(k, j-k, qtty, False, lvl+1)*factorial(length-qtty-j-2)
-                    print('\t',tmp)
+                    tmp=factorial(tgt)//factorial(tgt-qtty)*(other)*(other-1)*seq(k, j-k, qtty, False, lvl+1)*factorial(length-qtty-j-2)#5 5 2 +: [0][6] 288000; [1][5] 288000; [2][4] 230400; [3][3] 187200; [4][2] 144000; [5][1] 100800; [6][0] 57600
+                    #print('\t'*lvl+f'otto factorial({tgt})//factorial({tgt-qtty})*({other})*({other-1})*seq({k}, {j-k}, {qtty}, False, {lvl+1})*factorial({length-qtty-j-2})')
+                    #print('\t'*lvl,tmp)
                     #if k>1:
                     tmp*=(factorial(tgt-qtty)//factorial(k)//factorial(tgt-qtty-k))
-                    print('\t',tmp)
+                    #print('\t',tmp)
                     #if j-k>1:
                     tmp*=(factorial(other-2)//factorial(j-k)//factorial(other-2-j+k))
-                    print('\t\t',tmp)
-                    ans+=tmp
-            print('!',ans)
-            for i in range(qtty+1, tgt+1):
-                tmp=seq(tgt,other,i,must,lvl+1)
-                print(tmp)
-                ans+=tmp
+                    #print('\t'*lvl+'\t\t'+str(tmp))
+                    ttmp+=tmp
+                #print('\t'*lvl+str(ttmp))
+                ans+=ttmp
+            #print('\t'*lvl+'! only ', qtty, ' ',ans)
+            tmp=seq(tgt,other,qtty+1,must,lvl+1)
+            #print(tmp)
+            ans+=tmp
                 
-        print(lvl*'\t',tgt, other, qtty, must, '\t',ans)
+        #print(lvl*'\t',tgt, other, qtty, must, '\t',ans)
         return(ans)
     else:#not must
         if tgt<qtty:
@@ -238,9 +294,9 @@ def seq(tgt, other, qtty, must,lvl=0):
         #print(lvl*'\t',tgt, other, qtty, must, '\t',ans)
         return(ans)
 
-f1()
 
-'''
+
+
 #print(seq(2, 2, 2, True))
 #print(seq(2, 2, 2, False))
 assert(seq(2, 4, 2, True) == 240)
@@ -250,12 +306,22 @@ assert(seq(3, 4, 3, True)==720)
 assert(seq(3, 4, 2, True)==3600)
 assert(seq(3, 5, 2, True)==25920)
 assert(seq(3, 6, 2, True)==211680)
+assert(seq(4, 6, 2, True)==3024000)
+assert(seq(4, 6, 4, True)==120960)
 print()
 print()
 print()
-'''
-#assert(seq(4, 6, 2, True)==3024000)#362880  259200 259200 241920 ... 259200
+
+#assert(seq(3, 4, 2, False)==1440)
+#print(seq(5, 5, 2, True))#f1: only 2 1728000, only 3 1296000, only 4 432000, only 5 86400
+#assert(seq(5, 5, 2, True)==3542400)#f1 checked both through only 2+only3+only4+only5 and just 2 in a row
+
+
+#print(good('фцыжау', 2))
 #
-#2177280 only 2
-#725760 only 3
-#120960 only 4
+#ans = 0
+#for i in range(2,6):
+#    ans+= f1(i)
+#print(ans)
+#f1(2)
+
