@@ -410,7 +410,7 @@ def Q_uniq_several_vows(vow, qtty, must, difficulty):
             if ansdict[(vows,cons,spec)][1]>=10:
                 break
             ansdict[(vows,cons,spec)][1]+=1
-            question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(length) + ' букв можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать ровно один раз, и при этом в слове ' + ('обязательно' if must else 'не') + \
+            question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(length) + ' '+letters(length)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать ровно один раз, и при этом в слове ' + ('обязательно' if must else 'не') + \
                 ' должна встречаться последовательность из ' + str(qtty) + (' со' if not vow else ' ') + 'гласных букв?'
             shortanswer(wrd[:-1], question, ans, file)
             
@@ -484,9 +484,136 @@ def header_and_footer_to_xmls_uniq_vow():
 #    for j in range(-5,5):
 #        Q_uniq_several_seq(i, j, 1)
 
-for i in (True, False):
+'''for i in (True, False):
     for j in range(2,10):
         for k in (True, False):
             Q_uniq_several_vows(i, j, k, 1)
             
 header_and_footer_to_xmls_uniq_vow()
+'''
+
+def Q_uniq_any():
+    
+    ansdict = {}
+    flist = []
+   
+    for(dirpath, dirnames, filenames) in walk('sig/uniq'):
+        flist.extend(filenames)
+    for filename in flist:
+        spec = int(filename[-6:-4].replace('.',''))
+        vows = int(filename[4:6])
+        cons = int(filename[10:13].replace('.',''))
+        length = vows + cons + spec
+        for curlen in range(5, length):
+            ans = factorial(length)//factorial(length-curlen)
+            if ans in ansdict and ansdict[ans]>10:
+                continue
+            if not (50 <= ans <= 20000):
+                continue
+            f = open("sig/uniq/" + filename, "r", encoding = "UTF8")
+            l = f.readlines()
+            f.close()
+            if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
+                continue            
+            file = open("questions/uniq any.xml", "a+",encoding = "UTF8")
+            for wrd in l:
+                if ans in ansdict and ansdict[ans]>10:
+                    break
+                elif ans not in ansdict:
+                    ansdict[ans] = 0
+                ansdict[ans]+=1
+                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать ровно один раз?'#TODO: other lengths!
+                shortanswer(wrd[:-1], question, ans, file)
+                
+            file.close()
+        
+def header_and_footer_to_xmls_uniq_any():
+    flist = []
+    for(dirpath, dirnames, filenames) in walk('./questions'):
+        flist.extend(filenames)
+    for filename in flist:
+        file = open('./questions/'+filename, "r",encoding = "UTF8")
+        txt = file.readlines()
+        file.close()
+        file = open('./questions/'+filename, "w",encoding = "UTF8")
+        file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+        file.write("<quiz>")
+        file.write("<!-- question: 0  -->")
+        file.write("<question type=\"category\">")
+        file.write("<category>")
+        file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: небольшие"+"/eq: uniq any</text>")
+        file.write("</category>")
+        file.write("<info format=\"moodle_auto_format\">")
+        file.write("<text></text>")
+        file.write("</info>")
+        file.write("</question>")
+        for i in txt:
+            file.write(i)
+        file.write("</quiz>")
+        file.close()
+        
+#Q_uniq_any()
+#header_and_footer_to_xmls_uniq_any()
+'''
+def Q_nuniq_any():
+    from math import factorial
+    ansdict = {}
+    flist = []
+   
+    for(dirpath, dirnames, filenames) in walk('sig/nuniq'):
+        flist.extend(filenames)
+    for filename in flist:
+        from re import sub
+        sig = list((map(int, sub("[^0-9]"," ", filename).split())))
+        dif_letters = len(sig)
+        orig_len = sum(sig)
+        for curlen in range(5, min(orig_len, dif_letters)):
+            ans = factorial(dif_letters)//factorial(dif_letters-curlen)#TODO: WRONG! is this task solveable at all for nuniq?
+            if ans in ansdict and ansdict[ans]>10:
+                continue
+            if not (50 <= ans <= 50000):
+                continue
+            f = open("sig/nuniq/" + filename, "r", encoding = "UTF8")
+            l = f.readlines()
+            f.close()
+            if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
+                continue            
+            file = open("questions/nuniq any " + str(curlen) + ".xml", "a+",encoding = "UTF8")
+            for wrd in l:
+                if ans in ansdict and ansdict[ans]>10:
+                    break
+                elif ans not in ansdict:
+                    ansdict[ans] = 0
+                ansdict[ans]+=1
+                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз?'
+                shortanswer(wrd[:-1], question, ans, file)
+                
+            file.close()
+        
+def header_and_footer_to_xmls_nuniq_any():
+    flist = []
+    for(dirpath, dirnames, filenames) in walk('./questions'):
+        flist.extend(filenames)
+    for filename in flist:
+        qtty=int(filename[10:11].replace(".",''))
+        file = open('./questions/'+filename, "r",encoding = "UTF8")
+        txt = file.readlines()
+        file.close()
+        file = open('./questions/'+filename, "w",encoding = "UTF8")
+        file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+        file.write("<quiz>")
+        file.write("<!-- question: 0  -->")
+        file.write("<question type=\"category\">")
+        file.write("<category>")
+        file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: небольшие"+"/eq: nuniq any/eq: " +str(qtty)+"</text>")
+        file.write("</category>")
+        file.write("<info format=\"moodle_auto_format\">")
+        file.write("<text></text>")
+        file.write("</info>")
+        file.write("</question>")
+        for i in txt:
+            file.write(i)
+        file.write("</quiz>")
+        file.close()
+        
+Q_nuniq_any()'''
