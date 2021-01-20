@@ -11,6 +11,15 @@ def vowcount(str):
     return c
 l=[]
 
+def rm_old_questions():
+    import shutil
+    try:
+        shutil.rmtree('./questions')
+    except:
+        pass
+    import os
+    os.makedirs('./questions')    
+
 def letters(n):
     if 5 <= n%100 <= 20:
         return "букв"
@@ -99,6 +108,7 @@ def Q_uniq_spec_position(mode, difficulty):
     diff 0 50 < answer < 500
     diff 1 5000 < answer < 30000
     '''
+    rm_old_questions()
     ansdict = {}#in every question
     flist = []
     for(dirpath, dirnames, filenames) in walk('sig/uniq'):
@@ -159,6 +169,7 @@ def Q_uniq_several_seq(first, last, difficulty):
     last length of postfix that has to be (positive)/has to be missing (negative)
     first length of prefix - those letters must (positive)/cant (negative) be in first not_first letters
     '''
+    rm_old_questions()
     if abs(last) < 2:
         print("an ending sequence must be at least 2 letters long (otherwise its not a sequence)")
         return
@@ -270,6 +281,34 @@ def Q_uniq_several_seq(first, last, difficulty):
             shortanswer(i[:-1], question, ans, file)
         
         file.close()
+    def header_and_footer_to_xmls_uniq_seq():
+        from re import sub
+        flist = []
+        for(dirpath, dirnames, filenames) in walk('./questions'):
+            flist.extend(filenames)
+        for filename in flist:
+            first,last,dif=map(int,sub(r"[a-z\.]","",filename).split())
+            file = open('./questions/'+filename, "r",encoding = "UTF8")
+            txt = file.readlines()
+            file.close()
+            file = open('./questions/'+filename, "w",encoding = "UTF8")
+            file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+            file.write("<quiz>")
+            file.write("<!-- question: 0  -->")
+            file.write("<question type=\"category\">")
+            file.write("<category>")
+            file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: "+("большие" if dif == 1 else "небольшие")+"/eq: uniq two sequences/eq: "+('+ ' if first>0 else '- ')+('+' if last>0 else '-')+"/eq: "+str(abs(first))+' '+str(abs(last))+"</text>")
+            file.write("</category>")
+            file.write("<info format=\"moodle_auto_format\">")
+            file.write("<text></text>")
+            file.write("</info>")
+            file.write("</question>")
+            for i in txt:
+                file.write(i)
+            file.write("</quiz>")
+            file.close()
+    header_and_footer_to_xmls_uniq_seq()
+        
 
 def shortanswer(name, question, answer, file):
     file.write("<question type=\"shortanswer\">\n")
@@ -362,6 +401,7 @@ def Q_uniq_several_vows(vow, qtty, must, difficulty):
     diff 0 50 < answer < 500
     diff 1 5000 < answer < 30000
     '''
+    rm_old_questions()
     if qtty <= 1:
         return
     ansdict = {}
@@ -415,6 +455,37 @@ def Q_uniq_several_vows(vow, qtty, must, difficulty):
             shortanswer(wrd[:-1], question, ans, file)
             
         file.close()
+        def header_and_footer_to_xmls_uniq_vow():
+            from re import sub
+            flist = []
+            for(dirpath, dirnames, filenames) in walk('./questions'):
+                flist.extend(filenames)
+            for filename in flist:
+                qtty=int(filename[5:7])
+                let =filename[8:12] 
+                dif = int(filename[-5:-4])
+                file = open('./questions/'+filename, "r",encoding = "UTF8")
+                txt = file.readlines()
+                file.close()
+                file = open('./questions/'+filename, "w",encoding = "UTF8")
+                file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+                file.write("<quiz>")
+                file.write("<!-- question: 0  -->")
+                file.write("<question type=\"category\">")
+                file.write("<category>")
+                file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: "+("большие" if dif == 1 else "небольшие")+"/eq: uniq vows/eq: " + ("-" if qtty<0 else "+")+ "/eq: "+str(abs(qtty))+"</text>")
+                file.write("</category>")
+                file.write("<info format=\"moodle_auto_format\">")
+                file.write("<text></text>")
+                file.write("</info>")
+                file.write("</question>")
+                for i in txt:
+                    file.write(i)
+                file.write("</quiz>")
+                file.close()
+    header_and_footer_to_xmls_uniq_vow()
+        
+    
             
 #for i in range(4):
 #    Q_uniq_spec_position(i, 0)
@@ -423,61 +494,6 @@ def Q_uniq_several_vows(vow, qtty, must, difficulty):
 
 #Q_uniq_several_seq(-3,-2,0)
 
-def header_and_footer_to_xmls_uniq_seq():
-    from re import sub
-    flist = []
-    for(dirpath, dirnames, filenames) in walk('./questions'):
-        flist.extend(filenames)
-    for filename in flist:
-        first,last,dif=map(int,sub(r"[a-z\.]","",filename).split())
-        file = open('./questions/'+filename, "r",encoding = "UTF8")
-        txt = file.readlines()
-        file.close()
-        file = open('./questions/'+filename, "w",encoding = "UTF8")
-        file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
-        file.write("<quiz>")
-        file.write("<!-- question: 0  -->")
-        file.write("<question type=\"category\">")
-        file.write("<category>")
-        file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: "+("большие" if dif == 1 else "небольшие")+"/eq: uniq two sequences/eq: "+('+ ' if first>0 else '- ')+('+' if last>0 else '-')+"/eq: "+str(abs(first))+' '+str(abs(last))+"</text>")
-        file.write("</category>")
-        file.write("<info format=\"moodle_auto_format\">")
-        file.write("<text></text>")
-        file.write("</info>")
-        file.write("</question>")
-        for i in txt:
-            file.write(i)
-        file.write("</quiz>")
-        file.close()
-
-def header_and_footer_to_xmls_uniq_vow():
-    from re import sub
-    flist = []
-    for(dirpath, dirnames, filenames) in walk('./questions'):
-        flist.extend(filenames)
-    for filename in flist:
-        qtty=int(filename[5:7])
-        let =filename[8:12] 
-        dif = int(filename[-5:-4])
-        file = open('./questions/'+filename, "r",encoding = "UTF8")
-        txt = file.readlines()
-        file.close()
-        file = open('./questions/'+filename, "w",encoding = "UTF8")
-        file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
-        file.write("<quiz>")
-        file.write("<!-- question: 0  -->")
-        file.write("<question type=\"category\">")
-        file.write("<category>")
-        file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: "+("большие" if dif == 1 else "небольшие")+"/eq: uniq vows/eq: " + ("-" if qtty<0 else "+")+ "/eq: "+str(abs(qtty))+"</text>")
-        file.write("</category>")
-        file.write("<info format=\"moodle_auto_format\">")
-        file.write("<text></text>")
-        file.write("</info>")
-        file.write("</question>")
-        for i in txt:
-            file.write(i)
-        file.write("</quiz>")
-        file.close()
      
 
 #for i in range(-5,5):
@@ -493,7 +509,7 @@ header_and_footer_to_xmls_uniq_vow()
 '''
 
 def Q_uniq_any():
-    
+    rm_old_questions()
     ansdict = {}
     flist = []
    
@@ -526,38 +542,39 @@ def Q_uniq_any():
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
-            def header_and_footer_to_xmls_uniq_any():
-                flist = []
-                for(dirpath, dirnames, filenames) in walk('./questions'):
-                    flist.extend(filenames)
-                for filename in flist:
-                    file = open('./questions/'+filename, "r",encoding = "UTF8")
-                    txt = file.readlines()
-                    file.close()
-                    file = open('./questions/'+filename, "w",encoding = "UTF8")
-                    file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
-                    file.write("<quiz>")
-                    file.write("<!-- question: 0  -->")
-                    file.write("<question type=\"category\">")
-                    file.write("<category>")
-                    file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: небольшие"+"/eq: uniq any</text>")
-                    file.write("</category>")
-                    file.write("<info format=\"moodle_auto_format\">")
-                    file.write("<text></text>")
-                    file.write("</info>")
-                    file.write("</question>")
-                    for i in txt:
-                        file.write(i)
-                    file.write("</quiz>")
-                    file.close()        
+    def header_and_footer_to_xmls_uniq_any():
+        flist = []
+        for(dirpath, dirnames, filenames) in walk('./questions'):
+            flist.extend(filenames)
+        for filename in flist:
+            file = open('./questions/'+filename, "r",encoding = "UTF8")
+            txt = file.readlines()
+            file.close()
+            file = open('./questions/'+filename, "w",encoding = "UTF8")
+            file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+            file.write("<quiz>")
+            file.write("<!-- question: 0  -->")
+            file.write("<question type=\"category\">")
+            file.write("<category>")
+            file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: небольшие"+"/eq: uniq any</text>")
+            file.write("</category>")
+            file.write("<info format=\"moodle_auto_format\">")
+            file.write("<text></text>")
+            file.write("</info>")
+            file.write("</question>")
+            for i in txt:
+                file.write(i)
+            file.write("</quiz>")
+            file.close()        
         header_and_footer_to_xmls_uniq_any()
         
 
         
 #Q_uniq_any()
 #header_and_footer_to_xmls_uniq_any()
-'''
+
 def Q_nuniq_any():
+    rm_old_questions()
     from math import factorial
     ansdict = {}
     flist = []
@@ -569,11 +586,13 @@ def Q_nuniq_any():
         sig = list((map(int, sub("[^0-9]"," ", filename).split())))
         dif_letters = len(sig)
         orig_len = sum(sig)
-        for curlen in range(5, min(orig_len, dif_letters)):
-            ans = factorial(dif_letters)//factorial(dif_letters-curlen)#TODO: WRONG! is this task solveable at all for nuniq?
+        if orig_len > 10:
+            continue
+        for curlen in range(3, min(orig_len, dif_letters)):
+            ans = factorial(dif_letters)//factorial(dif_letters-curlen)
             if ans in ansdict and ansdict[ans]>10:
                 continue
-            if not (50 <= ans <= 50000):
+            if not (50 <= ans <= 5000):
                 continue
             f = open("sig/nuniq/" + filename, "r", encoding = "UTF8")
             l = f.readlines()
@@ -591,8 +610,7 @@ def Q_nuniq_any():
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
-        
-def header_and_footer_to_xmls_nuniq_any():
+    #header
     flist = []
     for(dirpath, dirnames, filenames) in walk('./questions'):
         flist.extend(filenames)
@@ -618,9 +636,12 @@ def header_and_footer_to_xmls_nuniq_any():
         file.write("</quiz>")
         file.close()
         
-Q_nuniq_any()'''
+        
+        
+#Q_nuniq_any()
 
 def Q_nuniq_min_vowels(min_vow):
+    rm_old_questions()
     from math import factorial
     ansdict = {}
     flist = []
@@ -635,18 +656,24 @@ def Q_nuniq_min_vowels(min_vow):
         cons_sig = [i for i in map(int, sub(",", " ", sig[1]).split())]
         spec_sig = [i for i in map(int, sub(",", " ", sig[2]).split())]
         orig_len = sum(vow_sig + cons_sig + spec_sig)
+        uniq_let = len(vow_sig) + len(cons_sig) + len(spec_sig)
+        if uniq_let < 4 or uniq_let > 10 or orig_len > 10:
+            continue
         for curlen in range(5, 7):
-            ans = (len(vow_sig)**min_vow)*factorial(len(vow_sig))//factorial(min_vow)//factorial()#TODO: here
+            ans = 0
+            for curvow in range(min_vow, curlen + 1):
+                ans += (len(vow_sig)**min_vow)*((len(cons_sig)+len(spec_sig))**(curlen-min_vow))*factorial(curlen)//factorial(curlen - curvow)
             if ans in ansdict and ansdict[ans]>10:
                 continue
-            if not (50 <= ans <= 50000):
+            if not (50 <= ans <= 5000):
                 continue
             f = open("sig/nuniq/" + filename, "r", encoding = "UTF8")
             l = f.readlines()
             f.close()
             if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
                 continue            
-            resflist.append("questions/nuniq any " + str(curlen) + ".xml")
+            if ("questions/nuniq minvow " + str(min_vow) + ".xml") not in resflist:
+                resflist.append("questions/nuniq minvow " + str(min_vow) + ".xml")
             file = open(resflist[-1], "a+",encoding = "UTF8")
             for wrd in l:
                 if ans in ansdict and ansdict[ans]>10:
@@ -654,22 +681,22 @@ def Q_nuniq_min_vowels(min_vow):
                 elif ans not in ansdict:
                     ansdict[ans] = 0
                 ansdict[ans]+=1
-                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз?'
+                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз, и минимальное количество гласных букв в получившихся словах должно быть равным ' + str(min_vow) + '?'
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
     for filename in resflist:
-        qtty=int(filename[10:11].replace(".",''))
-        file = open('./questions/'+filename, "r",encoding = "UTF8")
+        qtty=int(filename[23:24].replace(".",''))
+        file = open(filename, "r",encoding = "UTF8")
         txt = file.readlines()
         file.close()
-        file = open('./questions/'+filename, "w",encoding = "UTF8")
+        file = open(filename, "w",encoding = "UTF8")
         file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
         file.write("<quiz>")
         file.write("<!-- question: 0  -->")
         file.write("<question type=\"category\">")
         file.write("<category>")
-        file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: небольшие"+"/eq: nuniq any/eq: " +str(qtty)+"</text>")
+        file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: небольшие"+"/eq: nuniq minvow/eq: " +str(qtty)+"</text>")
         file.write("</category>")
         file.write("<info format=\"moodle_auto_format\">")
         file.write("<text></text>")
@@ -679,4 +706,7 @@ def Q_nuniq_min_vowels(min_vow):
                 file.write(i)
         file.write("</quiz>")
         file.close()
-Q_nuniq_min_vowels()
+Q_nuniq_min_vowels(2)
+
+import winsound
+winsound.Beep(2500, 1000)
