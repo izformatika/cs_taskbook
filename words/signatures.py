@@ -60,7 +60,9 @@ def uniq_to_sig():
                 vow_count += 1
             elif let in special:
                 spec_count += 1
-        file=open("sig/uniq/vow "+str(vow_count)+" cons " + str(len(i) - spec_count - vow_count - 1)+" spec " + str(spec_count) + ".txt", "a+",encoding="UTF8")
+        file = open("sig/uniq/vow " + str(vow_count) + " cons " +
+                  str(len(i) - spec_count - vow_count - 1) + " spec " +
+                  str(spec_count) + ".txt", "a+", encoding="UTF8")
         file.write(i)
         file.close()
         j += 1
@@ -91,7 +93,8 @@ def nuniq_to_sig():
         vow_sig.sort()
         cons_sig.sort()
         spec_sig.sort()
-        file=open("sig/nuniq/vow "+str(vow_sig)+" cons "+str(cons_sig)+" spec "+str(spec_sig)+".txt","a+",encoding="UTF8")
+        file = open("sig/nuniq/vow " + str(vow_sig) + " cons " + str(cons_sig) +
+                  " spec " + str(spec_sig) + ".txt", "a+", encoding="UTF8")
         file.write(i)
         file.close()
         j += 1
@@ -124,7 +127,8 @@ def Q_uniq_spec_position(mode, difficulty):
         if mode == 0 or mode == 1:
             ans = vows * factorial(length - 2) * (length - 1)
         elif mode == 2 or mode == 3:
-            ans = factorial(length) - vows * factorial(length - 2) * (length - 1)
+            ans = factorial(length) - vows * \
+                factorial(length - 2) * (length - 1)
         else:
             ans = -1
         if difficulty == 1 and (ans < 5000 or ans > 30000) \
@@ -139,7 +143,8 @@ def Q_uniq_spec_position(mode, difficulty):
         f.close()
         if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
             continue
-        file = open("spec pos " + str(mode) + " " + str(difficulty) + ".txt", "a+")
+        file = open("spec pos " + str(mode) + " " + str(difficulty) + ".txt",
+                    "a+")
         for i in l:
             if ans not in ansdict.keys():#in every question
                 ansdict[ans] = 0
@@ -147,8 +152,12 @@ def Q_uniq_spec_position(mode, difficulty):
                 ansdict[ans] = ansdict[ans] + 1
             else:
                 break
-            question = "Сколько слов длиной в "+str(length)+ " " + letters(length) + " (не обязательно осмысленных) можно составить " + \
-                "из букв слова \""+i[:-1]+"\", если в них " + ("мягкий" if "ь" in i else "твёрдый") + " знак должен стоять строго "
+            question = "Сколько слов длиной в " + str(length) + " " + \
+                letters(length) +\
+                " (не обязательно осмысленных) можно составить " + \
+                "из букв слова \"" + i[:-1] + "\", если в них " + (
+                "мягкий" if "ь" in i else "твёрдый") + \
+                " знак должен стоять строго "
             if mode == 0:
                 question += "после гласной"
             elif mode == 1:
@@ -159,19 +168,23 @@ def Q_uniq_spec_position(mode, difficulty):
                 question += "не перед гласной"
             else:
                 question += "ОШИБКА"
-            question += ", и при этом буквы из исходного слова можно использовать ровно по одному разу?"
+            question += ", и при этом буквы из исходного слова можно " + \
+                "использовать ровно по одному разу?"
             shortanswer(i[:-1], question, ans, file)
         file.close()
 def Q_uniq_several_seq(first, last, difficulty):
     '''
     diff 0 50 < answer < 500
     diff 1 5000 < answer < 30000
-    last length of postfix that has to be (positive)/has to be missing (negative)
-    first length of prefix - those letters must (positive)/cant (negative) be in first not_first letters
+    last length of postfix that 
+    has to be (positive)/has to be missing (negative)
+    first length of prefix - 
+    those letters must (positive)/cant (negative) be in first not_first letters
     '''
     rm_old_questions()
     if abs(last) < 2:
-        print("an ending sequence must be at least 2 letters long (otherwise its not a sequence)")
+        print("an ending sequence must be at least 2 letters long \
+        (otherwise its not a sequence)")
         return
     
     ansdict = {}#in every question
@@ -520,8 +533,8 @@ def Q_uniq_any():
         vows = int(filename[4:6])
         cons = int(filename[10:13].replace('.',''))
         length = vows + cons + spec
-        for curlen in range(5, length):
-            ans = factorial(length)//factorial(length-curlen)
+        for cur_len in range(5, length):
+            ans = factorial(length)//factorial(length-cur_len)
             if ans in ansdict and ansdict[ans]>10:
                 continue
             if not (50 <= ans <= 20000):
@@ -538,7 +551,7 @@ def Q_uniq_any():
                 elif ans not in ansdict:
                     ansdict[ans] = 0
                 ansdict[ans]+=1
-                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать ровно один раз?'#TODO: other lengths!
+                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(cur_len) + ' '+letters(cur_len)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать ровно один раз?'#TODO: other lengths!
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
@@ -588,8 +601,8 @@ def Q_nuniq_any():
         orig_len = sum(sig)
         if orig_len > 10:
             continue
-        for curlen in range(3, min(orig_len, dif_letters)):
-            ans = factorial(dif_letters)//factorial(dif_letters-curlen)
+        for cur_len in range(3, min(orig_len, dif_letters)):
+            ans = factorial(dif_letters)//factorial(dif_letters-cur_len)
             if ans in ansdict and ansdict[ans]>10:
                 continue
             if not (50 <= ans <= 5000):
@@ -599,14 +612,14 @@ def Q_nuniq_any():
             f.close()
             if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
                 continue            
-            file = open("questions/nuniq any " + str(curlen) + ".xml", "a+",encoding = "UTF8")
+            file = open("questions/nuniq any " + str(cur_len) + ".xml", "a+",encoding = "UTF8")
             for wrd in l:
                 if ans in ansdict and ansdict[ans]>10:
                     break
                 elif ans not in ansdict:
                     ansdict[ans] = 0
                 ansdict[ans]+=1
-                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз?'
+                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(cur_len) + ' '+letters(cur_len)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз?'
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
@@ -659,10 +672,11 @@ def Q_nuniq_min_vowels(min_vow):
         uniq_let = len(vow_sig) + len(cons_sig) + len(spec_sig)
         if uniq_let < 4 or uniq_let > 10 or orig_len > 10:
             continue
-        for curlen in range(5, 7):
+        for cur_len in range(5, 7):
             ans = 0
-            for curvow in range(min_vow, curlen + 1):
-                ans += (len(vow_sig)**min_vow)*((len(cons_sig)+len(spec_sig))**(curlen-min_vow))*factorial(curlen)//factorial(curlen - curvow)
+            for cur_vow in range(min_vow, cur_len + 1):
+                ans += (len(vow_sig)**min_vow) * ((len(cons_sig) + len(spec_sig)) **
+                        (cur_len - min_vow)) * factorial(cur_len) // factorial(cur_len - cur_vow)
             if ans in ansdict and ansdict[ans]>10:
                 continue
             if not (50 <= ans <= 5000):
@@ -672,8 +686,10 @@ def Q_nuniq_min_vowels(min_vow):
             f.close()
             if len(l) == 0:#shouldnt be, otherwise file wouldnt be created
                 continue            
-            if ("questions/nuniq minvow " + str(min_vow) + ".xml") not in resflist:
-                resflist.append("questions/nuniq minvow " + str(min_vow) + ".xml")
+            if ("questions/nuniq minvow " + str(min_vow) + ".xml") \
+                    not in resflist:
+                resflist.append("questions/nuniq minvow " +
+                                str(min_vow) + ".xml")
             file = open(resflist[-1], "a+",encoding = "UTF8")
             for wrd in l:
                 if ans in ansdict and ansdict[ans]>10:
@@ -681,7 +697,7 @@ def Q_nuniq_min_vowels(min_vow):
                 elif ans not in ansdict:
                     ansdict[ans] = 0
                 ansdict[ans]+=1
-                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз, и минимальное количество гласных букв в получившихся словах должно быть равным ' + str(min_vow) + '?'
+                question = 'Сколько слов (не обязательно осмысленных) длиной ' + str(cur_len) + ' ' + letters(cur_len) + ' можно составить из букв слова \'' + wrd[:-1] + '\', если каждую букву можно использовать ' + 'сколько угодно раз, и минимальное количество ' + 'гласных букв в получившихся словах должно быть равным ' + str(min_vow) + '?' 
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
@@ -696,7 +712,9 @@ def Q_nuniq_min_vowels(min_vow):
         file.write("<!-- question: 0  -->")
         file.write("<question type=\"category\">")
         file.write("<category>")
-        file.write("<text>top/общая информатика/количество информации/комбинаторика/на словах/eq: небольшие"+"/eq: nuniq minvow/eq: " +str(qtty)+"</text>")
+        file.write("<text>top/общая информатика/количество информации/\
+        комбинаторика/на словах/eq: небольшие" + "/eq: nuniq minvow/eq: " +
+        str(qtty) + "</text>")
         file.write("</category>")
         file.write("<info format=\"moodle_auto_format\">")
         file.write("<text></text>")
@@ -706,7 +724,100 @@ def Q_nuniq_min_vowels(min_vow):
                 file.write(i)
         file.write("</quiz>")
         file.close()
-Q_nuniq_min_vowels(2)
+# Q_nuniq_min_vowels(2)
+def comb(k, n):
+    from math import factorial
+    return factorial(n) // factorial(k) // factorial(n - k)
 
+def Q_nuniq_vow_cons_ratio(with_spec):
+    rm_old_questions()
+    from math import factorial
+    ansdict = {}
+    flist = []
+    resflist = []
+
+    for(dirpath, dirnames, filenames) in walk('sig/nuniq'):
+        flist.extend(filenames)
+    for filename in flist:
+        from re import sub, match
+        sig = list(match("vow \[(.*)\] cons \[(.*)\] spec \[(.*)\].txt",
+                         filename).groups())
+        vow_sig = [i for i in map(int, sub(",", " ", sig[0]).split())]
+        cons_sig = [i for i in map(int, sub(",", " ", sig[1]).split())]
+        spec_sig = [i for i in map(int, sub(",", " ", sig[2]).split())]
+        orig_len = sum(vow_sig + cons_sig + spec_sig)
+        uniq_let = len(vow_sig) + len(cons_sig) + len(spec_sig)
+        if uniq_let < 4 or uniq_let > 10 or orig_len > 10:
+            continue
+        lens = []
+        if len(spec_sig) == 0 and with_spec:
+            continue
+        f = open("sig/nuniq/" + filename, "r", encoding="UTF8")
+        l = f.readlines()
+        f.close()
+        if len(l) == 0:
+            continue        
+        for cur_len in range(5, 13):
+            spec_range = range(0, 1)
+            if with_spec:
+                spec_range = range((3 if cur_len %
+                                   3 == 0 else cur_len % 3), cur_len - 2, 3)
+            else:
+                if cur_len % 3 > 0:
+                    continue
+            ans = 0
+            for cur_spec in spec_range:
+                cur_vow = (cur_len - cur_spec) // 3
+                cur_cons = cur_vow * 2
+                #print(cur_len, cur_vow, cur_cons, cur_spec)
+                ans += (len(vow_sig)**cur_vow) * (len(cons_sig)**cur_cons) * (len(
+                    spec_sig)**cur_spec) * comb(cur_spec, cur_len) * comb(cur_vow, cur_len - cur_spec)
+
+            if ans in ansdict and ansdict[ans] > 10:
+                continue
+            if not (50 <= ans <= 5000):
+                continue
+
+            if ("questions/nuniq vow cons ratio with" + ('out' if not with_spec else '') + " spec.xml") not in resflist:
+                resflist.append("questions/nuniq vow cons ratio with" +
+                                ('out' if not with_spec else '') + " spec.xml")
+            file = open(resflist[-1], "a+", encoding="UTF8")
+            for wrd in l:
+                if ans in ansdict and ansdict[ans] > 10:
+                    break
+                elif ans not in ansdict:
+                    ansdict[ans] = 0
+                ansdict[ans] += 1
+                question = 'Сколько слов (не обязательно осмысленных) длиной '\
+                    + str(cur_len) + ' ' + letters(cur_len) + \
+                    ' можно составить из букв слова \'' + \
+                    wrd[:-1] + '\', если каждую букву можно использовать ' + \
+                    'сколько угодно раз, и гласных букв в получившихся словах должно быть ровно вдвое меньше, чем согласных?'
+                shortanswer(wrd[:-1], question, ans, file)
+
+            file.close()
+    for filename in resflist:
+        file = open(filename, "r", encoding="UTF8")
+        txt = file.readlines()
+        file.close()
+        file = open(filename, "w",encoding = "UTF8")
+        file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+        file.write("<quiz>")
+        file.write("<!-- question: 0  -->")
+        file.write("<question type=\"category\">")
+        file.write("<category>")
+        file.write("<text>top/общая информатика/количество информации/\
+        комбинаторика/на словах/eq: небольшие" + "/eq: nuniq vow cons ratio with" + ('out' if not with_spec else '') + " spec</text>")
+        file.write("</category>")
+        file.write("<info format=\"moodle_auto_format\">")
+        file.write("<text></text>")
+        file.write("</info>")
+        file.write("</question>")
+        for i in txt:
+                file.write(i)
+        file.write("</quiz>")
+        file.close()
+
+Q_nuniq_vow_cons_ratio(False)
 import winsound
 winsound.Beep(2500, 1000)
