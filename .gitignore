@@ -32,3 +32,5 @@
 *.app
 /words/sig/debug
 /words/questions.txt
+/words/questions
+/families/data.txt
