@@ -299,6 +299,7 @@ def seq(tgt, other, qtty, must,lvl=0):
 
 #print(seq(2, 2, 2, True))
 #print(seq(2, 2, 2, False))
+'''
 assert(seq(2, 4, 2, True) == 240)
 assert(seq(3, 2, 2, True)==108)
 assert(seq(3, 3, 2, True)==576)
@@ -311,17 +312,56 @@ assert(seq(4, 6, 4, True)==120960)
 print()
 print()
 print()
+'''
 
-#assert(seq(3, 4, 2, False)==1440)
-#print(seq(5, 5, 2, True))#f1: only 2 1728000, only 3 1296000, only 4 432000, only 5 86400
-#assert(seq(5, 5, 2, True)==3542400)#f1 checked both through only 2+only3+only4+only5 and just 2 in a row
+# assert(seq(3, 4, 2, False)==1440)
+# print(seq(5, 5, 2, True))#f1: only 2 1728000, only 3 1296000, only 4 432000, only 5 86400
+# assert(seq(5, 5, 2, True)==3542400)#f1 checked both through only 2+only3+only4+only5 and just 2 in a row
 
 
-#print(good('פצûזאף', 2))
+# print(good('פצûזאף', 2))
 #
-#ans = 0
-#for i in range(2,6):
+# ans = 0
+# for i in range(2,6):
 #    ans+= f1(i)
-#print(ans)
-#f1(2)
+# print(ans)
+# f1(2)
+def f5():
+    vowels = ["א", "ÿ", "ף", "‏", "‎", "ו", "מ", "¸", "û", "ט"]
+    specials = ['ת', "ü"]
 
+    def good2(s1):
+        vow_count = 0
+        spec_count = 0
+        for i in s1:
+            if i in vowels:
+                vow_count += 1
+            elif i in specials:
+                spec_count += 1
+        return vow_count > 0 and len(s1) - vow_count - spec_count == 2 * vow_count
+    from collections import Counter
+
+    s = "ודנü"
+    print(s)
+    plus=0
+    minus = 0
+    #print(s[:2])
+    for i1 in s:
+        print(i1)
+        for i2 in s:
+            for i3 in s:
+                for i4 in s:
+                    for i5 in s:
+                        for i6 in s:
+                            for i7 in s:
+                                s2 = i1 + i2 + i3 + i4 + i5 + i6 + i7
+                                if good2(s2):
+                                    print("+", s2)
+                                    plus += 1
+                                else:
+                                    #print("-", s1)
+                                    minus += 1
+    print (plus, minus)
+    return (plus)
+
+f5()
