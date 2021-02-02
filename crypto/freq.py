@@ -14,8 +14,9 @@ def find_good_sig():
             counters.sort(key = lambda a: a[0], reverse = True)
             #print(*[ord(i)-ord('а') for i in 'оеаинтсрвл'])
             top_let = [i[1] for i in counters[:10]]
+			top_occur = [i[0] for i in counters[:10]]
             #print(top_let)
-            if top_let == [14, 5, 0, 8, 13, 18, 17, 16, 2, 11]:
+            if top_let == [14, 5, 0, 8, 13, 18, 17, 16, 2, 11] and len(set(top_occur))==10:
                 print(f, t)
 def random_encode():
     from random import shuffle
