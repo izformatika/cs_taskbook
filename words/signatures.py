@@ -1,13 +1,11 @@
 # coding=cp1251
 import common
 import dictionary_splitter
-from os import walk
-from math import factorial
 import Q_uniq_spec_position
 import Q_uniq_several_seq
 import Q_any
 import Q_nuniq_min_vowels
-
+import Q_uniq_several_vows
             
 #for i in range(4):
 #    Q_uniq_spec_position(i, 0)

@@ -1,5 +1,7 @@
 # coding=cp1251
 from collections import Counter
+from os import walk
+from math import factorial
 alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 vowels=["а","я","у","ю","э","е","о","ё","ы","и"]
 special=["ь", "ъ"]
