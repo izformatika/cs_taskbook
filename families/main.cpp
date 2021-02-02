@@ -10,12 +10,11 @@ uniform_int_distribution<> born(1950,1970);
 uniform_int_distribution<> tid(1,10000);
 struct person;
 vector<person> pers;
-int main()
+bool rand_fname=false;
+void fill_pers_1()
 {
-    setlocale(LC_ALL, "Russian");
-
-
-    /*pers.push_back(person(1,{18,22}));
+    //family 1.odg
+    pers.push_back(person(1,{18,22}));
     pers.push_back(person(-1,{5,6},born(mt)));
     pers.push_back(person(1,{5,7,8},born(mt)));
     pers.push_back(person(1,{6},born(mt)));
@@ -38,14 +37,12 @@ int main()
     pers.push_back(person(-1,{22}));
     pers.push_back(person(-1,{}));
     pers.push_back(person(1,{}));
-    pers.push_back(person(-1,{0,14}));*/
-    ofstream ofs("data.txt");
-for (int taski=0; taski<100; taski++)
+    pers.push_back(person(-1,{0,14}));
+}
+
+void fill_pers_2()
 {
-    int errors=0;
-    do
-    {
-        errors=0;
+    //family 2.odg
     pers.clear();
     pers.push_back(person(1,{}));
     pers.push_back(person(-1,{5,6,12},born(mt)));
@@ -64,35 +61,76 @@ for (int taski=0; taski<100; taski++)
     pers.push_back(person(1,{}));
     pers.push_back(person(-1,{0}));
 
+}
 
+void fill_pers_3()
+{
+    //family 3.odg
+    pers.clear();
+    pers.push_back(person(1,{}));
+    pers.push_back(person(-1,{5,6,7},born(mt)));
+    pers.push_back(person(1,{5,6,7},born(mt)));
+    pers.push_back(person(1,{8},born(mt)));
+    pers.push_back(person(-1,{8}));
+    pers.push_back(person(-1,{15}));
+    pers.push_back(person(-1,{}));
+    pers.push_back(person(1,{}));
+    pers.push_back(person(1,{14}));
+    pers.push_back(person(-1,{11}, born(mt)));
+    pers.push_back(person(1,{0,11}, born(mt)));
+    pers.push_back(person(1,{13}));
+    pers.push_back(person(-1,{4}, born(mt)));
+    pers.push_back(person(-1,{14}));
+    pers.push_back(person(1,{}));
+    pers.push_back(person(-1,{0}));
+}
+
+int main()
+{
+
+
+    /**/
+
+    ofstream ofs("data.txt");
+    //locale myloc("Russian");
+    SetConsoleOutputCP (1251);
+    SetConsoleCP (1251);
+    //ofs.imbue(myloc);
+for (int taski=0; taski<1; taski++)
+{
+    int errors=0;
+    do
+    {
+        errors=0;
+        fill_pers_3();
     for (size_t i=0; i<pers.size(); i++)
     {
         for (auto j:pers[i].children)
             pers[j].parents.push_back(i);
-    }
-    for (size_t i=0; i<pers.size(); i++)
-        pers[i].patronymic();
-
-    /*for (auto i:pers){
-            cout << i.name << ":";
+    }/*
+    for (auto i:pers){
+            cout << i.to_str() << ":";
             for (auto j:i.parents)
-                cout << pers[j].name<<" ";
+                cout << pers[j].to_str()<<" ";
         cout << endl;
-    }*/
-
+    }
+*/
     while(true)
     {
         bool added=false;
         for (size_t j=0; j<pers.size(); j++)
         {
             if (pers[j].byear==0){
+                pers[j].patronymic();
                 if (pers[j].parents.size()==1 and pers[pers[j].parents[0]].byear>0)
                 {
+
                     pers[j].byear=dif(mt)+pers[pers[j].parents[0]].byear;
                     added=true;
                 }
                 if (pers[j].parents.size()==2 and pers[pers[j].parents[0]].byear>0 and pers[pers[j].parents[1]].byear>0)
                 {
+
                     pers[j].byear=dif(mt)+max(pers[pers[j].parents[0]].byear, pers[pers[j].parents[1]].byear);
                     added=true;
                 }
@@ -103,7 +141,11 @@ for (int taski=0; taski<100; taski++)
     errors=check();
     }
     while (errors>0);
-
+    for (size_t i=0; i<pers.size(); i++)
+    {
+        if (pers[i].patr=='Ú') pers[i].patronymic();
+        pers[i].gender_bender();
+    }
     //generated successfully!
 
     vector<string>desc1,desc2;
@@ -130,7 +172,11 @@ for (int taski=0; taski<100; taski++)
     for (auto i:desc1) ofs<< i << endl;
     ofs << endl;
     for (auto i:desc2) ofs<< i << endl;
-    int ans=pers[age_between_f(ofs)].id;
+    //-------------------------------------------------------------------------------------------------
+                                                                                        //QUESTION HERE
+    int ans=pers[age_between_m(ofs)].id;
+
+    //-------------------------------------------------------------------------------------------------
     ofs <<"</p>]]></text>" << endl
                 <<"</questiontext>" << endl
                 <<"<generalfeedback format=\"html\">" << endl

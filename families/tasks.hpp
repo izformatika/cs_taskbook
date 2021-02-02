@@ -17,5 +17,7 @@ int oldest_uncle(std::ostream& fs);
 int most_gchildren_f(std::ostream &fs);
 int most_gchildren_m(std::ostream &fs);
 int age_between_f(std::ostream &fs);
+int age_between_m(std::ostream &fs);
+int exact_descendants_age(std::ostream &fs);
 
 #endif // TASKS_HPP_INCLUDED

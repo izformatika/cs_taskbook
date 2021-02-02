@@ -18,5 +18,5 @@ std::vector<std::pair<int,int>> uncles();
 std::set<int> best_age(std::vector<std::pair<int,int>> p, bool youngest=true, bool scnd=true);
 std::set<int> most_often(std::vector<std::pair<int,int>> p, bool scnd=true);
 std::vector<std::pair<int,int>> age_by_birth(std::vector<std::pair<int,int>> p, int from, int to);
-
+std::set<int> descendants(int of, int age = -1);
 #endif // SEARCHERS_HPP_INCLUDED

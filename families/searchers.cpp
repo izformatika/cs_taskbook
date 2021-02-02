@@ -1,5 +1,6 @@
 #include "includes.hpp"
 #include "person.hpp"
+#include <queue>
 
 
 //struct person;
@@ -135,5 +136,24 @@ std::vector<std::pair<int,int>> age_by_birth(std::vector<std::pair<int,int>> p, 
         if (((pers[i.first].byear-pers[i.second].byear)>=from or from==0) and (to==0 or (pers[i.first].byear-pers[i.second].byear)<=to))
             res.push_back(i);
     }
+    return res;
+}
+std::set<int> descendants(int of, int age)
+{
+    std::set<int> res;
+    std::queue<int> q;
+    q.push(of);
+    int maxyob = pers[of].byear + age;
+    do
+    {
+        int cur = q.front();
+        q.pop();
+        for (auto j: pers[cur].children)
+        {
+            if (pers[j].byear <= maxyob or age == -1) res.insert(j);
+            q.push(j);
+        }
+    }
+    while (q.size()!=0);
     return res;
 }

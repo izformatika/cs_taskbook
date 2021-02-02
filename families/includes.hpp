@@ -1,4 +1,5 @@
 #include <vector>
+#include <windows.h>
 #include <set>
 #include <iostream>
 #include <ostream>

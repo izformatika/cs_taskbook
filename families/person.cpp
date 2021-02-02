@@ -23,7 +23,15 @@ void person::getid()
 
 void person::getname()
 {
-    sname=snames[d1(mt)];
+    while (true)
+    {
+        sname=snames[d1(mt)];
+        bool found=false;
+        for (auto i:pers)
+            if (sname==i.sname) {found=true; break;}
+        if (found) continue;
+        break;
+    }
     if (gender==1) {gender_bender();}
     name=alphabet[d1(mt)];
 
