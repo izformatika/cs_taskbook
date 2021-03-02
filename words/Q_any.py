@@ -1,5 +1,5 @@
 # coding=cp1251
-import common
+from common import *
 
 def Q_uniq_any():
     rm_old_questions()
@@ -14,7 +14,7 @@ def Q_uniq_any():
         cons = int(filename[10:13].replace('.',''))
         length = vows + cons + spec
         for curlen in range(5, length):
-            ans = factorial(length)//factorial(length-curlen)
+            ans = length**curlen
             if ans in ansdict and ansdict[ans]>10:
                 continue
             if not (50 <= ans <= 20000):
@@ -31,7 +31,8 @@ def Q_uniq_any():
                 elif ans not in ansdict:
                     ansdict[ans] = 0
                 ansdict[ans]+=1
-                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать ровно один раз?'#TODO: other lengths!
+                question = 'Сколько различных слов (не обязательно осмысленных) длиной ' + str(curlen) + ' ' + letters(
+                    curlen) + ' можно составить из букв слова \'' + wrd[:-1] + '\', если каждую букву можно использовать ровно один раз?'  # TODO: other lengths!
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
@@ -76,13 +77,13 @@ def Q_nuniq_any():
         flist.extend(filenames)
     for filename in flist:
         from re import sub
-        sig = list((map(int, sub("[^0-9]"," ", filename).split())))
+        sig = list((map(int, sub("[^0-9]", " ", filename).split())))
         dif_letters = len(sig)
         orig_len = sum(sig)
         if orig_len > 10:
             continue
         for curlen in range(3, min(orig_len, dif_letters)):
-            ans = factorial(dif_letters)//factorial(dif_letters-curlen)
+            ans = dif_letters**curlen
             if ans in ansdict and ansdict[ans]>10:
                 continue
             if not (50 <= ans <= 5000):
@@ -99,7 +100,8 @@ def Q_nuniq_any():
                 elif ans not in ansdict:
                     ansdict[ans] = 0
                 ansdict[ans]+=1
-                question = 'Сколько слов (не обязательно осмысленных) длиной '+ str(curlen) + ' '+letters(curlen)+' можно составить из букв слова \'' +  wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз?'
+                question = 'Сколько различных слов (не обязательно осмысленных) длиной ' + str(curlen) + ' ' + letters(
+                    curlen) + ' можно составить из букв слова \'' + wrd[:-1] + '\', если каждую букву можно использовать сколько угодно раз?'
                 shortanswer(wrd[:-1], question, ans, file)
                 
             file.close()
@@ -129,4 +131,4 @@ def Q_nuniq_any():
         file.write("</quiz>")
         file.close()
         
-        
+

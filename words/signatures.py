@@ -3,7 +3,7 @@ import common
 import dictionary_splitter
 import Q_uniq_spec_position
 import Q_uniq_several_seq
-import Q_any
+from Q_any import *
 import Q_nuniq_min_vowels
 import Q_uniq_several_vows
             
@@ -26,7 +26,7 @@ import Q_uniq_several_vows
 header_and_footer_to_xmls_uniq_vow()
 '''
 
-#Q_nuniq_any()
+# Q_nuniq_any()
 
 #Q_nuniq_min_vowels(2)
 
