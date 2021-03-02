@@ -32,3 +32,4 @@
 *.app
 /words/sig/debug
 /words/questions.txt
+*/__pycache__/*
