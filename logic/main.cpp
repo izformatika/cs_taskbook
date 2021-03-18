@@ -1,55 +1,50 @@
 #include <iostream>
 #include <cmath>
-#include <vector>
-#include <cstdlib>
 #include <time.h>
 #include <memory>
+#include "logic_expressions.h"
 
 using namespace std;
 
-class expr
-{
-public:
-    virtual bool value()=0;
-    virtual string str(bool hide=true)=0;
-    virtual string type(){return "logic";}
-    virtual ~expr(){};
-    virtual string wrap(bool hide=true, bool walpha=false)=0;
-    virtual int priority()=0;
-    virtual void populate(int depth, float cut_chance)=0;
-    virtual shared_ptr<expr> clone()=0;
-    //virtual var operator=(const var){return *this;}
-};
-vector<shared_ptr<expr> > catalogue;
-class var:public expr
-{
-public:
-    virtual bool value()
-    {
-        return *m_a;
-    }
-    virtual string str(bool hide=true)
-    {
-        if (hide) return m_name;
-        if (*m_a) return "1";
-        return "0";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false) {return str(hide);}
-    var(bool *a, string name):m_a(a),m_name(name){}
-    var(shared_ptr<bool>a, string name):m_a(a),m_name(name){}
-    virtual ~var(){}
-    virtual int priority() {return 6;}
-    virtual void populate(int depth, float cut_chance) {};
-    virtual shared_ptr<expr> clone(){return make_shared<var>(m_a,m_name);};
-    var operator=(var a) {*m_a = a.value(); return *this;}
-    var operator=(bool a){*m_a = a; return *this;}
-private:
-    shared_ptr<bool> m_a;
-    string m_name;
-    var(){};
-    var(const var&){};
-};
+const bool all_parentheses = true;
+
 vector<shared_ptr<var> > vars;
+
+void fill_op_symb()
+{
+    if (style == slashes)
+    {
+        op_symb[op_and] = " /\\ ";
+        op_symb[op_or] = " \\/ ";
+        op_symb[op_eq] = " = ";
+        op_symb[op_impl] = " -> ";
+        op_symb[op_not] = "!";
+    }
+    else if (style == words)
+    {
+        op_symb[op_and] = " and ";
+        op_symb[op_or] = " or ";
+        op_symb[op_eq] = " equals ";
+        op_symb[op_impl] = " implies ";
+        op_symb[op_not] = "not ";
+    }
+    else if (style == typo)
+    {
+        op_symb[op_and] = "∧";
+        op_symb[op_or] = "∨";
+        op_symb[op_eq] = "≡";
+        op_symb[op_impl] = "→";
+        op_symb[op_not] = "¬";
+    }
+    else if (style == math)
+    {
+        op_symb[op_and] = "*";
+        op_symb[op_or] = "+";
+        op_symb[op_eq] = "=";
+        op_symb[op_impl] = "-";
+        op_symb[op_not] = "!";
+    }
+}
 
 shared_ptr<var> choose_var()
 {
@@ -80,180 +75,12 @@ shared_ptr<expr> pop_one(int depth, float cut_chance)
 }
 
 
-class disj:public expr
-{
-public:
-    virtual bool value()
-    {
-        return m_a->value() or m_b->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") \\/ ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
-        +(walpha?" or ":" \\/ ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
-    }
-    disj(expr * a, expr * b):m_a(a),m_b(b){}
-    disj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
-    virtual ~disj(){}
-    virtual int priority() {return 2;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<disj>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    disj(){};
-    disj(const disj&){};
-    //disj operator=(const disj){}
-};
-class conj:public expr
-{
-public:
-    virtual bool value()
-    {
-        return m_a->value() and m_b->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") /\\ ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
-        +(walpha?" and ":" /\\ ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
-    }
-    conj(expr * a, expr * b):m_a(a),m_b(b){}
-    conj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
-    ~conj(){}
-    virtual int priority() {return 4;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<conj>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    conj();
-    conj(const conj&){};
-    //conj operator=(const conj){}
-};
-class impl:public expr
-{
-public:
-    virtual bool value()
-    {
-        return not m_a->value() or m_b->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") -> ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
-        +(walpha?" implies ":" -> ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
-    }
-    impl(expr * a, expr * b):m_a(a),m_b(b){};
-    impl(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
-    virtual ~impl(){}
-    virtual int priority() {return 2;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<impl>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    impl(){};
-    impl(const impl&){};
-    //impl operator=(const impl){};
-};
-class eq:public expr
-{
-public:
-    virtual bool value()
-    {
-        return m_a->value() and m_b->value() or (not m_a->value() and not m_b->value());
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") = ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
-        +(walpha?" equals ":" = ")
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
-    }
-    eq(expr * a, expr * b):m_a(a),m_b(b){};
-    eq(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
-    virtual ~eq(){}
-    virtual int priority() {return 1;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<eq>(m_a,m_b);};
-private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    eq(){};
-    eq(const impl&){};
-
-};
-class neg:public expr
-{
-public:
-    virtual bool value()
-    {
-        return not m_a->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "(!"+m_a->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority()?"(":"")+string((walpha?"not ":"!"))+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"");
-    }
-    neg(expr * a):m_a(a){};
-    neg(shared_ptr<expr> a):m_a(a){};
-    virtual ~neg(){}
-    virtual int priority() {return 5;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-    }
-    virtual shared_ptr<expr> clone() {return make_shared<neg>(m_a);};
-private:
-    shared_ptr<expr> m_a;
-    neg(){};
-    neg(const neg&){};
-    //neg operator=(const neg){};
-};
-
 
 
 
 int main()
 {
+    fill_op_symb();
     srand(time(0));
     catalogue.push_back(make_shared<conj>(new var(NULL, ""), new var(NULL, "")));
     catalogue.push_back(make_shared<disj>(new var(NULL, ""), new var(NULL, "")));
@@ -275,10 +102,10 @@ int main()
         vars.clear();
         root->populate(3,0.1);
         int solutions(0);
-        for (int mask(0); mask<pow(2, vars.size()+1);mask++)
+        for (int mask(0); mask<pow(2, vars.size());mask++)
         {
             int curmask = mask;
-            for (int j(0); j<vars.size(); j++)
+            for (size_t j(0); j<vars.size(); j++)
             {
                 *vars[j] = curmask%2;
                 curmask /= 2;
@@ -290,11 +117,12 @@ int main()
         if (vars.size() == 5 and (solutions == 4 or solutions == 5 or solutions == 6 or nos == 4 or nos == 5 or nos == 6))
         {
             cout << root->wrap(true,false) << endl;
+            cout << root->str() << endl;
             cout << solutions << " " << nos << endl;
-            for (int mask(0); mask<pow(2, vars.size()+1);mask++)
+            for (int mask(0); mask<pow(2, vars.size());mask++)
             {
                 int curmask = mask;
-                for (int j(0); j<vars.size(); j++)
+                for (size_t j(0); j<vars.size(); j++)
                 {
                     *vars[j] = curmask%2;
                     curmask /= 2;
