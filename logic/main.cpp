@@ -119,6 +119,11 @@ int main()
             cout << root->wrap(true,false) << endl;
             cout << root->str() << endl;
             cout << solutions << " " << nos << endl;
+            for (auto i: vars)
+            {
+                cout << i->str(true) << " ";
+            }
+            cout << endl;
             for (int mask(0); mask<pow(2, vars.size());mask++)
             {
                 int curmask = mask;
@@ -128,7 +133,15 @@ int main()
                     curmask /= 2;
                 }
                 if (root->value()==1)
-                    cout << root->wrap(false,false) << " = " << root->value() << endl;
+                {
+                    for (auto i: vars)
+                    {
+                        cout << i->str(false) << " ";
+                    }
+                    cout << endl;
+
+                    //cout << root->wrap(false,false) << " = " << root->value() << endl;
+                }
             }
             break;
         }

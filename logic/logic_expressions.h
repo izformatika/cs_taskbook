@@ -11,6 +11,8 @@ map<op, string> op_symb;
 
 op_style style = math;
 
+bool allbraces = false;
+
 class expr
 {
 public:
@@ -68,14 +70,14 @@ public:
     }
     virtual string wrap(bool hide=true, bool walpha=false)
     {
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
+        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
         +op_symb[op_or]
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
+        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
     }
     disj(expr * a, expr * b):m_a(a),m_b(b){}
     disj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
     virtual ~disj(){}
-    virtual int priority() {return 2;}
+    virtual int priority() {return 3;}
     virtual void populate(int depth, float cut_chance)
     {
         m_a=pop_one(depth, cut_chance);
@@ -102,9 +104,9 @@ public:
     }
     virtual string wrap(bool hide=true, bool walpha=false)
     {
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
+        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
         +op_symb[op_and]
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
+        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
     }
     conj(expr * a, expr * b):m_a(a),m_b(b){}
     conj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
@@ -137,9 +139,9 @@ public:
     virtual string wrap(bool hide=true, bool walpha=false)
     {
         //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
+        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
         +op_symb[op_impl]
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
+        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
     }
     impl(expr * a, expr * b):m_a(a),m_b(b){};
     impl(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
@@ -172,9 +174,9 @@ public:
     virtual string wrap(bool hide=true, bool walpha=false)
     {
         //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority()?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"")
+        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
         +op_symb[op_eq]
-        +(m_b->priority()<priority()?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<priority()?")":"");
+        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
     }
     eq(expr * a, expr * b):m_a(a),m_b(b){};
     eq(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
@@ -202,11 +204,11 @@ public:
     }
     virtual string str(bool hide=true)
     {
-        return "("+op_symb[op_not]+m_a->str(hide)+")";
+        return op_symb[op_not]+"("+m_a->str(hide)+")";
     }
     virtual string wrap(bool hide=true, bool walpha=false)
     {
-        return (m_a->priority()<priority()?"(":"")+op_symb[op_not]+m_a->wrap(hide, walpha)+(m_a->priority()<priority()?")":"");
+        return op_symb[op_not]+(m_a->priority()<=priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<=priority() or allbraces?")":"");
     }
     neg(expr * a):m_a(a){};
     neg(shared_ptr<expr> a):m_a(a){};
