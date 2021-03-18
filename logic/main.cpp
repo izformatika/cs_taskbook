@@ -1,85 +1,29 @@
 #include <iostream>
+#include <fstream>
 #include <cmath>
 #include <time.h>
 #include <memory>
 #include "logic_expressions.h"
+//#include <boost/dynamic_bitset.hpp>
 
 using namespace std;
 
 const bool all_parentheses = true;
+op_style style = typo;
 
-vector<shared_ptr<var> > vars;
 
-void fill_op_symb()
+bool check_table(vector<vector<bool>> sol, int solutions)
 {
-    if (style == slashes)
-    {
-        op_symb[op_and] = " /\\ ";
-        op_symb[op_or] = " \\/ ";
-        op_symb[op_eq] = " = ";
-        op_symb[op_impl] = " -> ";
-        op_symb[op_not] = "!";
-    }
-    else if (style == words)
-    {
-        op_symb[op_and] = " and ";
-        op_symb[op_or] = " or ";
-        op_symb[op_eq] = " equals ";
-        op_symb[op_impl] = " implies ";
-        op_symb[op_not] = "not ";
-    }
-    else if (style == typo)
-    {
-        op_symb[op_and] = "∧";
-        op_symb[op_or] = "∨";
-        op_symb[op_eq] = "≡";
-        op_symb[op_impl] = "→";
-        op_symb[op_not] = "¬";
-    }
-    else if (style == math)
-    {
-        op_symb[op_and] = "*";
-        op_symb[op_or] = "+";
-        op_symb[op_eq] = "=";
-        op_symb[op_impl] = "-";
-        op_symb[op_not] = "!";
-    }
+    int nos = pow(2, vars.size()) - solutions;
+//TODO
+//a table is bad if it has two cols where either all cells are the same or contain different values only in rows that are otherwise the same (hence we cant tell between these two variables)
 }
-
-shared_ptr<var> choose_var()
-{
-    if (rand()%5>0 and rand()%3<vars.size())
-    {
-        int which=rand()%(vars.size());
-        return vars[which];
-    }
-    else
-    {
-        vars.push_back(make_shared<var>(new bool(rand()%2), string(1,vars.size()+'a')));
-        return (vars[vars.size()-1]);
-    }
-}
-
-shared_ptr<expr> pop_one(int depth, float cut_chance)
-{
-    if ((rand()%100)<(cut_chance*100) or depth==0)
-    {
-        return choose_var();
-    }
-    else//not the time to stop, we need to generate deeper
-    {
-        shared_ptr<expr> tmp=catalogue[rand()%catalogue.size()]->clone();
-        tmp->populate(depth-1, cut_chance);
-        return tmp;
-    }
-}
-
-
 
 
 
 int main()
 {
+    ofstream ofs("data.txt");
     fill_op_symb();
     srand(time(0));
     catalogue.push_back(make_shared<conj>(new var(NULL, ""), new var(NULL, "")));
@@ -87,61 +31,52 @@ int main()
     catalogue.push_back(make_shared<impl>(new var(NULL, ""), new var(NULL, "")));
     catalogue.push_back(make_shared<eq>(new var(NULL, ""), new var(NULL, "")));
     catalogue.push_back(make_shared<neg>(new var(NULL, "")));
-    /*bool a=false;
-    bool b=true;
-    bool c=true;
+    //bool a=false;
+    //bool b=true;
+    //bool c=true;
     //(a or b) and (c -> a)
-    shared_ptr<expr> e(new conj(new disj(new var(&a,"a"), new var(&b,"b")), new impl(new var(&c,"c"),new var(&a,"a"))));
-    cout << e->str(true) << " = " << e->value() << endl;
-    a=true;
-    cout << e->str(true) << " = " << e->value() << endl;
-    cout << e->wrap(false) << endl;*/
+    //shared_ptr<expr> e(new conj(new disj(new var(&a,"a"), new var(&b,"b")), new impl(new var(&c,"c"),new var(&a,"a"))));
+    //cout << e->str(true) << " = " << e->value() << endl;
+    //a=true;
+    //cout << e->str(true) << " = " << e->value() << endl;
+    //cout << e->wrap(false) << endl;
     shared_ptr<conj> root=make_shared<conj>(new var(NULL, ""), new var(NULL, ""));
     while (true)
     {
         vars.clear();
         root->populate(3,0.1);
         int solutions(0);
+        vector<vector<bool>> sol(pow(2, vars.size()), vector<bool>(vars.size() + 1, false));
         for (int mask(0); mask<pow(2, vars.size());mask++)
         {
             int curmask = mask;
             for (size_t j(0); j<vars.size(); j++)
             {
                 *vars[j] = curmask%2;
+                sol[mask][j] = curmask%2;
                 curmask /= 2;
             }
             //cout << root->wrap(false,false) << " = " << root->value() << endl;
-            if (root->value()==1) solutions++;
+            if (root->value()==1) {solutions++;sol[mask][vars.size()] = true;}
         }
         int nos = pow(2, vars.size()) - solutions;
-        if (vars.size() == 5 and (solutions == 4 or solutions == 5 or solutions == 6 or nos == 4 or nos == 5 or nos == 6))
+        if (vars.size() == 5 and (solutions == 4 or solutions == 5 or solutions == 6 or nos == 4 or nos == 5 or nos == 6) and check_table(sol, solutions))
         {
-            cout << root->wrap(true,false) << endl;
-            cout << root->str() << endl;
-            cout << solutions << " " << nos << endl;
+            ofs << root->wrap(true,false) << endl;
+            ofs << root->str() << endl;
+            ofs << solutions << " " << nos << endl;
             for (auto i: vars)
             {
-                cout << i->str(true) << " ";
+                ofs << i->str(true) << " ";
             }
-            cout << endl;
-            for (int mask(0); mask<pow(2, vars.size());mask++)
+            ofs << endl;
+            bool yes = (solutions<nos);
+            for (auto i: sol)
             {
-                int curmask = mask;
-                for (size_t j(0); j<vars.size(); j++)
-                {
-                    *vars[j] = curmask%2;
-                    curmask /= 2;
-                }
-                if (root->value()==1)
-                {
-                    for (auto i: vars)
-                    {
-                        cout << i->str(false) << " ";
-                    }
-                    cout << endl;
-
-                    //cout << root->wrap(false,false) << " = " << root->value() << endl;
-                }
+                if (i[vars.size()] == yes){
+                for (auto j: i)
+                    ofs << j << " ";
+                ofs << endl;}
             }
             break;
         }
