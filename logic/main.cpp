@@ -12,17 +12,15 @@ const bool all_parentheses = true;
 op_style style = typo;
 
 
-bool check_table(vector<vector<bool>> sol, int solutions)
+bool check_table(vector<vector<bool>> sol)
 {
-    int nos = pow(2, vars.size()) - solutions;
-    bool needed = (solutions < nos);
-
     for (size_t c1(0); c1<sol[0].size()-1; c1++)
     for (size_t c2(c1+1); c2<sol[0].size()-1; c2++)
     {
+        //vector<int> comp_states(sol.size(), 0);
         bool same_col = true;
         for (size_t r(0); r<sol.size(); r++)
-        if (sol[r][sol[0].size()-1] == needed and sol[r][c1]!=sol[r][c2]) {same_col = false; break;}
+        if (sol[r][c1]!=sol[r][c2]) {same_col = false; break;}
         if (same_col) return false;
 
     }
@@ -72,7 +70,14 @@ int main()
             if (root->value()==1) {solutions++;sol[mask][vars.size()] = true;}
         }
         int nos = pow(2, vars.size()) - solutions;
-        if (vars.size() == 5 and (solutions == 4 or solutions == 5 or solutions == 6 or nos == 4 or nos == 5 or nos == 6) and check_table(sol, solutions))
+        bool needed = (solutions < nos);
+        for (int i(0); i<sol.size(); i++)
+        {
+            if (sol[i][sol[0].size()-1] != needed)
+            {sol.erase(sol.begin()+i); i--;}
+        }
+
+        if (vars.size() == 5 and (solutions == 4 or solutions == 5 or solutions == 6 or nos == 4 or nos == 5 or nos == 6) and check_table(sol))
         {
             ofs << root->wrap(true,false) << endl;
             ofs << root->str() << endl;
@@ -82,13 +87,11 @@ int main()
                 ofs << i->str(true) << " ";
             }
             ofs << endl;
-            bool yes = (solutions<nos);
             for (auto i: sol)
             {
-                if (i[vars.size()] == yes){
                 for (auto j: i)
                     ofs << j << " ";
-                ofs << endl;}
+                ofs << endl;
             }
             break;
         }
