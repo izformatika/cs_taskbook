@@ -15,6 +15,18 @@ op_style style = typo;
 bool check_table(vector<vector<bool>> sol, int solutions)
 {
     int nos = pow(2, vars.size()) - solutions;
+    bool needed = (solutions < nos);
+
+    for (size_t c1(0); c1<sol[0].size()-1; c1++)
+    for (size_t c2(c1+1); c2<sol[0].size()-1; c2++)
+    {
+        bool same_col = true;
+        for (size_t r(0); r<sol.size(); r++)
+        if (sol[r][sol[0].size()-1] == needed and sol[r][c1]!=sol[r][c2]) {same_col = false; break;}
+        if (same_col) return false;
+
+    }
+    return true;
 //TODO
 //a table is bad if it has two cols where either all cells are the same or contain different values only in rows that are otherwise the same (hence we cant tell between these two variables)
 }
