@@ -18,6 +18,7 @@ class expr
 public:
     virtual bool value()=0;
     virtual string str(bool hide=true)=0;
+    virtual string fulltext()=0;
     virtual string type(){return "logic";}
     virtual ~expr(){};
     virtual string wrap(bool hide=true, bool walpha=false)=0;
@@ -40,6 +41,10 @@ public:
         if (hide) return m_name;
         if (*m_a) return "1";
         return "0";
+    }
+    virtual string fulltext()
+    {
+        return "new var(&" + m_name + ", \"" + m_name + "\")";
     }
     virtual string wrap(bool hide=true, bool walpha=false) {return str(hide);}
     var(bool *a, string name):m_a(a),m_name(name){}
@@ -83,6 +88,10 @@ public:
         m_a=pop_one(depth, cut_chance);
         m_b=pop_one(depth, cut_chance);
     }
+    virtual string fulltext()
+    {
+        return "new disj(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+    }
     virtual shared_ptr<expr> clone() {return make_shared<disj>(m_a,m_b);};
 private:
     shared_ptr<expr> m_a;
@@ -107,6 +116,10 @@ public:
         return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
         +op_symb[op_and]
         +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
+    }
+    virtual string fulltext()
+    {
+        return "new conj(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
     conj(expr * a, expr * b):m_a(a),m_b(b){}
     conj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
@@ -143,6 +156,10 @@ public:
         +op_symb[op_impl]
         +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
     }
+    virtual string fulltext()
+    {
+        return "new impl(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+    }
     impl(expr * a, expr * b):m_a(a),m_b(b){};
     impl(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
     virtual ~impl(){}
@@ -178,6 +195,10 @@ public:
         +op_symb[op_eq]
         +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
     }
+    virtual string fulltext()
+    {
+        return "new eq(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+    }
     eq(expr * a, expr * b):m_a(a),m_b(b){};
     eq(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
     virtual ~eq(){}
@@ -209,6 +230,10 @@ public:
     virtual string wrap(bool hide=true, bool walpha=false)
     {
         return op_symb[op_not]+(m_a->priority()<=priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<=priority() or allbraces?")":"");
+    }
+    virtual string fulltext()
+    {
+        return "new neg(" + m_a->fulltext()+")";
     }
     neg(expr * a):m_a(a){};
     neg(shared_ptr<expr> a):m_a(a){};
