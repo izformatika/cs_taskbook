@@ -6,7 +6,7 @@
 using namespace std;
 
 enum op_style {slashes, words, typo, math, ampersand};
-enum op {op_and, op_or, op_not, op_eq, op_impl};
+enum op {op_and, op_or, op_not, op_eq, op_impl, op_fake};
 map<op, string> op_symb;
 
 extern op_style style;
@@ -21,14 +21,60 @@ public:
     virtual string fulltext()=0;
     virtual string type(){return "logic";}
     virtual ~expr(){};
-    virtual string wrap(bool hide=true, bool walpha=false)=0;
+    virtual string wrap(bool hide=true)=0;
     virtual int priority()=0;
     virtual void populate(int depth, float cut_chance)=0;
     virtual shared_ptr<expr> clone()=0;
+    virtual int count_rotations()=0;
     //virtual var operator=(const var){return *this;}
 };
 vector<shared_ptr<expr> > catalogue;
 shared_ptr<expr> pop_one(int depth, float cut_chance);
+class bin_op: public expr
+{
+public:
+    virtual int count_rotations() {return m_a->count_rotations()*m_b->count_rotations();}
+    virtual bool value()=0;
+    virtual string str(bool hide=true)
+    {
+        return "("+m_a->str(hide)+") " + op_symb[m_symb()] + " ("+m_b->str(hide)+")";
+    }
+    virtual string wrap(bool hide=true)
+    {
+        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide)+(m_a->priority()<priority() or allbraces?")":"")
+        +op_symb[m_symb()]
+        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide)+(m_b->priority()<=priority() or allbraces?")":"");
+    }
+    virtual void populate(int depth, float cut_chance)
+    {
+        m_a=pop_one(depth, cut_chance);
+        m_b=pop_one(depth, cut_chance);
+    }
+    virtual int priority()=0;
+    virtual string fulltext()=0;
+    bin_op(expr * a, expr * b):m_a(a),m_b(b){}
+    bin_op(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
+    virtual ~bin_op(){}
+    virtual op m_symb()=0;
+protected:
+    shared_ptr<expr> m_a;
+    shared_ptr<expr> m_b;
+
+protected:
+    bin_op(){};
+};
+
+class commut_op: public bin_op
+{
+public:
+    virtual bool value()=0;
+    virtual int count_rotations() {return (m_a->str()==m_b->str()?1:2)*m_a->count_rotations()*m_b->count_rotations();}
+    commut_op(shared_ptr<expr> a, shared_ptr<expr> b):bin_op(a, b){};
+    virtual op m_symb()=0;
+protected:
+    commut_op(){};
+};
+
 class var:public expr
 {
 public:
@@ -46,15 +92,16 @@ public:
     {
         return "new var(&" + m_name + ", \"" + m_name + "\")";
     }
-    virtual string wrap(bool hide=true, bool walpha=false) {return str(hide);}
-    var(bool *a, string name):m_a(a),m_name(name){}
+    virtual string wrap(bool hide=true) {return str(hide);}
     var(shared_ptr<bool>a, string name):m_a(a),m_name(name){}
+    var(bool a, string name):m_a(make_shared<bool>(a)),m_name(name){}
     virtual ~var(){}
     virtual int priority() {return 6;}
-    virtual void populate(int depth, float cut_chance) {};
+    virtual void populate(int depth, float cut_chance){};
     virtual shared_ptr<expr> clone(){return make_shared<var>(m_a,m_name);};
     var& operator=(var a) {*m_a = a.value(); return *this;}
     var& operator=(bool a){*m_a = a; return *this;}
+    virtual int count_rotations() {return 1;}
 private:
     shared_ptr<bool> m_a;
     string m_name;
@@ -62,163 +109,101 @@ private:
     var(const var&){};
 };
 
-class disj:public expr
+class disj:public commut_op
 {
 public:
     virtual bool value()
     {
         return m_a->value() or m_b->value();
     }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") " + op_symb[op_or] + " ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
-        +op_symb[op_or]
-        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
-    }
-    disj(expr * a, expr * b):m_a(a),m_b(b){}
-    disj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
-    virtual ~disj(){}
+
+    disj(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
+    //disj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
+    //virtual ~disj(){}
     virtual int priority() {return 3;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
     virtual string fulltext()
     {
         return "new disj(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
     virtual shared_ptr<expr> clone() {return make_shared<disj>(m_a,m_b);};
+    virtual op m_symb() {return op_or;};
 private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    disj(){};
-    disj(const disj&){};
+    //disj(){};
+//    disj(const disj&){};
     //disj operator=(const disj){}
 };
-class conj:public expr
+class conj:public commut_op
 {
 public:
     virtual bool value()
     {
         return m_a->value() and m_b->value();
     }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") " +op_symb[op_and]+" ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
-        +op_symb[op_and]
-        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
-    }
     virtual string fulltext()
     {
         return "new conj(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
-    conj(expr * a, expr * b):m_a(a),m_b(b){}
-    conj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
-    ~conj(){}
     virtual int priority() {return 4;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
+conj(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
+ //   conj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
+ //   ~conj(){}
     virtual shared_ptr<expr> clone() {return make_shared<conj>(m_a,m_b);};
+    virtual op m_symb() {return op_and;};
 private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    conj();
-    conj(const conj&){};
+  //  conj();
+   // conj(const conj&){};
     //conj operator=(const conj){}
 };
-class impl:public expr
+class impl:public bin_op
 {
 public:
+//    virtual int count_rotations() {return}
     virtual bool value()
     {
         return not m_a->value() or m_b->value();
-    }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") "+op_symb[op_impl]+" ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
-        +op_symb[op_impl]
-        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
     }
     virtual string fulltext()
     {
         return "new impl(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
-    impl(expr * a, expr * b):m_a(a),m_b(b){};
-    impl(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
-    virtual ~impl(){}
+    impl(shared_ptr<expr>  a, shared_ptr<expr>  b):bin_op(a,b){};
+    virtual op m_symb() {return op_impl;};
+//    impl(expr * a, expr * b):m_a(a),m_b(b){};
+ //   impl(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
+  //  virtual ~impl(){}
     virtual int priority() {return 2;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
     virtual shared_ptr<expr> clone() {return make_shared<impl>(m_a,m_b);};
 private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    impl(){};
-    impl(const impl&){};
+    //impl(){};
+    //impl(const impl&){};
     //impl operator=(const impl){};
 };
-class eq:public expr
+class eq:public commut_op
 {
 public:
     virtual bool value()
     {
         return ((m_a->value() and m_b->value()) or ((not m_a->value() and not m_b->value())));
     }
-    virtual string str(bool hide=true)
-    {
-        return "("+m_a->str(hide)+") "+op_symb[op_eq]+" ("+m_b->str(hide)+")";
-    }
-    virtual string wrap(bool hide=true, bool walpha=false)
-    {
-        //cout << "\t" << m_a->priority() << " " << priority() << endl;
-        return (m_a->priority()<priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<priority() or allbraces?")":"")
-        +op_symb[op_eq]
-        +(m_b->priority()<=priority() or allbraces?"(":"")+m_b->wrap(hide, walpha)+(m_b->priority()<=priority() or allbraces?")":"");
-    }
+    virtual op m_symb() {return op_eq;};
     virtual string fulltext()
     {
         return "new eq(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
-    eq(expr * a, expr * b):m_a(a),m_b(b){};
-    eq(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
-    virtual ~eq(){}
+//    eq(expr * a, expr * b):m_a(a),m_b(b){};
+    eq(shared_ptr<expr> a, shared_ptr<expr> b):commut_op(a,b) {}
+  //  virtual ~eq(){}
     virtual int priority() {return 1;}
-    virtual void populate(int depth, float cut_chance)
-    {
-        m_a=pop_one(depth, cut_chance);
-        m_b=pop_one(depth, cut_chance);
-    }
     virtual shared_ptr<expr> clone() {return make_shared<eq>(m_a,m_b);};
 private:
-    shared_ptr<expr> m_a;
-    shared_ptr<expr> m_b;
-    eq(){};
-    eq(const impl&){};
+    //eq(){};
+    //eq(const impl&){};
 
 };
 class neg:public expr
 {
 public:
+    virtual int count_rotations() {return m_a->count_rotations();}
     virtual bool value()
     {
         return not m_a->value();
@@ -227,9 +212,9 @@ public:
     {
         return op_symb[op_not]+"("+m_a->str(hide)+")";
     }
-    virtual string wrap(bool hide=true, bool walpha=false)
+    virtual string wrap(bool hide=true)
     {
-        return op_symb[op_not]+(m_a->priority()<=priority() or allbraces?"(":"")+m_a->wrap(hide, walpha)+(m_a->priority()<=priority() or allbraces?")":"");
+        return op_symb[op_not]+(m_a->priority()<=priority() or allbraces?"(":"")+m_a->wrap(hide)+(m_a->priority()<=priority() or allbraces?")":"");
     }
     virtual string fulltext()
     {
@@ -261,6 +246,7 @@ void fill_op_symb()
         op_symb[op_eq] = " = ";
         op_symb[op_impl] = " -> ";
         op_symb[op_not] = "!";
+        op_symb[op_fake] = "#";
     }
     else if (style == words)
     {
@@ -269,6 +255,7 @@ void fill_op_symb()
         op_symb[op_eq] = " equals ";
         op_symb[op_impl] = " implies ";
         op_symb[op_not] = "not ";
+        op_symb[op_fake] = "#";
     }
     else if (style == typo)
     {
@@ -277,6 +264,7 @@ void fill_op_symb()
         op_symb[op_eq] = "≡";
         op_symb[op_impl] = "→";
         op_symb[op_not] = "¬";
+        op_symb[op_fake] = "#";
     }
     else if (style == math)
     {
@@ -285,6 +273,7 @@ void fill_op_symb()
         op_symb[op_eq] = "=";
         op_symb[op_impl] = "-";
         op_symb[op_not] = "!";
+        op_symb[op_fake] = "#";
     }
     else if (style == ampersand)
     {
@@ -293,6 +282,7 @@ void fill_op_symb()
         op_symb[op_eq] = " = ";
         op_symb[op_impl] = " -> ";
         op_symb[op_not] = "!";
+        op_symb[op_fake] = "#";
     }
 }
 vector<shared_ptr<var> > vars;
@@ -305,7 +295,7 @@ shared_ptr<var> choose_var()
     }
     else
     {
-        vars.push_back(make_shared<var>(new bool(rand()%2), string(1,vars.size()+'a')));
+        vars.push_back(make_shared<var>(bool(rand()%2), string(1,vars.size()+'a')));
         return (vars[vars.size()-1]);
     }
 }

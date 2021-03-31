@@ -49,7 +49,7 @@ bool check_table(vector<vector<bool>> sol)
 void gen_func_with_sparse_table()
 {
     ofstream ofs("data.txt");
-    shared_ptr<conj> root=make_shared<conj>(new var(NULL, ""), new var(NULL, ""));
+    shared_ptr<conj> root=make_shared<conj>(make_shared<var>(NULL, ""), make_shared<var>(NULL, ""));
     while (true)
     {
         vars.clear();
@@ -78,8 +78,9 @@ void gen_func_with_sparse_table()
 
         if (vars.size() == 5 and (solutions == 4 or solutions == 5 or solutions == 6 or nos == 4 or nos == 5 or nos == 6) and check_table(sol))
         {
-            ofs << root->wrap(true,false) << endl;
-            //ofs << root->fulltext() << endl;
+            ofs << root->wrap(true) << endl;
+            ofs << root->fulltext() << endl;
+            ofs << root->count_rotations() << endl;
             ofs << solutions << " " << nos << endl;
             for (auto i: vars)
             {
@@ -95,6 +96,12 @@ void gen_func_with_sparse_table()
             break;
         }
     }
+    /*TODO: generate smaller table as well. drop rows and digits one-by-one.
+    check if the remaining table is recognizeable, i.e. if it has a unique row\col:
+    only number of 1 or 0 that fits the original qtty. then check the rest of the table
+    for recognizeability considering rows\cols left
+
+    */
 }
 
 void shuffle_table()
@@ -114,13 +121,13 @@ int main()
 
     fill_op_symb();
     srand(time(0));
-    catalogue.push_back(make_shared<conj>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<disj>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<impl>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<eq>(new var(NULL, ""), new var(NULL, "")));
-    catalogue.push_back(make_shared<neg>(new var(NULL, "")));
+    catalogue.push_back(make_shared<conj>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
+    catalogue.push_back(make_shared<disj>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
+    catalogue.push_back(make_shared<impl>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
+    catalogue.push_back(make_shared<eq>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
+    catalogue.push_back(make_shared<neg>(make_shared<var>(NULL, "")));
 
-    ///gen_func_with_sparse_table();
+    gen_func_with_sparse_table();
 
     return 0;
 }
