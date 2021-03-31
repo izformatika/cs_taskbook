@@ -10,7 +10,7 @@
 using namespace std;
 
 const bool all_parentheses = true;
-op_style style = typo;
+op_style style = words;
 
 
 bool check_table(vector<vector<bool>> sol)
@@ -130,7 +130,16 @@ int main()
     catalogue.push_back(make_shared<neg>(make_shared<var>(NULL, "")));
 
     //gen_func_with_sparse_table();
-    //boost::dynamic_bitset<> a(8,19);
-    //cout << a << endl;
+    make_vars(5);
+    auto a = make_shared<conjunction>(make_shared<conjunction>(make_shared<impl>(make_shared<eq>(vars[0], vars[1]), vars[2]), make_shared<neg>(make_shared<conjunction>(vars[2], vars[0]))), make_shared<impl>(make_shared<impl>(make_shared<conjunction>(vars[2], vars[1]), make_shared<eq>(vars[3], vars[1])), make_shared<conjunction>(make_shared<disjunction>(vars[2], vars[4]), make_shared<conjunction>(vars[1], vars[4]))));
+    cout << a->str() << endl;
+    int rot_qtty=a->count_rotations();
+    dynamic_bitset<> rot_mask(rot_qtty,0);
+    for (int i(0); i<pow(2, rot_qtty); i++)
+    {
+        rot_mask = dynamic_bitset<>(rot_qtty, i);
+        auto cur_rot(a);
+        cur_rot->(make_rot(rot_mask));//TODO: implement in bin_op, commut_op
+    }
     return 0;
 }

@@ -90,7 +90,7 @@ public:
     }
     virtual string fulltext()
     {
-        return "new var(&" + m_name + ", \"" + m_name + "\")";
+        return "vars[" + to_string(int(m_name[0])-int('a')) + "]";
     }
     virtual string wrap(bool hide=true) {return str(hide);}
     var(shared_ptr<bool>a, string name):m_a(a),m_name(name){}
@@ -123,7 +123,7 @@ public:
     virtual int priority() {return 3;}
     virtual string fulltext()
     {
-        return "new disjunction(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+        return "make_shared<disjunction>(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
     virtual shared_ptr<expr> clone() {return make_shared<disjunction>(m_a,m_b);};
     virtual op m_symb() {return op_or;};
@@ -141,7 +141,7 @@ public:
     }
     virtual string fulltext()
     {
-        return "new conjunction(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+        return "make_shared<conjunction>(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
     virtual int priority() {return 4;}
 conjunction(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
@@ -164,7 +164,7 @@ public:
     }
     virtual string fulltext()
     {
-        return "new impl(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+        return "make_shared<impl>(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
     impl(shared_ptr<expr>  a, shared_ptr<expr>  b):bin_op(a,b){};
     virtual op m_symb() {return op_impl;};
@@ -188,7 +188,7 @@ public:
     virtual op m_symb() {return op_eq;};
     virtual string fulltext()
     {
-        return "new eq(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+        return "make_shared<eq>(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
 //    eq(expr * a, expr * b):m_a(a),m_b(b){};
     eq(shared_ptr<expr> a, shared_ptr<expr> b):commut_op(a,b) {}
@@ -218,7 +218,7 @@ public:
     }
     virtual string fulltext()
     {
-        return "new neg(" + m_a->fulltext()+")";
+        return "make_shared<neg>(" + m_a->fulltext()+")";
     }
     neg(expr * a):m_a(a){};
     neg(shared_ptr<expr> a):m_a(a){};
@@ -313,5 +313,10 @@ shared_ptr<expr> pop_one(int depth, float cut_chance)
         return tmp;
     }
 }
-
+void make_vars(int n)
+{
+    vars.clear();
+    for (int i(0);i<n; i++)
+        vars.push_back(make_shared<var>(true, string(1,vars.size()+'a')));
+}
 #endif // LOGIC_EXPRESSIONS_H_INCLUDED
