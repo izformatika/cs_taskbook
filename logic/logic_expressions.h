@@ -33,7 +33,7 @@ shared_ptr<expr> pop_one(int depth, float cut_chance);
 class bin_op: public expr
 {
 public:
-    virtual int count_rotations() {return m_a->count_rotations()*m_b->count_rotations();}
+    virtual int count_rotations() {return m_a->count_rotations()+m_b->count_rotations();}
     virtual bool value()=0;
     virtual string str(bool hide=true)
     {
@@ -68,7 +68,7 @@ class commut_op: public bin_op
 {
 public:
     virtual bool value()=0;
-    virtual int count_rotations() {return (m_a->str()==m_b->str()?1:2)*m_a->count_rotations()*m_b->count_rotations();}
+    virtual int count_rotations() {return (m_a->str()==m_b->str()?0:1)+m_a->count_rotations()+m_b->count_rotations();}
     commut_op(shared_ptr<expr> a, shared_ptr<expr> b):bin_op(a, b){};
     virtual op m_symb()=0;
 protected:
@@ -101,7 +101,7 @@ public:
     virtual shared_ptr<expr> clone(){return make_shared<var>(m_a,m_name);};
     var& operator=(var a) {*m_a = a.value(); return *this;}
     var& operator=(bool a){*m_a = a; return *this;}
-    virtual int count_rotations() {return 1;}
+    virtual int count_rotations() {return 0;}
 private:
     shared_ptr<bool> m_a;
     string m_name;
@@ -109,7 +109,7 @@ private:
     var(const var&){};
 };
 
-class disj:public commut_op
+class disjunction:public commut_op
 {
 public:
     virtual bool value()
@@ -117,22 +117,22 @@ public:
         return m_a->value() or m_b->value();
     }
 
-    disj(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
-    //disj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
-    //virtual ~disj(){}
+    disjunction(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
+    //disjunction(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
+    //virtual ~disjunction(){}
     virtual int priority() {return 3;}
     virtual string fulltext()
     {
-        return "new disj(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+        return "new disjunction(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
-    virtual shared_ptr<expr> clone() {return make_shared<disj>(m_a,m_b);};
+    virtual shared_ptr<expr> clone() {return make_shared<disjunction>(m_a,m_b);};
     virtual op m_symb() {return op_or;};
 private:
-    //disj(){};
-//    disj(const disj&){};
-    //disj operator=(const disj){}
+    //disjunction(){};
+//    disjunction(const disjunction&){};
+    //disjunction operator=(const disjunction){}
 };
-class conj:public commut_op
+class conjunction:public commut_op
 {
 public:
     virtual bool value()
@@ -141,18 +141,18 @@ public:
     }
     virtual string fulltext()
     {
-        return "new conj(" + m_a->fulltext()+", " + m_b->fulltext()+")";
+        return "new conjunction(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
     virtual int priority() {return 4;}
-conj(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
- //   conj(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
- //   ~conj(){}
-    virtual shared_ptr<expr> clone() {return make_shared<conj>(m_a,m_b);};
+conjunction(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
+ //   conjunction(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
+ //   ~conjunction(){}
+    virtual shared_ptr<expr> clone() {return make_shared<conjunction>(m_a,m_b);};
     virtual op m_symb() {return op_and;};
 private:
-  //  conj();
-   // conj(const conj&){};
-    //conj operator=(const conj){}
+  //  conjunction();
+   // conjunction(const conjunction&){};
+    //conjunction operator=(const conjunction){}
 };
 class impl:public bin_op
 {

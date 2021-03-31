@@ -3,8 +3,9 @@
 #include <cmath>
 #include <time.h>
 #include <memory>
+#include <boost/dynamic_bitset.hpp>
 #include "logic_expressions.h"
-//#include <boost/dynamic_bitset.hpp>
+
 
 using namespace std;
 
@@ -49,7 +50,7 @@ bool check_table(vector<vector<bool>> sol)
 void gen_func_with_sparse_table()
 {
     ofstream ofs("data.txt");
-    shared_ptr<conj> root=make_shared<conj>(make_shared<var>(NULL, ""), make_shared<var>(NULL, ""));
+    shared_ptr<conjunction> root = make_shared<conjunction> (make_shared<var> (NULL, ""), make_shared<var> (NULL, ""));
     while (true)
     {
         vars.clear();
@@ -106,28 +107,30 @@ void gen_func_with_sparse_table()
 
 void shuffle_table()
 {
-//line 1 - ignore
-//line 2 - get min number - n
-//line 3 - get labels
+//line 1, 2 - ignore
+//line 3 - get rotation number
+//line 4 - get yes-no (n = min)
+//line 5 - get labels
 //n lines - ignore
 //until the end:
     //1 line - empty, ignore
     //several (<=n) nonempty lines - shuffle lines and cols
 
 }
-
+using boost::dynamic_bitset;
 int main()
 {
 
     fill_op_symb();
     srand(time(0));
-    catalogue.push_back(make_shared<conj>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
-    catalogue.push_back(make_shared<disj>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
+    catalogue.push_back(make_shared<conjunction>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
+    catalogue.push_back(make_shared<disjunction>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<impl>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<eq>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<neg>(make_shared<var>(NULL, "")));
 
-    gen_func_with_sparse_table();
-
+    //gen_func_with_sparse_table();
+    //boost::dynamic_bitset<> a(8,19);
+    //cout << a << endl;
     return 0;
 }
