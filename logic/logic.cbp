@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="global.h" />
+		<Unit filename="logic_expressions.cpp" />
 		<Unit filename="logic_expressions.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

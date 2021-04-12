@@ -1,10 +1,6 @@
 #ifndef LOGIC_EXPRESSIONS_H_INCLUDED
 #define LOGIC_EXPRESSIONS_H_INCLUDED
-#include <vector>
-#include <cstdlib>
-#include <map>
-using namespace std;
-
+#include "global.h"
 enum op_style {slashes, words, typo, math, ampersand};
 enum op {op_and, op_or, op_not, op_eq, op_impl, op_fake};
 map<op, string> op_symb;
@@ -26,7 +22,7 @@ public:
     virtual void populate(int depth, float cut_chance)=0;
     virtual shared_ptr<expr> clone()=0;
     virtual int count_rotations()=0;
-    //virtual var operator=(const var){return *this;}
+    virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to)=0;
 };
 vector<shared_ptr<expr> > catalogue;
 shared_ptr<expr> pop_one(int depth, float cut_chance);
@@ -56,6 +52,7 @@ public:
     bin_op(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
     virtual ~bin_op(){}
     virtual op m_symb()=0;
+    virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to);
 protected:
     shared_ptr<expr> m_a;
     shared_ptr<expr> m_b;
@@ -71,6 +68,7 @@ public:
     virtual int count_rotations() {return (m_a->str()==m_b->str()?0:1)+m_a->count_rotations()+m_b->count_rotations();}
     commut_op(shared_ptr<expr> a, shared_ptr<expr> b):bin_op(a, b){};
     virtual op m_symb()=0;
+    virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to);
 protected:
     commut_op(){};
 };
@@ -78,6 +76,7 @@ protected:
 class var:public expr
 {
 public:
+    virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to);
     virtual bool value()
     {
         return *m_a;
@@ -203,6 +202,7 @@ private:
 class neg:public expr
 {
 public:
+    virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to);
     virtual int count_rotations() {return m_a->count_rotations();}
     virtual bool value()
     {
@@ -237,86 +237,9 @@ private:
 };
 
 
-void fill_op_symb()
-{
-    if (style == slashes)
-    {
-        op_symb[op_and] = " /\\ ";
-        op_symb[op_or] = " \\/ ";
-        op_symb[op_eq] = " = ";
-        op_symb[op_impl] = " -> ";
-        op_symb[op_not] = "!";
-        op_symb[op_fake] = "#";
-    }
-    else if (style == words)
-    {
-        op_symb[op_and] = " and ";
-        op_symb[op_or] = " or ";
-        op_symb[op_eq] = " equals ";
-        op_symb[op_impl] = " implies ";
-        op_symb[op_not] = "not ";
-        op_symb[op_fake] = "#";
-    }
-    else if (style == typo)
-    {
-        op_symb[op_and] = "∧";
-        op_symb[op_or] = "∨";
-        op_symb[op_eq] = "≡";
-        op_symb[op_impl] = "→";
-        op_symb[op_not] = "¬";
-        op_symb[op_fake] = "#";
-    }
-    else if (style == math)
-    {
-        op_symb[op_and] = "*";
-        op_symb[op_or] = "+";
-        op_symb[op_eq] = "=";
-        op_symb[op_impl] = "-";
-        op_symb[op_not] = "!";
-        op_symb[op_fake] = "#";
-    }
-    else if (style == ampersand)
-    {
-        op_symb[op_and] = " & ";
-        op_symb[op_or] = " v ";
-        op_symb[op_eq] = " = ";
-        op_symb[op_impl] = " -> ";
-        op_symb[op_not] = "!";
-        op_symb[op_fake] = "#";
-    }
-}
 vector<shared_ptr<var> > vars;
-shared_ptr<var> choose_var()
-{
-    if (rand()%5>0 and rand()%3<vars.size())
-    {
-        int which=rand()%(vars.size());
-        return vars[which];
-    }
-    else
-    {
-        vars.push_back(make_shared<var>(bool(rand()%2), string(1,vars.size()+'a')));
-        return (vars[vars.size()-1]);
-    }
-}
-
-shared_ptr<expr> pop_one(int depth, float cut_chance)
-{
-    if ((rand()%100)<(cut_chance*100) or depth==0)
-    {
-        return choose_var();
-    }
-    else//not the time to stop, we need to generate deeper
-    {
-        shared_ptr<expr> tmp=catalogue[rand()%catalogue.size()]->clone();
-        tmp->populate(depth-1, cut_chance);
-        return tmp;
-    }
-}
-void make_vars(int n)
-{
-    vars.clear();
-    for (int i(0);i<n; i++)
-        vars.push_back(make_shared<var>(true, string(1,vars.size()+'a')));
-}
+void make_vars(int n);
+shared_ptr<expr> pop_one(int depth, float cut_chance);
+shared_ptr<var> choose_var();
+void fill_op_symb();
 #endif // LOGIC_EXPRESSIONS_H_INCLUDED

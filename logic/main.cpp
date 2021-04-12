@@ -1,13 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <cmath>
-#include <time.h>
-#include <memory>
-#include <boost/dynamic_bitset.hpp>
 #include "logic_expressions.h"
-
-
-using namespace std;
 
 const bool all_parentheses = true;
 op_style style = words;
@@ -117,7 +108,7 @@ void shuffle_table()
     //several (<=n) nonempty lines - shuffle lines and cols
 
 }
-using boost::dynamic_bitset;
+
 int main()
 {
 
@@ -139,7 +130,7 @@ int main()
     {
         rot_mask = dynamic_bitset<>(rot_qtty, i);
         auto cur_rot(a);
-        cur_rot->(make_rot(rot_mask));//TODO: implement in bin_op, commut_op
+        cur_rot->make_rot(rot_mask, 0, rot_qtty-1);//TODO: implement in bin_op, commut_op
     }
     return 0;
 }

@@ -1,22 +1,10 @@
-((a→b)∧c≡¬c∨(d≡c))∧(a∨¬(a∨e))
-
-6 26
+((a≡b)→c)∧¬(c∧a)∧(c∧b→(d≡b)→(c∨e)∧(b∧e))
+make_shared<conjunction>(make_shared<conjunction>(make_shared<impl>(make_shared<eq>(vars[0], vars[1]), vars[2]), make_shared<neg>(make_shared<conjunction>(vars[2], vars[0]))), make_shared<impl>(make_shared<impl>(make_shared<conjunction>(vars[2], vars[1]), make_shared<eq>(vars[3], vars[1])), make_shared<conjunction>(make_shared<disjunction>(vars[2], vars[4]), make_shared<conjunction>(vars[1], vars[4]))))
+9
+5 27
 a b c d e 
-1	0	1	0	0	1	
-0	0	1	1	0	1	
-0	1	1	1	0	1	
-1	1	1	1	0	1	
-1	0	1	0	1	1	
-1	1	1	1	1	1	
-
-
-		1	1	
-1	1	1	1	
-1		1		1
-
-1		1		
-		1	1	
-	1	1	1	
-1	1	1	1	
-
-//возможно это всё неправильно, я удалял строку единиц... надо ещё раз переделывать
+0 1 1 0 0 1 
+0 1 0 0 1 1 
+0 1 1 0 1 1 
+0 1 0 1 1 1 
+0 1 1 1 1 1 
