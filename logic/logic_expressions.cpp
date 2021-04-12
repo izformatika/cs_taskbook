@@ -1,4 +1,10 @@
 #include "logic_expressions.h"
+map<op, string> op_symb;
+op_style style;
+bool allbraces = false;
+vector<shared_ptr<expr> > catalogue;
+vector<shared_ptr<var> > vars;
+
 void fill_op_symb()
 {
     if (style == slashes)
@@ -80,3 +86,14 @@ void make_vars(int n)
     for (int i(0);i<n; i++)
         vars.push_back(make_shared<var>(true, string(1,vars.size()+'a')));
 }
+
+void neg::make_rot(dynamic_bitset<>cur_mask, int from, int to){}
+void var::make_rot(dynamic_bitset<>cur_mask, int from, int to)
+{}
+//TODO
+void bin_op::make_rot(dynamic_bitset<>cur_mask, int from, int to)
+{}
+
+void commut_op::make_rot(dynamic_bitset<>cur_mask, int from, int to)
+{}
+

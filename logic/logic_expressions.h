@@ -3,11 +3,11 @@
 #include "global.h"
 enum op_style {slashes, words, typo, math, ampersand};
 enum op {op_and, op_or, op_not, op_eq, op_impl, op_fake};
-map<op, string> op_symb;
+extern map<op, string> op_symb;
 
 extern op_style style;
 
-bool allbraces = false;
+extern bool allbraces;
 
 class expr
 {
@@ -23,8 +23,9 @@ public:
     virtual shared_ptr<expr> clone()=0;
     virtual int count_rotations()=0;
     virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to)=0;
+    expr(){}
 };
-vector<shared_ptr<expr> > catalogue;
+extern vector<shared_ptr<expr> > catalogue;
 shared_ptr<expr> pop_one(int depth, float cut_chance);
 class bin_op: public expr
 {
@@ -237,7 +238,7 @@ private:
 };
 
 
-vector<shared_ptr<var> > vars;
+extern vector<shared_ptr<var> > vars;
 void make_vars(int n);
 shared_ptr<expr> pop_one(int depth, float cut_chance);
 shared_ptr<var> choose_var();

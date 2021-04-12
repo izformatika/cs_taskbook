@@ -1,7 +1,6 @@
 #include "logic_expressions.h"
 
 const bool all_parentheses = true;
-op_style style = words;
 
 
 bool check_table(vector<vector<bool>> sol)
@@ -111,7 +110,7 @@ void shuffle_table()
 
 int main()
 {
-
+    style = words;
     fill_op_symb();
     srand(time(0));
     catalogue.push_back(make_shared<conjunction>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
