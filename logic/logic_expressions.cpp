@@ -1,7 +1,6 @@
 #include "logic_expressions.h"
 map<op, string> op_symb;
 op_style style;
-bool allbraces = false;
 vector<shared_ptr<expr> > catalogue;
 vector<shared_ptr<var> > vars;
 
@@ -87,13 +86,29 @@ void make_vars(int n)
         vars.push_back(make_shared<var>(true, string(1,vars.size()+'a')));
 }
 
-void neg::make_rot(dynamic_bitset<>cur_mask, int from, int to){}
+void neg::make_rot(dynamic_bitset<>cur_mask, int from, int to)
+{
+    m_a->make_rot(cur_mask,from+1,to);
+}
 void var::make_rot(dynamic_bitset<>cur_mask, int from, int to)
-{}
-//TODO
+{
+    //cout << "";
+    /*nothing*/
+    }
 void bin_op::make_rot(dynamic_bitset<>cur_mask, int from, int to)
-{}
+{
+    //cout << m_a->wrap() << " # " << m_b->wrap() << endl;
+    int rot_a=m_a->count_rotations();
+    m_a->make_rot(cur_mask,from,to-rot_a-1);
+    m_b->make_rot(cur_mask,to-rot_a,to);
+}
 
 void commut_op::make_rot(dynamic_bitset<>cur_mask, int from, int to)
-{}
+{
+    //cout << m_a->wrap() << " # " << m_b->wrap() << endl;
+    int rot_a=m_a->count_rotations();
+    m_a->make_rot(cur_mask,from,to-rot_a-1);
+    m_b->make_rot(cur_mask,to-rot_a,to);
+    if (cur_mask[from+rot_a]) swap(m_a, m_b);
+}
 

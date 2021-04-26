@@ -1,6 +1,6 @@
 #include "logic_expressions.h"
 
-const bool all_parentheses = true;
+bool allbraces;
 
 
 bool check_table(vector<vector<bool>> sol)
@@ -110,7 +110,8 @@ void shuffle_table()
 
 int main()
 {
-    style = words;
+    allbraces = false;
+    style = ampersand;
     fill_op_symb();
     srand(time(0));
     catalogue.push_back(make_shared<conjunction>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
@@ -120,16 +121,22 @@ int main()
     catalogue.push_back(make_shared<neg>(make_shared<var>(NULL, "")));
 
     //gen_func_with_sparse_table();
+
     make_vars(5);
     auto a = make_shared<conjunction>(make_shared<conjunction>(make_shared<impl>(make_shared<eq>(vars[0], vars[1]), vars[2]), make_shared<neg>(make_shared<conjunction>(vars[2], vars[0]))), make_shared<impl>(make_shared<impl>(make_shared<conjunction>(vars[2], vars[1]), make_shared<eq>(vars[3], vars[1])), make_shared<conjunction>(make_shared<disjunction>(vars[2], vars[4]), make_shared<conjunction>(vars[1], vars[4]))));
-    cout << a->str() << endl;
+
+    //make_vars(2);
+    //auto a = make_shared<conjunction>(make_shared<impl>(vars[0],vars[1]),make_shared<eq>(vars[0], vars[1]));
+    //cout << a->wrap() << endl;
     int rot_qtty=a->count_rotations();
     dynamic_bitset<> rot_mask(rot_qtty,0);
-    for (int i(0); i<pow(2, rot_qtty); i++)
+    for (int i(0); i<10/*pow(2, rot_qtty)*/; i++)
     {
         rot_mask = dynamic_bitset<>(rot_qtty, i);
-        auto cur_rot(a);
-        cur_rot->make_rot(rot_mask, 0, rot_qtty-1);//TODO: implement in bin_op, commut_op
+        auto cur_rot = a->clone();
+        cur_rot->make_rot(rot_mask, 0, rot_qtty-1);
+        cout << cur_rot->wrap() << endl;
+        //cout << rot_mask << " " << cur_rot->wrap() <<endl<<endl;
     }
     return 0;
 }

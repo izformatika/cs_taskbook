@@ -20,10 +20,12 @@ public:
     virtual string wrap(bool hide=true)=0;
     virtual int priority()=0;
     virtual void populate(int depth, float cut_chance)=0;
-    virtual shared_ptr<expr> clone()=0;
     virtual int count_rotations()=0;
     virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to)=0;
     expr(){}
+    virtual shared_ptr<expr>clone()=0;
+private:
+    expr(const expr&){}
 };
 extern vector<shared_ptr<expr> > catalogue;
 shared_ptr<expr> pop_one(int depth, float cut_chance);
@@ -54,22 +56,26 @@ public:
     virtual ~bin_op(){}
     virtual op m_symb()=0;
     virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to);
+    virtual shared_ptr<expr>clone()=0;
 protected:
     shared_ptr<expr> m_a;
     shared_ptr<expr> m_b;
-
-protected:
     bin_op(){};
+private:
+    bin_op(const bin_op&){}
 };
 
 class commut_op: public bin_op
 {
 public:
     virtual bool value()=0;
-    virtual int count_rotations() {return (m_a->str()==m_b->str()?0:1)+m_a->count_rotations()+m_b->count_rotations();}
+    virtual int count_rotations() {return (m_a->str()==m_b->str()?0:1/*TODO: make better comparisons*/)+m_a->count_rotations()+m_b->count_rotations();}
     commut_op(shared_ptr<expr> a, shared_ptr<expr> b):bin_op(a, b){};
     virtual op m_symb()=0;
     virtual void make_rot(dynamic_bitset<>cur_mask, int from, int to);
+    virtual shared_ptr<expr>clone()=0;
+private:
+    commut_op(const commut_op&){};
 protected:
     commut_op(){};
 };
@@ -98,15 +104,20 @@ public:
     virtual ~var(){}
     virtual int priority() {return 6;}
     virtual void populate(int depth, float cut_chance){};
-    virtual shared_ptr<expr> clone(){return make_shared<var>(m_a,m_name);};
     var& operator=(var a) {*m_a = a.value(); return *this;}
     var& operator=(bool a){*m_a = a; return *this;}
     virtual int count_rotations() {return 0;}
+
+    virtual shared_ptr<expr>clone()
+    {
+        auto r = shared_ptr<var>(new var(m_a, m_name));
+        return dynamic_pointer_cast<expr>(r);
+    }
 private:
+    var(const var&){};
     shared_ptr<bool> m_a;
     string m_name;
     var(){};
-    var(const var&){};
 };
 
 class disjunction:public commut_op
@@ -125,11 +136,15 @@ public:
     {
         return "make_shared<disjunction>(" + m_a->fulltext()+", " + m_b->fulltext()+")";
     }
-    virtual shared_ptr<expr> clone() {return make_shared<disjunction>(m_a,m_b);};
+    virtual shared_ptr<expr>clone()
+    {
+        auto r = shared_ptr<disjunction>(new disjunction(m_a->clone(), m_b->clone()));
+        return dynamic_pointer_cast<expr>(r);
+    }
     virtual op m_symb() {return op_or;};
 private:
-    //disjunction(){};
-//    disjunction(const disjunction&){};
+    disjunction(){};
+    disjunction(const disjunction&){};
     //disjunction operator=(const disjunction){}
 };
 class conjunction:public commut_op
@@ -147,11 +162,16 @@ public:
 conjunction(shared_ptr<expr>  a, shared_ptr<expr>  b):commut_op(a,b){};
  //   conjunction(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){}
  //   ~conjunction(){}
-    virtual shared_ptr<expr> clone() {return make_shared<conjunction>(m_a,m_b);};
+    virtual shared_ptr<expr>clone()
+    {
+        auto r = shared_ptr<conjunction>(new conjunction(m_a->clone(), m_b->clone()));
+        return dynamic_pointer_cast<expr>(r);
+    }
     virtual op m_symb() {return op_and;};
 private:
+
   //  conjunction();
-   // conjunction(const conjunction&){};
+    conjunction(const conjunction&){};
     //conjunction operator=(const conjunction){}
 };
 class impl:public bin_op
@@ -172,10 +192,13 @@ public:
  //   impl(shared_ptr<expr> a, shared_ptr<expr> b):m_a(a),m_b(b){};
   //  virtual ~impl(){}
     virtual int priority() {return 2;}
-    virtual shared_ptr<expr> clone() {return make_shared<impl>(m_a,m_b);};
+    virtual shared_ptr<expr>clone()
+    {
+        auto r = shared_ptr<impl>(new impl(m_a->clone(), m_b->clone()));
+        return dynamic_pointer_cast<expr>(r);
+    }
 private:
-    //impl(){};
-    //impl(const impl&){};
+    impl(const impl&){};
     //impl operator=(const impl){};
 };
 class eq:public commut_op
@@ -194,10 +217,13 @@ public:
     eq(shared_ptr<expr> a, shared_ptr<expr> b):commut_op(a,b) {}
   //  virtual ~eq(){}
     virtual int priority() {return 1;}
-    virtual shared_ptr<expr> clone() {return make_shared<eq>(m_a,m_b);};
+    virtual shared_ptr<expr>clone()
+    {
+        auto r = shared_ptr<eq>(new eq(m_a->clone(), m_b->clone()));
+        return dynamic_pointer_cast<expr>(r);
+    }
 private:
-    //eq(){};
-    //eq(const impl&){};
+    eq(const impl&){};
 
 };
 class neg:public expr
@@ -229,10 +255,13 @@ public:
     {
         m_a=pop_one(depth, cut_chance);
     }
-    virtual shared_ptr<expr> clone() {return make_shared<neg>(m_a);};
+    virtual shared_ptr<expr>clone()
+    {
+        auto r = shared_ptr<neg>(new neg(m_a->clone()));
+        return dynamic_pointer_cast<expr>(r);
+    }
 private:
     shared_ptr<expr> m_a;
-    neg(){};
     neg(const neg&){};
     //neg operator=(const neg){};
 };

@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <map>
 #include <boost/dynamic_bitset.hpp>
+#include <memory>
 
 using std::cout;
 using std::endl;
@@ -21,6 +22,7 @@ using boost::dynamic_bitset;
 using std::to_string;
 using std::make_shared;
 using std::ofstream;
+using std::dynamic_pointer_cast;
 
 
 
