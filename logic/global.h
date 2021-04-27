@@ -6,10 +6,12 @@
 #include <time.h>
 #include <memory>
 #include <vector>
+#include <iomanip>
 #include <cstdlib>
 #include <map>
 #include <boost/dynamic_bitset.hpp>
 #include <memory>
+#include <random>
 
 using std::cout;
 using std::endl;
@@ -22,7 +24,11 @@ using boost::dynamic_bitset;
 using std::to_string;
 using std::make_shared;
 using std::ofstream;
+using std::ifstream;
+using std::stringstream;
 using std::dynamic_pointer_cast;
+using std::mt19937;
+using std::uniform_int_distribution;
 
 
 

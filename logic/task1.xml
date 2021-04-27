@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8"?><quiz><question type="category"><category><text>top/!!импорт-экспорт Скорцезе</text></category><info format="moodle_auto_format"><text></text></info></question>
+<question type="shortanswer">
+<name>
+<text>00</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & ((b -> c) & (c -> d) = a & a v (a v b))
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td>0</td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td>0</td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td> </td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>ebdac</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>01</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & ((b -> c) & (c -> d) = b v a v a & a)
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>dacbe</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>02</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((c -> d) & (b -> c) = a v b v a & a) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td> </td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td>0</td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>edbac</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>03</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+(a v b v a & a = (c -> d) & (b -> c)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td>0</td><td> </td><td> </td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td> </td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>eacbd</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>04</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((b -> c) & (c -> d) = a v b v a & a) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td>0</td><td> </td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>badce</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>05</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((c -> d) & (b -> c) = a & a v (a v b)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td> </td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>dacbe</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>06</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+(a & a v (a v b) = (b -> c) & (c -> d)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>0</td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td> </td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>bdcea</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>07</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & ((c -> d) & (b -> c) = a v b v a & a)
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>cedba</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>08</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+(a & a v (b v a) = (b -> c) & (c -> d)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td>0</td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>dcbea</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>09</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & (a & a v (b v a) = (c -> d) & (b -> c))
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>becad</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>10</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((c -> d) & (b -> c) = a & a v (a v b)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>dbeac</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>11</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & ((b -> c) & (c -> d) = b v a v a & a)
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>bdcae</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>12</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+(a v b v a & a = (c -> d) & (b -> c)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>dceba</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>13</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & (a & a v (a v b) = (b -> c) & (c -> d))
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>0</td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td>0</td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>dcbea</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>14</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((c -> d) & (b -> c) = a v b v a & a) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td> </td><td>0</td><td> </td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>beadc</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>15</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((c -> d) & (b -> c) = a & a v (b v a)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td> </td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td> </td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>adceb</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>16</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((c -> d) & (b -> c) = a & a v (b v a)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>dbeca</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>17</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & ((b -> c) & (c -> d) = b v a v a & a)
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td> </td><td> </td><td> </td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td>0</td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td>0</td><td>1</td></tr>
+<tr><td> </td><td>0</td><td> </td><td> </td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>daecb</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>18</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+((c -> d) & (b -> c) = a & a v (a v b)) & e
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>bedca</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+<question type="shortanswer">
+<name>
+<text>19</text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>Логическая функция F задаётся выражением:<br> 
+e & (a & a v (b v a) = (b -> c) & (c -> d))
+<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>
+Определите, какому столбцу таблицы истинности соответствует каждая из переменных a, b, c, d, e.
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>переменная 3</th><th>переменная 4</th><th>переменная 5</th><th>значение функции</th></tr>
+<tr><td>?</td><td>?</td><td>?</td><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td> </td><td> </td><td> </td><td>0</td><td>1</td></tr>
+<tr><td>0</td><td> </td><td>0</td><td>0</td><td> </td><td>1</td></tr>
+<tr><td> </td><td> </td><td>0</td><td> </td><td> </td><td>1</td></tr>
+<tr><td>0</td><td> </td><td> </td><td>0</td><td>0</td><td>1</td></tr>
+</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>
+<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:
+<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>
+<tr><tr><td>?</td><td>?</td><td>F</td></tr>
+<tr><td>0</td><td>1</td><td>0</td></tr>
+</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text></text>
+</generalfeedback>
+<defaultgrade>1.0000000</defaultgrade>
+<penalty>0.3333333</penalty>
+<hidden>0</hidden>
+<idnumber></idnumber>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>beadc</text>
+<feedback format="html">
+<text></text>
+</feedback>
+</answer>
+</question>
+
+</quiz>

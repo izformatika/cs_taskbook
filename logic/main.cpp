@@ -1,4 +1,5 @@
 #include "logic_expressions.h"
+#include <boost/algorithm/string.hpp>
 
 bool allbraces;
 
@@ -80,8 +81,8 @@ void gen_func_with_sparse_table()
             ofs << endl;
             for (auto i: sol)
             {
-                for (auto j: i)
-                    ofs << j << " ";
+                for (int j(0); j<i.size()-1; j++)
+                    ofs << i[j] << " ";
                 ofs << endl;
             }
             break;
@@ -95,8 +96,165 @@ void gen_func_with_sparse_table()
     */
 }
 
+std::string ReplaceString(std::string subject, const std::string& search,
+                          const std::string& replace) {
+    size_t pos = 0;
+    while ((pos = subject.find(search, pos)) != std::string::npos) {
+         subject.replace(pos, search.length(), replace);
+         pos += replace.length();
+    }
+    return subject;
+}
+
+bool shuffled_ok(vector<int> ord)
+{
+    for (int i(1); i<ord.size(); i++)
+        if (ord[i]==ord[i-1]+1) return false;
+    return true;
+}
+
+void moodle_write_question(ofstream &ofs, int id, string qtext, string ans)
+{
+    ofs << "<question type=\"shortanswer\">" << endl
+                <<"<name>" << endl
+                <<"<text>" << std::fixed << std::setw(2) <<std::setfill('0')<< id << "</text>" << endl
+                <<"</name>" << endl
+                <<"<questiontext format=\"html\">" << endl
+                <<"<text><![CDATA[<p>" << qtext
+                <<"</p>]]></text>" << endl
+                <<"</questiontext>" << endl
+                <<"<generalfeedback format=\"html\">" << endl
+                <<"<text></text>" << endl
+                <<"</generalfeedback>" << endl
+                <<"<defaultgrade>1.0000000</defaultgrade>" << endl
+                <<"<penalty>0.3333333</penalty>" << endl
+                <<"<hidden>0</hidden>" << endl
+                <<"<idnumber></idnumber>" << endl
+                <<"<usecase>0</usecase>" << endl
+                <<"<answer fraction=\"100\" format=\"moodle_auto_format\">" << endl
+                <<"<text>" << ans << "</text>" << endl
+                  <<"<feedback format=\"html\">"<<endl
+                    <<"<text></text>" << endl
+                  <<"</feedback>" << endl
+                <<"</answer>" <<endl
+              <<"</question>" <<endl << endl;
+
+}
+
+void moodle_header(ofstream &ofs)
+{
+    ofs<< "<?xml version=\"1.0\" encoding=\"UTF-8\"?><quiz><question type=\"category\"><category>"
+      << "<text>top/!!импорт-экспорт Скорцезе</text>"
+    <<"</category><info format=\"moodle_auto_format\"><text></text></info></question>" << endl;
+}
+
 void shuffle_table()
 {
+    int tasks_from_each(20);
+    mt19937 mt(time(0));
+
+    ifstream ifs("data.txt");
+    ofstream ofs("task.xml");
+    /*TODO: insert manually from file (no eval yet)*/
+    make_vars(5);
+    auto logexpr_l = make_shared<conjunction>(make_shared<conjunction>(make_shared<disjunction>(make_shared<disjunction>(vars[0], vars[1]), make_shared<impl>(vars[1], vars[2])), make_shared<disjunction>(make_shared<conjunction>(vars[2], vars[2]), make_shared<impl>(vars[0], vars[3]))), make_shared<disjunction>(make_shared<neg>(make_shared<eq>(vars[0], vars[4])), make_shared<impl>(make_shared<neg>(vars[3]), make_shared<eq>(vars[2], vars[4]))));
+
+    int rot_qtty=logexpr_l->count_rotations();
+    uniform_int_distribution<> uid(0, pow(2, rot_qtty)-1);
+
+    moodle_header(ofs);
+    string buf;
+    string logexpr;
+    getline(ifs, logexpr);
+    getline(ifs, buf);
+    int yes(0), no(0);
+    ifs >> rot_qtty >> yes >> no;
+    //cout << rot_qtty << " " << yes << " " << no << endl;
+    getline(ifs, buf);
+
+    getline(ifs, buf);
+    vector<string> labels;
+    buf = ReplaceString(ReplaceString(buf, " \r\n", "\r\n"), "  ", " ");
+    boost::split(labels, buf, boost::is_any_of(" "));
+    if (labels[labels.size()-1] == "") labels.erase(labels.end()-1);
+
+    bool first_gone(false);
+    int tasks(0);
+
+    while (!ifs.eof())
+    {
+        vector<vector<int>> values;
+        while (true)
+        {
+            getline(ifs, buf);
+            if (buf == "") break;
+            values.push_back(vector<int>(labels.size(), 0));
+            for (int i(0); i<buf.size(); i+=2) values[values.size()-1][i/2]=(buf[i]=='-'?(-1):(buf[i]-'0'));
+        }
+        if (!first_gone) {first_gone=true; continue;}
+        /*for (auto i: values){
+            for (auto j: i) cout << j << " "; cout << endl;
+            }*/
+        for (int t(0); t<tasks_from_each; t++)
+        {
+        auto cur_logexpr = logexpr_l->clone();
+
+        dynamic_bitset<> rot_mask(rot_qtty,uid(mt));
+        cur_logexpr->make_rot(rot_mask, 0, rot_qtty-1);
+        logexpr = cur_logexpr->wrap();
+
+        vector<int> ord(labels.size());
+        for (int i(0); i<labels.size(); i++) ord[i]=i;
+
+        do
+        random_shuffle(ord.begin(), ord.end());
+        while (!shuffled_ok(ord));
+
+        string ans;
+        for (auto i: ord) ans+=labels[i];
+        //cout << ans << endl;
+
+        vector<vector<char>> sh_values(values.size(), vector<char>(labels.size(), 0));
+        for (int row(0); row<values.size(); row++)
+        for (int col(0); col<labels.size(); col++)
+            sh_values[row][col] = (values[row][ord[col]]==-1?' ':values[row][ord[col]]+'0');
+        /*for (auto i: sh_values){
+            for (auto j: i) cout << j << " "; cout << endl;
+            }*/
+        random_shuffle(sh_values.begin(), sh_values.end());
+        stringstream ss;
+        ss << "Логическая функция F задаётся выражением:<br> " << endl << logexpr << endl;
+        ss << "<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>" << endl <<
+            "Определите, какому столбцу таблицы истинности соответствует каждая из переменных ";
+        for (int i(0); i<labels.size()-1; i++) ss << labels[i] << ", "; ss << labels[labels.size()-1] << "." << endl;
+        ss << "<table border=1><tr>";
+        for (int i(0); i<labels.size(); i++) ss << "<th>переменная " << i+1 << "</th>";
+        ss << "<th>значение функции</th></tr>"<<endl<<"<tr>";
+        for (int i(0); i<labels.size(); i++) ss << "<td>?</td>";
+        ss << "<td>F</td></tr>"<<endl;
+        for (auto row: sh_values)
+        {
+            ss << "<tr>";
+            for (auto v: row)
+                ss << "<td>" << v << "</td>";
+            ss << "<td>" << (yes<no) << "</td>";
+
+            ss << "</tr>" << endl;
+        }
+        ss << "</table>В ответе напишите буквы переменных в том порядке, в котором идут соответствующие им столбцы (сначала буква, соответствующая первому столбцу; затем буква, соответствующая второму столбцу, и т. д.)." <<
+        " Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.<br>" << endl;
+        ss << "<i>Пример. Пусть задано выражение x → y, зависящее от двух переменных x и y, и фрагмент таблицы истинности:" << endl;
+        ss << "<table border=1><tr><th>переменная 1</th><th>переменная 2</th><th>значение функции</th></tr>"<<endl<<"<tr>";
+        ss << "<tr><td>?</td><td>?</td><td>F</td></tr>" << endl;
+        ss << "<tr><td>0</td><td>1</td><td>0</td></tr>" << endl;
+        ss << "</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>" << endl;
+
+
+        moodle_write_question(ofs, tasks, ss.str(), ans);
+        tasks++;
+        }
+    }
+    ofs << "</quiz>" << endl;
 //line 1, 2 - ignore
 //line 3 - get rotation number
 //line 4 - get yes-no (n = min)
@@ -108,35 +266,39 @@ void shuffle_table()
 
 }
 
+void test_rotations()
+{
+    make_vars(5);
+    auto a = make_shared<conjunction>(make_shared<disjunction>(make_shared<impl>(make_shared<eq>(vars[0], vars[1]), make_shared<disjunction>(vars[1], vars[0])), make_shared<impl>(make_shared<disjunction>(vars[0], vars[2]), make_shared<eq>(vars[2], vars[0]))), make_shared<disjunction>(make_shared<disjunction>(make_shared<disjunction>(vars[0], vars[3]), make_shared<impl>(vars[1], vars[3])), make_shared<impl>(vars[1], make_shared<impl>(vars[1], vars[4]))));
+    cout << a->wrap() << endl;
+    int rot_qtty=a->count_rotations();
+    cout << rot_qtty << endl;
+    dynamic_bitset<> rot_mask(rot_qtty,0);
+    for (int i(0); i<pow(2, rot_qtty); i++)
+    {
+        rot_mask = dynamic_bitset<>(rot_qtty, i);
+        auto cur_rot = a->clone();
+        cur_rot->make_rot(rot_mask, 0, rot_qtty-1);
+        cout << cur_rot->wrap() << endl;
+    }
+}
+
 int main()
 {
     allbraces = false;
     style = ampersand;
     fill_op_symb();
     srand(time(0));
+
     catalogue.push_back(make_shared<conjunction>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<disjunction>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<impl>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<eq>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<neg>(make_shared<var>(NULL, "")));
 
-    //gen_func_with_sparse_table();
+    gen_func_with_sparse_table();
 
-    make_vars(5);
-    auto a = make_shared<conjunction>(make_shared<conjunction>(make_shared<impl>(make_shared<eq>(vars[0], vars[1]), vars[2]), make_shared<neg>(make_shared<conjunction>(vars[2], vars[0]))), make_shared<impl>(make_shared<impl>(make_shared<conjunction>(vars[2], vars[1]), make_shared<eq>(vars[3], vars[1])), make_shared<conjunction>(make_shared<disjunction>(vars[2], vars[4]), make_shared<conjunction>(vars[1], vars[4]))));
 
-    //make_vars(2);
-    //auto a = make_shared<conjunction>(make_shared<impl>(vars[0],vars[1]),make_shared<eq>(vars[0], vars[1]));
-    //cout << a->wrap() << endl;
-    int rot_qtty=a->count_rotations();
-    dynamic_bitset<> rot_mask(rot_qtty,0);
-    for (int i(0); i<10/*pow(2, rot_qtty)*/; i++)
-    {
-        rot_mask = dynamic_bitset<>(rot_qtty, i);
-        auto cur_rot = a->clone();
-        cur_rot->make_rot(rot_mask, 0, rot_qtty-1);
-        cout << cur_rot->wrap() << endl;
-        //cout << rot_mask << " " << cur_rot->wrap() <<endl<<endl;
-    }
+    //shuffle_table();
     return 0;
 }
