@@ -1,5 +1,10 @@
 #include "logic_expressions.h"
 #include <boost/algorithm/string.hpp>
+#define PIMPL shared_ptr<impl>
+#define POR shared_ptr<disjunction>
+#define PAND shared_ptr<conjunction>
+#define PNOT shared_ptr<neg>
+#define PEQ shared_ptr<eq>
 
 bool allbraces;
 
@@ -148,6 +153,24 @@ void moodle_header(ofstream &ofs)
     <<"</category><info format=\"moodle_auto_format\"><text></text></info></question>" << endl;
 }
 
+struct task_src
+{
+    shared_ptr<expr> exp;
+    vector<string> part_truth_table;
+    task_src(shared_ptr<expr> e, vector<string> ptt):exp(e), part_truth_table(ptt) {}
+    task_src(){}
+};
+/*
+void make_task_from_file()
+{
+
+}
+
+void make_task_on_the_fly()
+{
+
+}*/
+
 void shuffle_table()
 {
     int tasks_from_each(20);
@@ -283,6 +306,22 @@ void test_rotations()
     }
 }
 
+
+void polyakov_3(int id)
+{
+    make_vars(3);
+    map<int, task_src> cat;
+    cat[175]=task_src (dynamic_pointer_cast<expr> (PIMPL(new impl(POR(new disjunction(vars[2], vars[1])),PEQ(new eq(vars[0], vars[2]))))),{"0 -1 0", "0 -1 -1"});
+
+    if (id == 175) cout << cat[175].exp->wrap() << endl;
+    /*auto p178=PIMPL(POR(PNOT(vars[2]), PNOT(vars[1])), PEQ(vars[0], vars[2]));
+    vector<string> t178={"1 1 -1","1 -1 -1"};
+
+    auto p180=POR(PIMPL(POR(vars[1], vars[2]), vars[0]), PEQ(vars[0], vars[2]));
+    vector<string> t180={"0 0 -1", "0 -1 -1"};*/
+
+}
+
 int main()
 {
     allbraces = false;
@@ -296,9 +335,10 @@ int main()
     catalogue.push_back(make_shared<eq>(make_shared<var>(NULL, ""), make_shared<var>(NULL, "")));
     catalogue.push_back(make_shared<neg>(make_shared<var>(NULL, "")));
 
-    gen_func_with_sparse_table();
+    //gen_func_with_sparse_table();
 
 
-    //shuffle_table();
+    //shuffle_table
+    polyakov_3(175);
     return 0;
 }
