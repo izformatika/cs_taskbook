@@ -51,20 +51,9 @@ void gen_func_with_sparse_table()
     {
         vars.clear();
         root->populate(3,0.1);
-        int solutions(0);
-        vector<vector<bool>> sol(pow(2, vars.size()), vector<bool>(vars.size() + 1, false));
-        for (int mask(0); mask<pow(2, vars.size());mask++)
-        {
-            int curmask = mask;
-            for (size_t j(0); j<vars.size(); j++)
-            {
-                *vars[j] = curmask%2;
-                sol[mask][j] = curmask%2;
-                curmask /= 2;
-            }
-            //cout << root->wrap(false,false) << " = " << root->value() << endl;
-            if (root->value()==1) {solutions++;sol[mask][vars.size()] = true;}
-        }
+        vector<vector<bool>> sol;
+        int solutions=get_solutions(root, sol);
+
         int nos = pow(2, vars.size()) - solutions;
         bool needed = (solutions < nos);
         for (int i(0); i<sol.size(); i++)
@@ -156,45 +145,29 @@ void moodle_header(ofstream &ofs)
 struct task_src
 {
     shared_ptr<expr> exp;
-    vector<string> part_truth_table;
-    task_src(shared_ptr<expr> e, vector<string> ptt):exp(e), part_truth_table(ptt) {}
+    vector<vector<int>> part_truth_table;
+    vector<string> labels;
+    task_src(shared_ptr<expr> e, vector<vector<int>> ptt, vector<string> l):exp(e), part_truth_table(ptt), labels(l) {}
+    task_src(shared_ptr<expr> e, vector<vector<int>> ptt):exp(e), part_truth_table(ptt), labels(vector<string>(ptt[0].size(),"")) {for (int i(0); i<ptt[0].size(); i++)labels[i]=i+'a';}
     task_src(){}
 };
-/*
+void shuffle_write_table(task_src tsk, int yes, int no, int rot_qtty);
 void make_task_from_file()
 {
-
-}
-
-void make_task_on_the_fly()
-{
-
-}*/
-
-void shuffle_table()
-{
-    int tasks_from_each(20);
-    mt19937 mt(time(0));
-
     ifstream ifs("data.txt");
-    ofstream ofs("task.xml");
+
     /*TODO: insert manually from file (no eval yet)*/
     make_vars(5);
     auto logexpr_l = make_shared<conjunction>(make_shared<conjunction>(make_shared<disjunction>(make_shared<disjunction>(vars[0], vars[1]), make_shared<impl>(vars[1], vars[2])), make_shared<disjunction>(make_shared<conjunction>(vars[2], vars[2]), make_shared<impl>(vars[0], vars[3]))), make_shared<disjunction>(make_shared<neg>(make_shared<eq>(vars[0], vars[4])), make_shared<impl>(make_shared<neg>(vars[3]), make_shared<eq>(vars[2], vars[4]))));
 
-    int rot_qtty=logexpr_l->count_rotations();
-    uniform_int_distribution<> uid(0, pow(2, rot_qtty)-1);
+    int rot_qtty(logexpr_l->count_rotations());
+    vector<vector<bool>> sol(pow(2,vars.size()), vector<bool>(vars.size(), false));
+    int yes=get_solutions(logexpr_l, sol);
+    int nos = pow(2, vars.size()) - yes;
 
-    moodle_header(ofs);
     string buf;
-    string logexpr;
-    getline(ifs, logexpr);
     getline(ifs, buf);
-    int yes(0), no(0);
-    ifs >> rot_qtty >> yes >> no;
-    //cout << rot_qtty << " " << yes << " " << no << endl;
     getline(ifs, buf);
-
     getline(ifs, buf);
     vector<string> labels;
     buf = ReplaceString(ReplaceString(buf, " \r\n", "\r\n"), "  ", " ");
@@ -202,8 +175,6 @@ void shuffle_table()
     if (labels[labels.size()-1] == "") labels.erase(labels.end()-1);
 
     bool first_gone(false);
-    int tasks(0);
-
     while (!ifs.eof())
     {
         vector<vector<int>> values;
@@ -214,46 +185,78 @@ void shuffle_table()
             values.push_back(vector<int>(labels.size(), 0));
             for (int i(0); i<buf.size(); i+=2) values[values.size()-1][i/2]=(buf[i]=='-'?(-1):(buf[i]-'0'));
         }
+        cout << "go" << endl;
         if (!first_gone) {first_gone=true; continue;}
-        /*for (auto i: values){
+        shuffle_write_table(task_src(logexpr_l, values, labels), yes, nos, rot_qtty);
+    }
+}
+
+void make_task_on_the_fly()
+{
+    make_vars(3);
+    shared_ptr<expr> e = PIMPL(new impl(POR(new disjunction(vars[2], vars[1])),PEQ(new eq(vars[0], vars[2]))));
+    cout <<"go"<<endl;
+    task_src tsk(e,{{0, -1, 0}, {0, -1, -1}});
+
+    int rot_qtty(tsk.exp->count_rotations());
+    vector<vector<bool>> sol(pow(2,tsk.labels.size()), vector<bool>(tsk.labels.size(), false));
+    int yes=get_solutions(tsk.exp, sol);
+    int nos = pow(2, vars.size()) - yes;
+    shuffle_write_table(tsk, yes, nos, rot_qtty);
+}
+
+void shuffle_write_table(task_src tsk, int yes, int no, int rot_qtty)
+{
+//TODO: add checks for same answers
+    int tasks_from_each(20);
+    mt19937 mt(time(0));
+
+    ofstream ofs("task2.xml");
+
+    uniform_int_distribution<> uid(0, pow(2, rot_qtty)-1);
+
+    moodle_header(ofs);
+
+
+
+      /*for (auto i: values){
             for (auto j: i) cout << j << " "; cout << endl;
             }*/
         for (int t(0); t<tasks_from_each; t++)
         {
-        auto cur_logexpr = logexpr_l->clone();
+        auto cur_logexpr = tsk.exp->clone();
 
         dynamic_bitset<> rot_mask(rot_qtty,uid(mt));
         cur_logexpr->make_rot(rot_mask, 0, rot_qtty-1);
-        logexpr = cur_logexpr->wrap();
 
-        vector<int> ord(labels.size());
-        for (int i(0); i<labels.size(); i++) ord[i]=i;
+        vector<int> ord(tsk.labels.size());
+        for (int i(0); i<tsk.labels.size(); i++) ord[i]=i;
 
         do
         random_shuffle(ord.begin(), ord.end());
         while (!shuffled_ok(ord));
 
         string ans;
-        for (auto i: ord) ans+=labels[i];
+        for (auto i: ord) ans+=tsk.labels[i];
         //cout << ans << endl;
 
-        vector<vector<char>> sh_values(values.size(), vector<char>(labels.size(), 0));
-        for (int row(0); row<values.size(); row++)
-        for (int col(0); col<labels.size(); col++)
-            sh_values[row][col] = (values[row][ord[col]]==-1?' ':values[row][ord[col]]+'0');
+        vector<vector<char>> sh_values(tsk.part_truth_table.size(), vector<char>(tsk.labels.size(), 0));
+        for (int row(0); row<tsk.part_truth_table.size(); row++)
+        for (int col(0); col<tsk.labels.size(); col++)
+            sh_values[row][col] = (tsk.part_truth_table[row][ord[col]]==-1?' ':tsk.part_truth_table[row][ord[col]]+'0');
         /*for (auto i: sh_values){
             for (auto j: i) cout << j << " "; cout << endl;
             }*/
         random_shuffle(sh_values.begin(), sh_values.end());
         stringstream ss;
-        ss << "Логическая функция F задаётся выражением:<br> " << endl << logexpr << endl;
+        ss << "Логическая функция F задаётся выражением:<br> " << endl << cur_logexpr->wrap() << endl;
         ss << "<br>Дан частично заполненный фрагмент, содержащий неповторяющиеся строки таблицы истинности функции F.<br>" << endl <<
             "Определите, какому столбцу таблицы истинности соответствует каждая из переменных ";
-        for (int i(0); i<labels.size()-1; i++) ss << labels[i] << ", "; ss << labels[labels.size()-1] << "." << endl;
+        for (int i(0); i<tsk.labels.size()-1; i++) ss << tsk.labels[i] << ", "; ss << tsk.labels[tsk.labels.size()-1] << "." << endl;
         ss << "<table border=1><tr>";
-        for (int i(0); i<labels.size(); i++) ss << "<th>переменная " << i+1 << "</th>";
+        for (int i(0); i<tsk.labels.size(); i++) ss << "<th>переменная " << i+1 << "</th>";
         ss << "<th>значение функции</th></tr>"<<endl<<"<tr>";
-        for (int i(0); i<labels.size(); i++) ss << "<td>?</td>";
+        for (int i(0); i<tsk.labels.size(); i++) ss << "<td>?</td>";
         ss << "<td>F</td></tr>"<<endl;
         for (auto row: sh_values)
         {
@@ -273,9 +276,8 @@ void shuffle_table()
         ss << "</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>" << endl;
 
 
-        moodle_write_question(ofs, tasks, ss.str(), ans);
-        tasks++;
-        }
+        moodle_write_question(ofs, t, ss.str(), ans);
+
     }
     ofs << "</quiz>" << endl;
 //line 1, 2 - ignore
@@ -307,13 +309,13 @@ void test_rotations()
 }
 
 
-void polyakov_3(int id)
+void polyakov_3(string id)
 {
     make_vars(3);
-    map<int, task_src> cat;
-    cat[175]=task_src (dynamic_pointer_cast<expr> (PIMPL(new impl(POR(new disjunction(vars[2], vars[1])),PEQ(new eq(vars[0], vars[2]))))),{"0 -1 0", "0 -1 -1"});
-
-    if (id == 175) cout << cat[175].exp->wrap() << endl;
+    map<string, task_src> cat;
+    cat["p175"]=task_src (dynamic_pointer_cast<expr> (PIMPL(new impl(POR(new disjunction(vars[2], vars[1])),PEQ(new eq(vars[0], vars[2]))))),{"0 -1 0", "0 -1 -1"});
+//TODO: add other tasks, turn vector of string into vector of int, make catalogue global, think about vars
+    if (id == "p175") cout << cat["p175"].exp->wrap() << endl;
     /*auto p178=PIMPL(POR(PNOT(vars[2]), PNOT(vars[1])), PEQ(vars[0], vars[2]));
     vector<string> t178={"1 1 -1","1 -1 -1"};
 
@@ -339,6 +341,7 @@ int main()
 
 
     //shuffle_table
-    polyakov_3(175);
+    //polyakov_3(175);
+    make_task_on_the_fly();
     return 0;
 }

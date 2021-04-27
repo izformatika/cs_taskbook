@@ -112,3 +112,22 @@ void commut_op::make_rot(dynamic_bitset<>cur_mask, int from, int to)
     if (cur_mask[from+rot_a]) swap(m_a, m_b);
 }
 
+int get_solutions(shared_ptr<expr> root, vector<vector<bool>> &sol)
+{
+    sol = vector<vector<bool>>(pow(2, vars.size()), vector<bool>(vars.size() + 1, false));
+    int res(0);
+    for (int mask(0); mask<pow(2, vars.size());mask++)
+    {
+        int curmask = mask;
+        for (size_t j(0); j<vars.size(); j++)
+        {
+            *vars[j] = curmask%2;
+            sol[mask][j] = curmask%2;
+            curmask /= 2;
+        }
+        //cout << root->wrap(false,false) << " = " << root->value() << endl;
+        if (root->value()==1) {res++;sol[mask][vars.size()] = true;}
+    }
+    return res;
+}
+

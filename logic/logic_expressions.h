@@ -27,6 +27,7 @@ public:
 private:
     expr(const expr&){}
 };
+
 extern vector<shared_ptr<expr> > catalogue;
 shared_ptr<expr> pop_one(int depth, float cut_chance);
 class bin_op: public expr
@@ -272,4 +273,5 @@ void make_vars(int n);
 shared_ptr<expr> pop_one(int depth, float cut_chance);
 shared_ptr<var> choose_var();
 void fill_op_symb();
+int get_solutions(shared_ptr<expr> root, vector<vector<bool>> &sol);
 #endif // LOGIC_EXPRESSIONS_H_INCLUDED
