@@ -151,7 +151,7 @@ struct task_src
     task_src(shared_ptr<expr> e, vector<vector<int>> ptt):exp(e), part_truth_table(ptt), labels(vector<string>(ptt[0].size(),"")) {for (int i(0); i<ptt[0].size(); i++)labels[i]=i+'a';}
     task_src(){}
 };
-void shuffle_write_table(task_src tsk, int yes, int no, int rot_qtty);
+void shuffle_write_table(task_src tsk, int yes, int no, int rot_qtty, string task_from="");
 void make_task_from_file()
 {
     ifstream ifs("data.txt");
@@ -205,7 +205,7 @@ void make_task_on_the_fly()
     shuffle_write_table(tsk, yes, nos, rot_qtty);
 }
 
-void shuffle_write_table(task_src tsk, int yes, int no, int rot_qtty)
+void shuffle_write_table(task_src tsk, int yes, int no, int rot_qtty, string task_from)
 {
 //TODO: add checks for same answers
     int tasks_from_each(20);
@@ -274,6 +274,7 @@ void shuffle_write_table(task_src tsk, int yes, int no, int rot_qtty)
         ss << "<tr><td>?</td><td>?</td><td>F</td></tr>" << endl;
         ss << "<tr><td>0</td><td>1</td><td>0</td></tr>" << endl;
         ss << "</table>Тогда первому столбцу соответствует переменная y, а второму столбцу – переменная x. В ответе нужно написать: yx. </i>" << endl;
+        if (task_from!="") ss << "<i>Источник задания: " << task_from << "</i>";
 
 
         moodle_write_question(ofs, t, ss.str(), ans);
@@ -308,19 +309,56 @@ void test_rotations()
     }
 }
 
-
-void polyakov_3(string id)
+void polyakov(int v, string id)
 {
-    make_vars(3);
+    make_vars(v);
     map<string, task_src> cat;
-    cat["p175"]=task_src (dynamic_pointer_cast<expr> (PIMPL(new impl(POR(new disjunction(vars[2], vars[1])),PEQ(new eq(vars[0], vars[2]))))),{"0 -1 0", "0 -1 -1"});
-//TODO: add other tasks, turn vector of string into vector of int, make catalogue global, think about vars
-    if (id == "p175") cout << cat["p175"].exp->wrap() << endl;
-    /*auto p178=PIMPL(POR(PNOT(vars[2]), PNOT(vars[1])), PEQ(vars[0], vars[2]));
-    vector<string> t178={"1 1 -1","1 -1 -1"};
+    if (v == 3)
+    {
+    cat["p175"]=task_src (dynamic_pointer_cast<expr> (PIMPL(new impl(POR(new disjunction(vars[2], vars[1])),PEQ(new eq(vars[0], vars[2]))))),{{0, -1, 0}, {0, -1, -1}});
+    cat["p178"]=task_src(dynamic_pointer_cast<expr> (PIMPL(new impl(POR(new disjunction(PNOT(new neg(vars[2])), PNOT(new neg(vars[1])))), PEQ(new eq(vars[0], vars[2]))))), {{1, 1, -1},{1, -1, -1}});
+    cat["p180"]=task_src(dynamic_pointer_cast<expr>(POR(new disjunction(PIMPL(new impl(POR(new disjunction(vars[1], vars[2])), vars[0])), PEQ(new eq(vars[0], vars[2]))))),{{0, 0, -1}, {0, -1, -1}});
+    cat["p181"]=task_src(dynamic_pointer_cast<expr>(POR(new disjunction(PIMPL(new impl(vars[1], PAND(new conjunction(vars[2], vars[0])))), PEQ(new eq(vars[0], vars[1]))))),{{0, -1, 0}, {-1, -1, 1}});
+    }
+    else if (v==4)
+    {    cat["p184"]=task_src(dynamic_pointer_cast<expr>(POR(new disjunction(PAND(new conjunction(PIMPL(new impl(vars[0], vars[1])), PIMPL(new impl(vars[1], vars[3])))), PEQ(new eq(vars[2], POR(new disjunction(vars[0], vars[1]))))))),
+                            {{1, 1, -1, -1}, {-1, 1, -1, -1}, {1, -1, -1, 1}});
+    cat["p187"]=task_src(dynamic_pointer_cast<expr>(POR(new disjunction(PIMPL(new impl(vars[0], PAND(new conjunction(vars[1], PNOT(new neg(vars[2])))))), vars[3]))),
+                            {{1, -1, 0, -1}, {-1, 0, 1, -1}, {1, 1, -1, -1}});
+    cat["p188"]=task_src(dynamic_pointer_cast<expr>(POR(new disjunction(PAND(new conjunction(vars[3], vars[1])), PEQ(new eq(PIMPL(new impl(vars[0], vars[3])), PIMPL(new impl(vars[1], vars[2]))))))),
+                         {{1, -1, -1, -1}, {1, -1, 1, -1}, {1, 1, 1, -1}});
+    cat["p190"]=task_src(dynamic_pointer_cast<expr>(POR(new disjunction(PAND(new conjunction(PIMPL(new impl(vars[0], vars[2])), PIMPL(new impl(vars[2], vars[3])))), PEQ(new eq(vars[1], POR(new disjunction(vars[0], vars[2]))))))),
+                         {{-1, -1, 1, -1}, {1, -1, -1, 1}, {1, -1, 1, -1}});
 
-    auto p180=POR(PIMPL(POR(vars[1], vars[2]), vars[0]), PEQ(vars[0], vars[2]));
-    vector<string> t180={"0 0 -1", "0 -1 -1"};*/
+    cat["p193"]=task_src(dynamic_pointer_cast<expr>(PIMPL(new impl(PEQ(new eq(vars[0], PNOT(new neg(vars[1])))), PEQ(new eq(PAND(new conjunction(vars[0], vars[3])), vars[2]))))),
+                         {{-1, 1, 1, -1}, {-1, 1, 1, 1}, {1, -1, 1, -1}});
+
+    cat["p194"]=task_src(dynamic_pointer_cast<expr>(PEQ(new eq(POR(new disjunction(PAND(new conjunction(vars[0], vars[3])), PAND(new conjunction(vars[3], vars[2])))), PAND(new conjunction(PIMPL(new impl(vars[3], vars[1])), PIMPL(new impl(vars[1], vars[0]))))))),
+                         {{1, 1, 0, 1}, {0, 1, 0, -1}, {0, 1, 0, -1}});
+    cat["p195"]=task_src(dynamic_pointer_cast<expr>(PIMPL(new impl(PIMPL(new impl(PIMPL(new impl(PNOT(new neg(vars[1])), vars[3])), PIMPL(new impl(vars[0], vars[2])))), PIMPL(new impl(vars[0], vars[3]))))),
+                         {{-1, 0, 0, 0}, {-1, 0, -1, 0}, {-1, -1, -1, 0}});
+    cat["p196"]=task_src(dynamic_pointer_cast<expr>(PEQ(new eq(POR(new disjunction(PIMPL(new impl(vars[1], vars[0])), PAND(new conjunction(PNOT(new neg(vars[2])), vars[3])))), PEQ(new eq(vars[3], vars[0]))))),
+                         {{-1, 0, 0, 1}, {0, 0, 1, 0}, {0, -1, -1, 1}});
+    cat["p197"]=task_src(dynamic_pointer_cast<expr>(PAND(new conjunction(PIMPL(new impl(vars[3], vars[2])), PEQ(new eq(PIMPL(new impl(vars[1], vars[0])), PIMPL(new impl(vars[3], vars[1]))))))),
+                         {{1, 0, -1, -1}, {-1, -1, 1, 0}, {1,1,0,0}});
+    cat["p199"]=task_src(dynamic_pointer_cast<expr>(PEQ(new eq(PAND(new conjunction(PAND(new conjunction(vars[0], POR(new disjunction(vars[1], PNOT(new neg(vars[2])))))), vars[3])), PIMPL(new impl(vars[0], PAND(new conjunction(PNOT(new neg(vars[1])), vars[2]))))))),
+                         {{1, -1, -1, -1}, {1, 1, -1, -1}, {1, 1, 1, -1}});
+    cat["p200"]=task_src(dynamic_pointer_cast<expr>(PAND(new conjunction(PIMPL(new impl(vars[1], POR(new disjunction(vars[0], vars[2])))), PIMPL(new impl(vars[2], vars[1]))))),
+                         {{0, 0, 1, 0}, {0, 0, 1, 1}, {1, 0, 1, 1}, {0, 1, 0, 1}});
+    cat["p202"]=task_src(dynamic_pointer_cast<expr>(PAND(new conjunction(PNOT(new neg(vars[3])), PIMPL(new impl(POR(new disjunction(vars[1], vars[2])), PAND(new conjunction(PNOT(new neg(vars[0])), vars[1]))))))),
+                         {{1, -1, -1, -1}, {-1, 1, -1, -1}, {-1, 1, 1, -1}});
+    cat["p203"]=task_src(dynamic_pointer_cast<expr>(PAND(new conjunction(POR(new disjunction(PIMPL(new impl(vars[0], vars[3])), PAND(new conjunction(vars[1], PNOT(new neg(vars[2])))))), POR(new disjunction(PIMPL(new impl(vars[1], PNOT(new neg(vars[2])))), PAND(new conjunction(vars[0], PNOT(new neg(vars[3]))))))))),
+                         {{-1, 0, -1, 0}, {0, -1, -1, 0}, {-1, 0, 0, 0}});
+    cat["p204"]=task_src(dynamic_pointer_cast<expr>(PAND(new conjunction(POR(new disjunction(PIMPL(new impl(vars[0], vars[1])), PNOT(new neg(PIMPL(new impl(vars[2], vars[3])))))), POR(new disjunction(PIMPL(new impl(vars[3], PNOT(new neg(vars[0])))), PIMPL(new impl(PNOT(new neg(vars[1])), vars[2]))))))),
+                         {{-1, 0, 0, 0}, {-1, 0, -1, 1}, {1, 0, 0, -1}});
+    cat["p207"]=task_src(dynamic_pointer_cast<expr>(PEQ(new eq(PAND(new conjunction(PNOT(new neg(PIMPL(new impl(vars[1], vars[0])))), PIMPL(new impl(vars[2], vars[3])))), PNOT(new neg(PAND(new conjunction(PAND(new conjunction(vars[0], vars[1])), PAND(new conjunction(vars[2], PNOT(new neg(vars[3]))))))))))),
+                         {{0, -1, 0, 0}, {0, -1, -1, -1}, {0, -1, 0 ,-1}, {-1, -1, -1, 0}});
+    }
+    for (auto i: cat)
+    {
+        cout << i.first << ": " << i.second.exp->wrap() << endl;
+    }
+//TODO: make catalogue global, think about vars
 
 }
 
@@ -341,7 +379,7 @@ int main()
 
 
     //shuffle_table
-    //polyakov_3(175);
-    make_task_on_the_fly();
+    polyakov(4, "0");
+    //make_task_on_the_fly();
     return 0;
 }
