@@ -43,7 +43,7 @@ void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
                 <<"Длина пароля одинакова для всех пользователей и составляет " << pass_len << " символ" << (pass_len%10==1 and pass_len%100!=11?"":(pass_len%10>=2 and pass_len%10<=4 and (pass_len%100<11 or pass_len%100>14)?"а":"ов"))
                 << ". Каждый символ пароля кодируется одинаковым минимально возможным количеством бит (единым для всех пользователей), а на весь пароль отводится минимально возможное целое количество байт. "
                 << "Также для каждого пользователя зарезервировано " << add_user_info << " байт" << (add_user_info%10>=2 and add_user_info%10<=4 and (add_user_info%100<11 or add_user_info%100>14)?"а":"") << " дополнительной информации.<br/>" << endl
-                << "Какой наименьший объём в Кбайт будет занимать информация обо всех пользователях в базе данных, если для пароля используется алфавит из "<<alph_len<<" символ"<<(alph_len%10==1 and alph_len%100!=11?"":(alph_len%10>=2 and alph_len%10<=4 and (alph_len%100<11 or alph_len%100>14)?"а":"ов"))<<"?<br/><br/>" << endl
+                << "Какой наименьший объём в Кбайт будет занимать информация обо всех пользователях в базе данных, если для пароля используется алфавит из "<<alph_len<<" символ"<<(alph_len%10==1 and alph_len%100!=11?"а":"ов")<<"?<br/><br/>" << endl
                 <<"Примечание. 1 мебибайт - 1024 кибибайта, 1 кибибайт - 1024 байта. Это технически более корректные термины, чем 'килобайт' и 'мегабайт'. Приняты в 1999 году Международной электротехнической комиссией в стандарте IEC 60027-2, в России в ГОСТ 8.417-2002.";
             answer_txt << total_mem;
 
@@ -53,8 +53,17 @@ void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
         #else
         cout << task_txt.str() << endl <<answer_txt.str() <<endl;
         #endif
-        if (done==task_qtty) return;
+        if (done==task_qtty)
+        {
+            #if moodle
+            ofs << "</quiz>" << endl;
+            #endif
+                return;
+        }
     }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
 }
 
 void g10_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
@@ -70,7 +79,7 @@ int main()
     #endif
     setlocale(LC_ALL,"Russian");
 
-    g7_1_1_2_2_1(10, ofs);
+    g7_1_1_2_2_1(50, ofs);
 
     return 0;
 }
