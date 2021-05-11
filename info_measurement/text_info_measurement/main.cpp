@@ -6,7 +6,7 @@
 #include <clocale>
 #include <set>
 
-#define moodle true
+#define moodle false
 #include "../../moodle_meta_cpp_functions/moodle_question.hpp"
 
 using namespace std;
@@ -65,21 +65,60 @@ void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
     ofs << "</quiz>" << endl;
     #endif
 }
-
+int factorial(int a)
+{
+    int ans(1);
+    for (int i(2); i<=a; i++) ans*=i;
+    return ans;
+}
 void g10_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
 {
+    mt19937 mt(time(0));
+    //uniform_int_distribution<> uid(0, 2);
+    //uniform_int_distribution<> uid_1(8, 1023);
+    set<int> ans;
 
+    int done(0);
+    //array<int,3> small_primes=[3,5,7];
+    for (int devs_need=3; devs_need<=9; devs_need++)
+    for (int people=devs_need+3; people<15; people++)
+    {
+        int res = people*factorial(people-1)/factorial(devs_need)/factorial(people-1-devs_need);
+        if (res < 10 or res > 200 or ans.find(res)!=ans.end()) continue;
+        done++;
+        ans.insert(res);
+
+        ostringstream task_txt;
+        ostringstream answer_txt;
+        task_txt << "ƒл€ работы над новым проектом из сотрудников отдела необходимо сформировать команду, состо€щую из 1 тимлида и " << devs_need << " разработчиков. «апишите количество различных способов сформировать команду, если в отделе работает " << people << " человек. ¬ ответе укажите только число. ѕримечание: в качестве тимлида может выступать любой сотрудник; команды, в которых состо€т одни и те же сотрудники, но в которых позицию тимлида занимают разные люди, считаютс€ разными командами.";
+        #if moodle
+
+        moodle_write_question(ofs,done,task_txt.str(), res);
+        #else
+        cout << task_txt.str() << endl <<res <<endl;
+        #endif
+        if (done==task_qtty)
+        {
+            #if moodle
+            ofs << "</quiz>" << endl;
+            #endif
+                return;
+        }
+    }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
 }
 
 int main()
 {
-    #if moodle
     ofstream ofs("data.txt");
+    #if moodle
     moodle_header(ofs);
     #endif
     setlocale(LC_ALL,"Russian");
 
-    g7_1_1_2_2_1(50, ofs);
+    g10_1_1(50, ofs);
 
     return 0;
 }
