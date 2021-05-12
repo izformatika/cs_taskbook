@@ -159,6 +159,71 @@ void g7_3_2_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
     #endif
 }
 
+void g7_2_1_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
+{
+    mt19937 mt(time(0));
+    set<int> ans;
+
+    int done(0);
+    array<int,3> small_primes={3,5,7};
+    array<array<int,2>, 9> aspect_ratios = {array<int, 2>{16, 9}, array<int, 2>{4, 3}, array<int, 2>{5, 4}, array<int, 2>{3, 2}, array<int, 2>{14, 9}, array<int, 2>{16, 10}, array<int, 2>{19, 9}, array<int, 2>{7, 3}, array<int, 2>{11, 4}};
+    uniform_int_distribution<>uid5_10(5, 10);
+    //uniform_int_distribution<>uid0_2(0,2);
+    //uniform_int_distribution<>uid0_1(0,1);
+    uniform_int_distribution<>uid11_16(11,16);
+    //uniform_int_distribution<>uid1_200(1,200);
+    uniform_int_distribution<>uid_primes(0, small_primes.size()-1);
+    uniform_int_distribution<>uid_ratio(0, aspect_ratios.size()-1);
+    while(done<task_qtty)
+    {
+        int photos_qtty(uid5_10(mt));
+        array<int, 2> aratio(aspect_ratios[uid_ratio(mt)]);
+
+        int q=small_primes[uid_primes(mt)];
+        int sidepart=uid5_10(mt);
+        int long_side(q*pow(2, sidepart)*aratio[0]);
+        if (long_side>65536) continue;
+        int short_side(q*pow(2, sidepart)*aratio[1]);
+        int colors_power(uid11_16(mt));
+        int colors(pow(2, colors_power));
+
+        long long total_memory(colors_power*short_side*long_side*photos_qtty);
+        if (total_memory%(8*1024)!=0) continue;
+        total_memory/=(8*1024);
+
+        if (total_memory > 4096 or total_memory < 1024 or ans.find(total_memory)!=ans.end()) continue;
+        done++;
+        ans.insert(total_memory);
+
+        ostringstream task_txt;
+        ostringstream answer_txt;
+        task_txt << "Требуется сохранить " << photos_qtty << " фотографий, имеющих соотношение сторон " << aratio[0] << ":" <<aratio[1]
+            << ". Длинная сторона каждой фотографии имеет длину " << long_side << " пиксел"
+            << (long_side%10>=2 and long_side%10<=4 and (long_side%100<12 or long_side%100>14)?"я":(long_side%10 == 1 and long_side%100!=11?"ь":"ей"))
+            << ", а палитра содержит " << colors << " цвет" << (colors%10>=2 and colors%10<=4 and (colors%100<11 or colors%100>15)?"а":"ов")
+            << ". Определите наименьший возможный объём всех фотографий. В ответе укажите количество кибибайт, при необходимости округлённое до целых в большую сторону. Единицы измерения указывать не нужно.<br/><br/>"
+                   <<"Примечание. 1 мебибайт - 1024 кибибайта, 1 кибибайт - 1024 байта. Это технически более корректные термины, чем 'килобайт' и 'мегабайт'. Приняты в 1999 году Международной электротехнической комиссией в стандарте IEC 60027-2, в России в ГОСТ 8.417-2002.";
+            answer_txt << total_memory;
+
+        #if moodle
+
+        moodle_write_question(ofs,done,task_txt.str(), answer_txt.str());
+        #else
+        cout << task_txt.str() << endl <<answer_txt.str() <<endl;
+        #endif
+        if (done==task_qtty)
+        {
+            #if moodle
+            ofs << "</quiz>" << endl;
+            #endif
+                return;
+        }
+    }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
+}
+
 
 int factorial(int a)
 {
@@ -214,7 +279,7 @@ int main()
     setlocale(LC_ALL,"Russian");
 
     //g10_1_1(50, ofs);
-    g7_3_2_1_1(10, ofs);
+    g7_2_1_1_1(10, ofs);
 
     return 0;
 }
