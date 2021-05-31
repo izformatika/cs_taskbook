@@ -49,19 +49,13 @@ void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
         #endif
         if (done==task_qtty)
         {
-            #if moodle
-            ofs << "</quiz>" << endl;
-            #endif
-                return;
+            break;
         }
     }
-    if (done==task_qtty)
-    {
-        #if moodle
-        ofs << "</quiz>" << endl;
-        #endif
-            return;
-    }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
+        return;
 }
 
 void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
