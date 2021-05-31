@@ -13,6 +13,27 @@
 
 using namespace std;
 
+void no_adj_letters()
+{
+    ifstream ifs("vow 2 cons 3 spec 1.txt");
+    string cur_word;
+    while (!ifs.eof())
+    {
+        ifs >> cur_word;
+        bool bad(false);
+        for (int i(0); i<cur_word.size() and !bad; i++)
+        for (int j(i+1); j<cur_word.size() and !bad; j++)
+            if (abs(cur_word[i]-cur_word[j])<3) bad=true;
+        if (bad) continue;
+        cout << cur_word << endl;
+    }
+}
+
+void g8_1_1_2(int task_qtty, ofstream &ofs, int solution_time=0)
+{
+    no_adj_letters();
+}
+
 void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
 {
     if (solution_time < 4 or solution_time>5) return;
@@ -326,7 +347,7 @@ int main()
 
     //g10_1_1(50, ofs);
     //g7_2_1_1_1(10, ofs);
-    g8_1_1_1(10,ofs);
+    g8_1_1_2(10,ofs);
 
     return 0;
 }
