@@ -6,11 +6,63 @@
 #include <fstream>
 #include <clocale>
 #include <set>
+#include <algorithm>
 
 #define moodle false
 #include "../../moodle_meta_cpp_functions/moodle_question.hpp"
 
 using namespace std;
+
+void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
+{
+    if (solution_time < 4 or solution_time>5) return;
+    vector<int> primes = {11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+    mt19937 mt(time(0));
+    uniform_int_distribution<> uid(0, primes.size()-1);
+    int max_attempts(1000);
+    int done(0);
+    vector<int> ans;
+    while (max_attempts--)
+    {
+        int a, b, product;
+        do
+        {
+            a = primes[uid(mt)];
+            b = primes[uid(mt)];
+            product = a*b;
+        }
+        while (not ((solution_time == 5 and (product%10 == 1 or product%10 == 9) and product > 300 and product < 600) or (solution_time == 4 and (product%10 == 7 or product%10 == 3) and product > 200 and product < 300)));
+        if (find(ans.begin(), ans.end(), product)!=ans.end()) continue;
+        ans.push_back(product);
+        ostringstream task_txt;
+        ostringstream answer_txt;
+        task_txt << "В алгоритме RSA для формирования пары ключей вычисляется модуль – число n, являющееся произведением двух простых чисел p и q. "
+        << "При этом как правило используются достаточно большие простые числа - до 2^2048. Модуль передаётся открыто и требуется для шифрования сообщений. Без знания исходных множителей (а подобрать их обычно сложно из-за большой величины модуля) расшифровать сообщение не получится. "
+        << "\nВ некотором сеансе передачи данных с использованием RSA модуль n оказался преступно мал - его значение равно " << product
+        << ". Проведите атаку на этот сеанс: определите единственно возможные исходные простые множители для данного модуля. В ответе укажите сумму этих множителей.";
+        answer_txt << a+b;
+        done++;
+        #if moodle
+        moodle_write_question(ofs,done,task_txt.str(), answer_txt.str());
+        #else
+        cout << task_txt.str() << endl <<answer_txt.str() <<endl << endl;
+        #endif
+        if (done==task_qtty)
+        {
+            #if moodle
+            ofs << "</quiz>" << endl;
+            #endif
+                return;
+        }
+    }
+    if (done==task_qtty)
+    {
+        #if moodle
+        ofs << "</quiz>" << endl;
+        #endif
+            return;
+    }
+}
 
 void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
 {
@@ -279,7 +331,8 @@ int main()
     setlocale(LC_ALL,"Russian");
 
     //g10_1_1(50, ofs);
-    g7_2_1_1_1(10, ofs);
+    //g7_2_1_1_1(10, ofs);
+    g8_1_1_1(10,ofs);
 
     return 0;
 }
