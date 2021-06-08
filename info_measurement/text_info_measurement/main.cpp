@@ -46,7 +46,13 @@ void all_adj_letters()
     }
 }
 
-
+int min_dist(string wrd, char c)
+{
+    int res(wrd.size());
+    for (auto i:wrd)
+        res=min(res, abs(c-i));
+    return res;
+}
 void g8_1_1_2(int task_qtty, ofstream &ofs, int solution_time=0)
 {
     if (solution_time!=5 and solution_time!=8) return;
@@ -63,7 +69,21 @@ void g8_1_1_2(int task_qtty, ofstream &ofs, int solution_time=0)
     uniform_int_distribution<> uid_primes(0, primes.size()-1);
     while (max_attempts--)
     {
+        int a(0), c(0);
+        string tgt_word(words[uid_words(mt)]);
 
+        do
+        {
+        a = primes[uid_primes(mt)];
+        c = primes[uid_primes(mt)];
+        }
+        while (a==c);
+
+        char let('ÿ');
+        while (let>='à' and min_dist(tgt_word, let)<4) let--;
+        if (let<'à') {/*clog << tgt_word << endl; */continue;}//all letters too close, cannot find a hint that wouldnt make task too easy
+        cout << tgt_word << " [" << let << "]" << endl;
+        break;
     }
     #if moodle
     ofs << "</quiz>" << endl;
