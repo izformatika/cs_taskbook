@@ -29,9 +29,46 @@ void no_adj_letters()
     }
 }
 
+void all_adj_letters()
+{
+    ifstream ifs("vow 2 cons 3 spec 1.txt");
+    string cur_word;
+    int maxfar(13);
+    while (!ifs.eof())
+    {
+        ifs >> cur_word;
+        int far(0);
+        for (int i(0); i<cur_word.size() and far<maxfar; i++)
+        for (int j(i+1); j<cur_word.size() and far<maxfar; j++)
+            if (abs(cur_word[i]-cur_word[j])>=3) far++;
+        if (far>=maxfar) continue;
+        cout << cur_word << endl;
+    }
+}
+
+
 void g8_1_1_2(int task_qtty, ofstream &ofs, int solution_time=0)
 {
-    no_adj_letters();
+    if (solution_time!=5 and solution_time!=8) return;
+    vector<string> words;
+    if (solution_time == 5)
+        words={"альбом", "голень", "гоньба", "деньга", "дизель", "ельник", "жердьЄ", "залежь", "комель", "копань", "линька", "лопарь", "модель", "мозель", "мольба", "мольва", "мораль", "морель", "мотыль", "мыльн€", "нельма", "немочь", "немощь", "никель", "носарь", "обсыпь", "охрипь", "пароль", "письмо", "полынь", "помесь", "портье", "порубь", "потесь", "сеньор", "синьор", "сухарь", "участь", "юность", "€рость"};
+    else
+        words = {"курьЄз", "лазурь", "лошадь", "льгота", "марь€ж", "объект", "отбель", "пам€ть", "печать", "пищаль", "платье", "разъЄм", "рубель", "сальдо", "сафь€н", "сельцо", "сольца", "тильда", "тканьЄ", "фасоль", "фильер", "фольга", "чекань", "шпильЄ", "щЄголь", "щитень"};
+    vector<int> primes = {7, 11, 13, 17, 19, 23, 29, 31};
+    int done(0);
+    int max_attempts(1000);
+    mt19937 mt(time(0));
+    uniform_int_distribution<> uid_words(0, words.size()-1);
+    uniform_int_distribution<> uid_primes(0, primes.size()-1);
+    while (max_attempts--)
+    {
+
+    }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
+    return;
 }
 
 void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
@@ -347,7 +384,8 @@ int main()
 
     //g10_1_1(50, ofs);
     //g7_2_1_1_1(10, ofs);
-    g8_1_1_2(10,ofs);
+    g8_1_1_2(10,ofs,5);
+
 
     return 0;
 }
