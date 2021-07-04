@@ -8,10 +8,12 @@
 #include <set>
 #include <algorithm>
 
-#define moodle false
+#define moodle true
 #include "../../moodle_meta_cpp_functions/moodle_question.hpp"
 
 using namespace std;
+
+string alphabet("абвгдеёжзийклмнопрстуфхцчшщъыьэюя");
 
 void no_adj_letters()
 {
@@ -23,7 +25,7 @@ void no_adj_letters()
         bool bad(false);
         for (int i(0); i<cur_word.size() and !bad; i++)
         for (int j(i+1); j<cur_word.size() and !bad; j++)
-            if (abs(cur_word[i]-cur_word[j])<3) bad=true;
+            if (abs(alphabet.find(cur_word[i])-alphabet.find(cur_word[j]))<3) bad=true;
         if (bad) continue;
         cout << cur_word << endl;
     }
@@ -40,7 +42,7 @@ void all_adj_letters()
         int far(0);
         for (int i(0); i<cur_word.size() and far<maxfar; i++)
         for (int j(i+1); j<cur_word.size() and far<maxfar; j++)
-            if (abs(cur_word[i]-cur_word[j])>=3) far++;
+            if (abs(alphabet.find(cur_word[i])-alphabet.find(cur_word[j]))>=3) far++;
         if (far>=maxfar) continue;
         cout << cur_word << endl;
     }
@@ -50,23 +52,38 @@ int min_dist(string wrd, char c)
 {
     int res(wrd.size());
     for (auto i:wrd)
-        res=min(res, abs(c-i));
+        res=min(res, abs(int(alphabet.find(c)-alphabet.find(i))));
+    return res;
+}
+string encode(string src, int a, int c)
+{
+    string res;
+    int nlet(0);
+    for (auto i: src)
+    {
+        nlet = (a*(alphabet.find(i)+1)+c)%33+1;
+        //cout << i << ":" <<(alphabet.find(i)+1)<<":"<< nlet << ' ';
+        res+=alphabet[nlet-1];
+    }
+    //cout << endl;
     return res;
 }
 void g8_1_1_2(int task_qtty, ofstream &ofs, int solution_time=0)
 {
-    if (solution_time!=5 and solution_time!=8) return;
+//    if (solution_time!=5 and solution_time!=8) return;
     vector<string> words;
-    if (solution_time == 5)
+  //  if (solution_time == 5)
         words={"альбом", "голень", "гоньба", "деньга", "дизель", "ельник", "жердьё", "залежь", "комель", "копань", "линька", "лопарь", "модель", "мозель", "мольба", "мольва", "мораль", "морель", "мотыль", "мыльня", "нельма", "немочь", "немощь", "никель", "носарь", "обсыпь", "охрипь", "пароль", "письмо", "полынь", "помесь", "портье", "порубь", "потесь", "сеньор", "синьор", "сухарь", "участь", "юность", "ярость"};
-    else
-        words = {"курьёз", "лазурь", "лошадь", "льгота", "марьяж", "объект", "отбель", "память", "печать", "пищаль", "платье", "разъём", "рубель", "сальдо", "сафьян", "сельцо", "сольца", "тильда", "тканьё", "фасоль", "фильер", "фольга", "чекань", "шпильё", "щёголь", "щитень"};
+  //  else//it doesnt give anything, given consecutive source letters the encoded letters will not be consecutive anyway
+  //      words = {"курьёз", "лазурь", "лошадь", "льгота", "марьяж", "объект", "отбель", "память", "печать", "пищаль", "платье", "разъём", "рубель", "сальдо", "сафьян", "сельцо", "сольца", "тильда", "тканьё", "фасоль", "фильер", "фольга", "чекань", "шпильё", "щёголь", "щитень"};
     vector<int> primes = {7, 11, 13, 17, 19, 23, 29, 31};
     int done(0);
     int max_attempts(1000);
     mt19937 mt(time(0));
     uniform_int_distribution<> uid_words(0, words.size()-1);
     uniform_int_distribution<> uid_primes(0, primes.size()-1);
+    set<string> ans;
+    stringstream task_txt;
     while (max_attempts--)
     {
         int a(0), c(0);
@@ -82,8 +99,46 @@ void g8_1_1_2(int task_qtty, ofstream &ofs, int solution_time=0)
         char let('я');
         while (let>='а' and min_dist(tgt_word, let)<4) let--;
         if (let<'а') {/*clog << tgt_word << endl; */continue;}//all letters too close, cannot find a hint that wouldnt make task too easy
-        cout << tgt_word << " [" << let << "]" << endl;
-        break;
+        //cout << tgt_word << " [" << let << "]" << endl;
+        string res_word(encode(tgt_word, a, c));
+        if (ans.find(res_word)!=ans.end()) continue;
+        int wtfs(0);//encoding works like shit when a = 11 :) should either exclude 11 from a... or force this shit to happen to make students doubt themselves
+        //also probably should enforce a*n <= 200 to ease manual calculations
+        for (size_t i(0); i<tgt_word.size(); i++)
+        for (size_t j(i+1); j<tgt_word.size(); j++)
+            if ((tgt_word[i]==tgt_word[j]) != (res_word[i]==res_word[j])) wtfs++;
+        if (wtfs == 0) continue;
+        ans.insert(res_word);
+        task_txt.str("");
+        task_txt << a << " " << c << endl;
+        task_txt << "Для шифрования слов русского языка используется следующий метод. Каждая буква заменяется на букву, номер которой вычисляется по формуле"
+            << " Xn = (q * N + p) % 33 + 1, где N - номер буквы по алфавиту, q и p - предопределённые коэффициенты, одинаковые для всего сеанса кодирования, и % - операция взятия остатка от деления. "
+            << "<br><i>Например, если q = 3 и p = 4, то буква \"д\" будет заменяться буквой \"т\" ((3*5+4)%33+1 = 20), буква \"и\" - буквой \"б\" ((3*10+4)%33+1 = 2) etc."
+            << "</i><br>Определите, как будет зашифровано слово \"" << tgt_word << "\", если q = " << a
+            << ", а p вычисляется, если знать, что буква \"" << let << "\" заменяется на \"" << encode(string(1, let), a, c) << "\". В ответе укажите шифрованный текст в нижнем регистре."
+            << "<br><br>Русский алфавит с порядковыми номерами для справки:<br><table>"
+            << "<tr><td>1: а</td><td>&nbsp;&nbsp;</td><td>10: и</td><td>&nbsp;&nbsp;</td><td>19: с</td><td>&nbsp;&nbsp;</td><td>28: ъ </td></tr>" << endl
+            << "<tr><td>2: б</td><td>&nbsp;&nbsp;</td><td>11: й</td><td>&nbsp;&nbsp;</td><td>20: т</td><td>&nbsp;&nbsp;</td><td>29: ы </td></tr>" << endl
+            << "<tr><td>3: в</td><td>&nbsp;&nbsp;</td><td>12: к</td><td>&nbsp;&nbsp;</td><td>21: у</td><td>&nbsp;&nbsp;</td><td>30: ь </td></tr>" << endl
+            << "<tr><td>4: г</td><td>&nbsp;&nbsp;</td><td>13: л</td><td>&nbsp;&nbsp;</td><td>22: ф</td><td>&nbsp;&nbsp;</td><td>31: э </td></tr>" << endl
+            << "<tr><td>5: д</td><td>&nbsp;&nbsp;</td><td>14: м</td><td>&nbsp;&nbsp;</td><td>23: х</td><td>&nbsp;&nbsp;</td><td>32: ю </td></tr>" << endl
+            << "<tr><td>6: е</td><td>&nbsp;&nbsp;</td><td>15: н</td><td>&nbsp;&nbsp;</td><td>24: ц</td><td>&nbsp;&nbsp;</td><td>33: я </td></tr>" << endl
+            << "<tr><td>7: ё</td><td>&nbsp;&nbsp;</td><td>16: о</td><td>&nbsp;&nbsp;</td><td>25: ч</td><td>&nbsp;&nbsp;</td><td></td><td></td></tr>" << endl
+            << "<tr><td>8: ж</td><td>&nbsp;&nbsp;</td><td>17: п</td><td>&nbsp;&nbsp;</td><td>26: ш</td><td>&nbsp;&nbsp;</td><td></td><td></td></tr>" << endl
+            << "<tr><td>9: з</td><td>&nbsp;&nbsp;</td><td>18: р</td><td>&nbsp;&nbsp;</td><td>27: щ</td><td>&nbsp;&nbsp;</td><td></td></tr></table>" << endl;
+        //cout << a << " " << c << " " << tgt_word << " " << encode(tgt_word, a, c) << endl;
+        //cout << " " << let << " " << encode(string(1, let), a, c) << endl << endl;
+//        cout<< task_txt.str();
+        #if moodle
+        moodle_write_question(ofs,done,task_txt.str(), res_word);
+        #else
+        cout << task_txt.str() << endl <<a << " " << c << endl <<res_word <<endl << endl;
+        #endif
+        done++;
+        if (done==task_qtty)
+        {
+            break;
+        }
     }
     #if moodle
     ofs << "</quiz>" << endl;
@@ -374,12 +429,13 @@ void g10_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
 
         ostringstream task_txt;
         ostringstream answer_txt;
+        answer_txt<<res;
         task_txt << "Для работы над новым проектом из сотрудников отдела необходимо сформировать команду, состоящую из 1 тимлида и " << devs_need << " разработчиков. Запишите количество различных способов сформировать команду, если в отделе работает " << people << " человек. В ответе укажите только число. Примечание: в качестве тимлида может выступать любой сотрудник; команды, в которых состоят одни и те же сотрудники, но в которых позицию тимлида занимают разные люди, считаются разными командами.";
         #if moodle
 
-        moodle_write_question(ofs,done,task_txt.str(), res);
+        moodle_write_question(ofs,done,task_txt.str(), answer_txt.str());
         #else
-        cout << task_txt.str() << endl <<res <<endl;
+        cout << task_txt.str() << endl <<answer_txt.str() <<endl;
         #endif
         if (done==task_qtty)
         {
@@ -405,7 +461,7 @@ int main()
     //g10_1_1(50, ofs);
     //g7_2_1_1_1(10, ofs);
     g8_1_1_2(10,ofs,5);
-
+    //cout << alphabet.find("ё") - alphabet.find("е") << endl;
 
     return 0;
 }
