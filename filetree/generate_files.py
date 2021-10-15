@@ -23,3 +23,21 @@ for i in list("12345"):
             f.close()
             
 
+'''
+for i in range(30):
+	n=names.readline()[:-1]
+	curfile = 'folder/'+n+"."+ext[random.randint(0,len(ext)-1)]
+	f=open(curfile,"w")
+	f.write('0'*random.randint(0, 9999999))
+	f.close()    
+	year = random.randint(2000, 2020)
+	month = random.randint(1, 12)
+	day = random.randint(1, 28)
+	hour = random.randint(0, 23)
+	minute = random.randint(0, 59)
+	second = random.randint(0, 59)
+	date = datetime.datetime(year=year, month=month, day=day, hour=hour, minute=minute, second=second)
+	modTime = time.mktime(date.timetuple())
+	os.utime(curfile, (modTime, modTime))
+
+'''
