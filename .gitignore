@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+/words/sig/debug
+/words/questions.txt
+*.pyc
+*.depend
+*.layout
+
