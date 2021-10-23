@@ -469,7 +469,7 @@ int g06_04_01_01(int task_qtty, ofstream &ofs)
     long long int total_mb(0);
 
     int attempts(1000), done(0);
-    while(attempts-- and done<100)
+    while(attempts-- and done<task_qtty)
     {
         ostringstream os;
         pages_text = (1<<uid(7,9)(mt));
@@ -487,6 +487,7 @@ int g06_04_01_01(int task_qtty, ofstream &ofs)
         total_memory = ((long long )bits_per_pixel)*w*h*pages_img + ((long long)bytes_per_symbol)*lines*symbols_per_line*pages_text<<3;
         if (total_memory % bits_per_mb != 0) continue;
         total_mb = total_memory/bits_per_mb;//10-20 символов, 1 символ, 2-4 символа
+        if (total_mb>1000 or total_mb < 100) continue;
 
         os << "Книга, состоящая из " << pages_total << " страниц" << (pages_total%100!=11 and pages_total%10==1?"ы":"");
         os << ", занимает объем " << total_mb << " мебибайт" << (((total_mb%100>10 and total_mb%100<20) or total_mb%10<2 or total_mb%10>4)?"":"а");
@@ -506,11 +507,14 @@ int g06_04_01_01(int task_qtty, ofstream &ofs)
         #endif
         done++;
     }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
 }
 
 int main()
 {
-    ofstream ofs("data.txt");
+    ofstream ofs("data.xml");
     #if moodle
     moodle_header(ofs);
     #endif
