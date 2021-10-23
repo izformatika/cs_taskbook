@@ -6,7 +6,9 @@
 #include <fstream>
 #include <clocale>
 #include <set>
+#include <cmath>
 #include <algorithm>
+#define uid uniform_int_distribution<>
 
 #define moodle true
 #include "../../moodle_meta_cpp_functions/moodle_question.hpp"
@@ -25,7 +27,7 @@ void no_adj_letters()
         bool bad(false);
         for (int i(0); i<cur_word.size() and !bad; i++)
         for (int j(i+1); j<cur_word.size() and !bad; j++)
-            if (abs(alphabet.find(cur_word[i])-alphabet.find(cur_word[j]))<3) bad=true;
+            if (abs(int(alphabet.find(cur_word[i])-alphabet.find(cur_word[j])))<3) bad=true;
         if (bad) continue;
         cout << cur_word << endl;
     }
@@ -42,7 +44,7 @@ void all_adj_letters()
         int far(0);
         for (int i(0); i<cur_word.size() and far<maxfar; i++)
         for (int j(i+1); j<cur_word.size() and far<maxfar; j++)
-            if (abs(alphabet.find(cur_word[i])-alphabet.find(cur_word[j]))>=3) far++;
+            if (abs(int(alphabet.find(cur_word[i])-alphabet.find(cur_word[j]))>=3)) far++;
         if (far>=maxfar) continue;
         cout << cur_word << endl;
     }
@@ -151,7 +153,7 @@ void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
     if (solution_time < 4 or solution_time>5) return;
     vector<int> primes = {11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
     mt19937 mt(time(0));
-    uniform_int_distribution<> uid(0, primes.size()-1);
+    uid u(0, primes.size()-1);
     int max_attempts(1000);
     int done(0);
     vector<int> ans;
@@ -160,8 +162,8 @@ void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
         int a, b, product;
         do
         {
-            a = primes[uid(mt)];
-            b = primes[uid(mt)];
+            a = primes[u(mt)];
+            b = primes[u(mt)];
             product = a*b;
         }
         while (not ((solution_time == 5 and (product%10 == 1 or product%10 == 9) and product > 300 and product < 600) or (solution_time == 4 and (product%10 == 7 or product%10 == 3) and product > 200 and product < 300)));
@@ -207,8 +209,8 @@ void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
     for (add_user_info=4; add_user_info<=4096; add_user_info*=2)
     for (bits_per_symbol=3; bits_per_symbol<=7; bits_per_symbol++)
     {
-        uniform_int_distribution<> uid(ceil(pow(2,bits_per_symbol-1)*1.5), floor(pow(2,bits_per_symbol)*0.8));
-        alph_len=uid(mt);
+        uid u(ceil(pow(2,bits_per_symbol-1)*1.5), floor(pow(2,bits_per_symbol)*0.8));
+        alph_len=u(mt);
         if (bits_per_symbol*pass_len % 8 == 0) continue;
         total_mem = (ceil((bits_per_symbol * pass_len)/8.0)*8 + add_user_info*8) * users_qtty;
         if (total_mem%8192>0 or total_mem < 8192) continue;
@@ -450,6 +452,62 @@ void g10_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
     #endif
 }
 
+int g06_04_01_01(int task_qtty, ofstream &ofs)
+{
+    mt19937 mt(time(0));
+    int pages_text(0);
+    int text_img_ratio(0);
+    int pages_img(0);
+    int pages_total(0);
+    int bytes_per_symbol(0);
+    int lines(0), symbols_per_line(0);
+    array<int, 3> primes = {3,5,7};
+    int w(0), h(0);
+    int bits_per_pixel(0);
+    long long int total_memory(0);
+    long long int bits_per_mb(1<<23);
+    long long int total_mb(0);
+
+    int attempts(1000), done(0);
+    while(attempts-- and done<100)
+    {
+        ostringstream os;
+        pages_text = (1<<uid(7,9)(mt));
+        text_img_ratio = (1<<uid(3,4)(mt));
+        pages_img = pages_text/text_img_ratio;
+        bytes_per_symbol = uid(2,4)(mt);
+        pages_total = pages_text+pages_img;
+        lines = (1<<uid(3,5)(mt))*primes[uid(0, primes.size()-1)(mt)];
+        symbols_per_line = (1<<uid(6,8)(mt));
+        if (uid(0,1)(mt)==0) swap(lines, symbols_per_line);
+        w = (1<<uid(9,11)(mt));
+        h = (1<<uid(9,11)(mt));
+
+        bits_per_pixel = uid(11,15)(mt);
+        total_memory = ((long long )bits_per_pixel)*w*h*pages_img + ((long long)bytes_per_symbol)*lines*symbols_per_line*pages_text<<3;
+        if (total_memory % bits_per_mb != 0) continue;
+        total_mb = total_memory/bits_per_mb;//10-20 символов, 1 символ, 2-4 символа
+
+        os << "Книга, состоящая из " << pages_total << " страниц" << (pages_total%100!=11 and pages_total%10==1?"ы":"");
+        os << ", занимает объем " << total_mb << " мебибайт" << (((total_mb%100>10 and total_mb%100<20) or total_mb%10<2 or total_mb%10>4)?"":"а");
+        os << ". Часть страниц книги полностью заняты текстом. Каждая такая страница содержит ровно ";
+        os << lines << " строк" << (lines%100>10 and lines%100<20?"":(lines%10==1?"а":(lines%10>1 and lines%10<5?"и":"")));
+        os <<", в каждой строке ровно "<< symbols_per_line <<" символ" << (symbols_per_line%100>10 and symbols_per_line%100<20?"ов":(symbols_per_line%10==1?"":(symbols_per_line%10>1 and symbols_per_line%10<5?"а":"ов"))) << ". ";
+        os << "Другая часть страниц полностью заполнена изображениями с разрешением " << w << " на " << h << " точек. ";
+        os << "Известно, что страниц с текстом в " << text_img_ratio << " раз больше, чем страниц с изображениями. ";
+        os << "Сколько цветов максимально может быть в палитре изображений, если известно, что кодировка предполагает, что для хранения каждого текстового символа отводится " << bytes_per_symbol << " байта? Используется попиксельное кодирование, для хранения каждого пикселя отводится одинаковое целое число бит. Ответ запишите в виде целого числа." << endl;
+        int ans = (1<<bits_per_pixel);
+
+        #if moodle
+
+        moodle_write_question(ofs,done,os.str(), to_string(ans));
+        #else
+        cout << os.str() << endl <<ans <<endl;
+        #endif
+        done++;
+    }
+}
+
 int main()
 {
     ofstream ofs("data.txt");
@@ -457,10 +515,10 @@ int main()
     moodle_header(ofs);
     #endif
     setlocale(LC_ALL,"Russian");
-
+    g06_04_01_01(50,ofs);
     //g10_1_1(50, ofs);
     //g7_2_1_1_1(10, ofs);
-    g8_1_1_2(10,ofs,5);
+    //g8_1_1_2(10,ofs,5);
     //cout << alphabet.find("ё") - alphabet.find("е") << endl;
 
     return 0;
