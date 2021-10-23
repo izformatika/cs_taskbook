@@ -4,6 +4,20 @@
 #include <cmath>
 unsigned long long int ull_max=18446744073709551615;
 const std::string longnum::alphabet="0123456789abcdefghijklmnopqrstuvwxyz";
+bool longnum::even()
+{
+    if (m_base % 2 == 0 and m_digits[0] % 2 == 0) return true;
+    if (m_base % 2 == 1)
+    {
+        int residue = 0;
+        for (auto i: m_digits)
+        {
+            residue = (residue + int(i)) % 2;
+        }
+        return residue % 2 == 0;
+    }
+    return false;
+}
 bool longnum::has_letters()
     {
         if (m_base<11) return false;
@@ -348,22 +362,21 @@ bool longnum::has_letters()
         }
         else
         {
-        m_digits.clear();
+            m_digits.clear();
 
-        for (int i=1; i<qtty; i++)
-        {
-            unsigned char curdig=0;
-            if (rand()%10==0) curdig=0;
-            else curdig=rand()%(int(m_base)-1)+1;
-            m_digits.push_back(curdig);
+            for (int i=1; i<qtty; i++)
+            {
+                unsigned char curdig=0;
+                if (rand()%10==0) curdig=0;
+                else curdig=rand()%(int(m_base)-1)+1;
+                m_digits.push_back(curdig);
+            }
+            m_digits.push_back(rand()%(int(m_base)-1)+1);
         }
-        m_digits.push_back(rand()%(int(m_base)-1)+1);
-        }
 
-
-        while (!(m_base<=10 or (m_base<=16 and has_letters()) or has_big_letters()))
+        if (10 <= m_base and m_base <= 16 and !has_letters() or 16 < m_base and !has_big_letters())
         {
-            m_digits[rand()%m_digits.size()]=rand()%int(m_base);
+            m_digits[rand()%m_digits.size()]=int(m_base) - 1; // if all digits small - make one digit maximal
         }
         cut_leading_zeros();
     }

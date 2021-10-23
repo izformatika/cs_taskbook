@@ -4,6 +4,7 @@
 #include <time.h>
 #include <cstdlib>
 #include "longnum.hpp"
+#include <cmath>
 #define moodle true
 
 using namespace std;
@@ -14,29 +15,29 @@ using namespace std;
 void direct_gen_pair(longnum& afrom, longnum& ato, int lvl=0, int split=true)
 {//TODO: 8 - 16; 4-8,4-32,8-32,16-32,
     vector<vector<int> > collection;
-    if (lvl==0)//склеить/разделить 0
+    if (lvl==0)//СЃРєР»РµРёС‚СЊ/СЂР°Р·РґРµР»РёС‚СЊ 0
     {
         collection.push_back({2,8,23});
         collection.push_back({2,16,23});
     }
-    else if (lvl==1)//посредник 0
+    else if (lvl==1)//РїРѕСЃСЂРµРґРЅРёРє 0
     {
     collection.push_back({8,16,7});
     collection.push_back({4,8,11});
     }
-    else if (lvl==2)//склеить/разделить 1
+    else if (lvl==2)//СЃРєР»РµРёС‚СЊ/СЂР°Р·РґРµР»РёС‚СЊ 1
     {
         collection.push_back({2,4,23});
         collection.push_back({3,9,23});
         collection.push_back({4,16,17});
     }
-    else if (lvl==3)//склеить/разделить 2
+    else if (lvl==3)//СЃРєР»РµРёС‚СЊ/СЂР°Р·РґРµР»РёС‚СЊ 2
     {
         collection.push_back({2,32,23});
         collection.push_back({3,27,19});
         collection.push_back({5,25,11});
     }
-    else if (lvl==4)//посредник 1
+    else if (lvl==4)//РїРѕСЃСЂРµРґРЅРёРє 1
     {
         collection.push_back({4,32,11});
         collection.push_back({8,32,7});
@@ -101,8 +102,8 @@ void direct_between()
                 <<"<text>" << setw(2)<<setfill('0')<< i << "</text>" << endl
                 <<"</name>" << endl
                 <<"<questiontext format=\"html\">" << endl
-                <<"<text><![CDATA[<p>Сколько чисел находится между \\(" << afrom.str() << "_{" << afrom.base()
-                <<"}\\) и \\("<<ato.str()<<"_{" << ato.base() <<"}\\), исключая сами эти числа? Ответ дайте в десятичной системе счисления, основание указывать не надо.</p>]]></text>" << endl
+                <<"<text><![CDATA[<p>РЎРєРѕР»СЊРєРѕ С‡РёСЃРµР» РЅР°С…РѕРґРёС‚СЃСЏ РјРµР¶РґСѓ \\(" << afrom.str() << "_{" << afrom.base()
+                <<"}\\) Рё \\("<<ato.str()<<"_{" << ato.base() <<"}\\), РёСЃРєР»СЋС‡Р°СЏ СЃР°РјРё СЌС‚Рё С‡РёСЃР»Р°? РћС‚РІРµС‚ РґР°Р№С‚Рµ РІ РґРµСЃСЏС‚РёС‡РЅРѕР№ СЃРёСЃС‚РµРјРµ СЃС‡РёСЃР»РµРЅРёСЏ, РѕСЃРЅРѕРІР°РЅРёРµ СѓРєР°Р·С‹РІР°С‚СЊ РЅРµ РЅР°РґРѕ.</p>]]></text>" << endl
                 <<"</questiontext>" << endl
                 <<"<generalfeedback format=\"html\">" << endl
                 <<"<text></text>" << endl
@@ -150,8 +151,8 @@ void direct_conversion()
                 <<"<text>" << setw(2)<<setfill('0')<< i << "</text>" << endl
                 <<"</name>" << endl
                 <<"<questiontext format=\"html\">" << endl
-                <<"<text><![CDATA[<p>Переведите число \\(" << afrom.str() << "_{" << afrom.base()
-                <<"}\\) в систему счисления с основанием \\(" << ato.base() << "\\). Основание в ответе указывать не надо, только цифры числа.</p>]]></text>" << endl
+                <<"<text><![CDATA[<p>РџРµСЂРµРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ \\(" << afrom.str() << "_{" << afrom.base()
+                <<"}\\) РІ СЃРёСЃС‚РµРјСѓ СЃС‡РёСЃР»РµРЅРёСЏ СЃ РѕСЃРЅРѕРІР°РЅРёРµРј \\(" << ato.base() << "\\). РћСЃРЅРѕРІР°РЅРёРµ РІ РѕС‚РІРµС‚Рµ СѓРєР°Р·С‹РІР°С‚СЊ РЅРµ РЅР°РґРѕ, С‚РѕР»СЊРєРѕ С†РёС„СЂС‹ С‡РёСЃР»Р°.</p>]]></text>" << endl
                 <<"</questiontext>" << endl
                 <<"<generalfeedback format=\"html\">" << endl
                 <<"<text></text>" << endl
@@ -176,11 +177,92 @@ void direct_conversion()
 }
 
 
+void odd_or_even()
+{
+    int tasks=50;
+    int lvl = 1;
+    unsigned char basemin (20), basemax (30);
+    int digsmin (5), digsmax (10);
+    if (lvl == 0) { basemin = 2; basemax = 9; digsmin = 5; digsmax = 10; }
+    else { basemin = 20; basemax = 30; }//digsmin = 10; digsmax = 20; }
+
+    #if moodle
+    ofstream ofs("odd_even.txt");
+    #endif
+
+    auto points = [](int even_qtty, bool even, bool mark_even)
+    {
+        string ans [] = {"-100"/* wtf? */, "100", "50", "33.33333", "25", "20", "16.66667"};
+        if (mark_even and even) return ans[even_qtty];
+        if (!mark_even and !even) return ans[6 - even_qtty];
+        return string("-50");
+    };
+
+    for (int i=0; i<tasks; i++)
+    {
+        bool mark_even = rand() % 2;
+        longnum nums[6];
+        int even_qtty = 0;
+        for (size_t i = 0; i < 6; i++)
+        {
+            unsigned char b = (rand() % (basemax - basemin) + basemin) / 2 * 2 + (i > 2 ? 1 : 0);
+            nums[i] = longnum(0, b);// half bases even half odd
+            nums[i].rand_digs(rand() % (digsmax - digsmin) + digsmin);
+            if (nums[i].even()) even_qtty++;
+        }
+        if (even_qtty == 0 or even_qtty == 6) {i--; continue;}//TODO: actually need 4 even base 4 odd base, 1/3 or 2/2 even/odd numbers ratio in each
+
+        #if moodle
+            ofs << "<question type=\"multichoice\">" << endl
+                <<"<name>" << endl
+                <<"<text>" << setw(2)<<setfill('0')<< i << "</text>" << endl
+                <<"</name>" << endl
+                <<"<questiontext format=\"html\">" << endl
+                <<"<text><![CDATA[<p>РљР°РєРёРµ РёР· СЌС‚РёС… С‡РёСЃРµР» СЏРІР»СЏСЋС‚СЃСЏ " << (mark_even?"":"РЅРµ")<< "С‡С‘С‚РЅС‹РјРё?</p>]]></text>" << endl
+                <<"</questiontext>" << endl
+                <<"<generalfeedback format=\"html\">" << endl
+                <<"<text></text>" << endl
+                <<"</generalfeedback>" << endl
+                <<"<defaultgrade>1.0000000</defaultgrade>" << endl
+                <<"<penalty>0.3333333</penalty>" << endl
+                <<"<hidden>0</hidden>" << endl
+                <<"<idnumber></idnumber>" << endl
+                <<"<single>false</single>" << endl
+                <<"<shuffleanswers>true</shuffleanswers>" << endl
+                <<"<answernumbering>abc</answernumbering>" << endl
+                <<"<correctfeedback format=\"html\">" << endl
+                <<"<text>Р’Р°С€ РѕС‚РІРµС‚ РІРµСЂРЅС‹Р№.</text>" << endl
+                <<"</correctfeedback>" << endl
+                <<"<partiallycorrectfeedback format=\"html\">" << endl
+                <<"<text>Р’Р°С€ РѕС‚РІРµС‚ С‡Р°СЃС‚РёС‡РЅРѕ РїСЂР°РІРёР»СЊРЅС‹Р№.</text>" << endl
+                <<"</partiallycorrectfeedback>" << endl
+                <<"<incorrectfeedback format=\"html\">" << endl
+                <<"<text>Р’Р°С€ РѕС‚РІРµС‚ РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№.</text>" << endl
+                <<"</incorrectfeedback>" << endl
+                <<"<shownumcorrect/>" << endl;
+                for (size_t i = 0; i < 6; i++)
+                {
+                    ofs << "<answer fraction=\"" << points(even_qtty, nums[i].even(), mark_even)<< "\" format=\"html\">" << endl
+                        << "<text><![CDATA[<p>\\(" << nums[i].str() << "_{" << nums[i].base() << "}\\)</sub><br></p>]]></text>" << endl
+                        << "<feedback format=\"html\">" << endl
+                        << "<text></text>" << endl
+                        << "</feedback>" << endl
+                        << "</answer>" << endl;
+                }
+
+              ofs <<"</question>" <<endl;
+        #else
+        //cout << afrom.str() <<"_"<<afrom.base() << " to " << ato.str() << "_"<<ato.base() <<endl;
+        #endif
+    }
+}
+
 int main()
 {
     srand(time(0));
     //numbers_between();
-    direct_between();
+    //direct_between();
     //direct_conversion();
     //what_base();
+    odd_or_even();
 }

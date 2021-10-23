@@ -15,7 +15,7 @@ public:
     bool all_letters();
     std::string str() const;
     unsigned long long mod_dec_value() const;
-    longnum(int d, unsigned char base);
+    longnum(int d = 0, unsigned char base = 1);
     longnum(std::string a_s, unsigned char base);
     longnum(std::string a_s, int str_base, int tgt_base);
     longnum& operator=(const longnum& src);
@@ -40,6 +40,7 @@ public:
     void rand_digs(int qtty);
     void direct(longnum afrom);
     int base(){return int(m_base);}
+    bool even();
 private:
     void cut_leading_zeros();
     int compare(const longnum& r)
