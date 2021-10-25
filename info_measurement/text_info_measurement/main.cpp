@@ -484,8 +484,12 @@ int g06_04_01_01(int task_qtty, ofstream &ofs)
         h = (1<<uid(9,11)(mt));
 
         bits_per_pixel = uid(11,15)(mt);
-        total_memory = ((long long )bits_per_pixel)*w*h*pages_img + ((long long)bytes_per_symbol)*lines*symbols_per_line*pages_text<<3;
+        long long int a = ((long long)bits_per_pixel)*w*h*pages_img;
+        long long int b = (((long long)bytes_per_symbol)*lines*symbols_per_line*pages_text<<3);
+        total_memory = a + b;
         if (total_memory % bits_per_mb != 0) continue;
+        //cout << a << " " << b << endl;
+        //cout << total_memory << endl;
         total_mb = total_memory/bits_per_mb;//10-20 символов, 1 символ, 2-4 символа
         if (total_mb>1000 or total_mb < 100) continue;
 
