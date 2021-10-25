@@ -14,7 +14,7 @@
 #include "../../moodle_meta_cpp_functions/moodle_question.hpp"
 
 using namespace std;
-
+mt19937 mt;
 string alphabet("абвгдеёжзийклмнопрстуфхцчшщъыьэюя");
 
 void no_adj_letters()
@@ -81,7 +81,6 @@ void g8_1_1_2(int task_qtty, ofstream &ofs, int solution_time=0)
     vector<int> primes = {7, 11, 13, 17, 19, 23, 29, 31};
     int done(0);
     int max_attempts(1000);
-    mt19937 mt(time(0));
     uniform_int_distribution<> uid_words(0, words.size()-1);
     uniform_int_distribution<> uid_primes(0, primes.size()-1);
     set<string> ans;
@@ -152,7 +151,6 @@ void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
 {
     if (solution_time < 4 or solution_time>5) return;
     vector<int> primes = {11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
-    mt19937 mt(time(0));
     uid u(0, primes.size()-1);
     int max_attempts(1000);
     int done(0);
@@ -195,7 +193,6 @@ void g8_1_1_1(int task_qtty, ofstream &ofs, int solution_time=5)
 
 void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
 {
-    mt19937 mt(time(0));
     //uniform_int_distribution<> uid(0, 2);
     //uniform_int_distribution<> uid_1(8, 1023);
     set<int> ans;
@@ -248,9 +245,8 @@ void g7_1_1_2_2_1(int task_qtty, ofstream &ofs, int solution_time=0)
     #endif
 }
 
-void g7_3_2_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
+void g06_03_02_01_01(int task_qtty, ofstream &ofs, int solution_time=0)
 {
-    mt19937 mt(time(0));
     set<int> ans;
 
     int done(0);
@@ -300,7 +296,7 @@ void g7_3_2_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
         channel_desc[1]= "моно (1 канал)";
         channel_desc[2]= "стерео (2 канала)";
         channel_desc[4]= "квадро (4 канала)";
-        task_txt << "Звукозапись длительностью " << t1 << " секунд сохранили в формате " << channel_desc[ch1] << " с частотой дискретизации "
+        task_txt << "<i>Задание 06.03.02.01.01#" << done+1 << "</i></p><p>Звукозапись длительностью " << t1 << " секунд сохранили в формате " << channel_desc[ch1] << " с частотой дискретизации "
             << freq1 << " килогерц" << (freq1%10>=2 and freq1%10<=4 and (freq1%100<11 or freq1%100>15)?"а":"")
             << ". Размер файла оказался равным " << sz1 << " кибибайт" << (sz1%10==1 and sz1%100!=11?"у":"ам")
             << ". Использовался некоторый алгоритм сжатия данных, который предполагает равномерное кодирование, но разрядность кодирования не обязательно будет выражаться целым количеством бит. Другой информации кроме звуковой в файле не было. <br/>Пользователь ";
@@ -342,7 +338,6 @@ void g7_3_2_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
 
 void g7_2_1_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
 {
-    mt19937 mt(time(0));
     set<int> ans;
 
     int done(0);
@@ -414,9 +409,6 @@ int factorial(int a)
 }
 void g10_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
 {
-    mt19937 mt(time(0));
-    //uniform_int_distribution<> uid(0, 2);
-    //uniform_int_distribution<> uid_1(8, 1023);
     set<int> ans;
 
     int done(0);
@@ -452,9 +444,10 @@ void g10_1_1(int task_qtty, ofstream &ofs, int solution_time=0)
     #endif
 }
 
-int g06_04_01_01(int task_qtty, ofstream &ofs)
+int g06_04_01(int type,string &q)
 {
-    mt19937 mt(time(0));
+    if (type<1 or type>4) {q = "ERROR"; return -1;}
+    (time(0));
     int pages_text(0);
     int text_img_ratio(0);
     int pages_img(0);
@@ -467,9 +460,8 @@ int g06_04_01_01(int task_qtty, ofstream &ofs)
     long long int total_memory(0);
     long long int bits_per_mb(1<<23);
     long long int total_mb(0);
-
-    int attempts(1000), done(0);
-    while(attempts-- and done<task_qtty)
+    int attempts(100);
+    while (attempts--)
     {
         ostringstream os;
         pages_text = (1<<uid(7,9)(mt));
@@ -493,21 +485,115 @@ int g06_04_01_01(int task_qtty, ofstream &ofs)
         total_mb = total_memory/bits_per_mb;//10-20 символов, 1 символ, 2-4 символа
         if (total_mb>1000 or total_mb < 100) continue;
 
-        os << "Книга, состоящая из " << pages_total << " страниц" << (pages_total%100!=11 and pages_total%10==1?"ы":"");
-        os << ", занимает объем " << total_mb << " мебибайт" << (((total_mb%100>10 and total_mb%100<20) or total_mb%10<2 or total_mb%10>4)?"":"а");
-        os << ". Часть страниц книги полностью заняты текстом. Каждая такая страница содержит ровно ";
-        os << lines << " строк" << (lines%100>10 and lines%100<20?"":(lines%10==1?"а":(lines%10>1 and lines%10<5?"и":"")));
-        os <<", в каждой строке ровно "<< symbols_per_line <<" символ" << (symbols_per_line%100>10 and symbols_per_line%100<20?"ов":(symbols_per_line%10==1?"":(symbols_per_line%10>1 and symbols_per_line%10<5?"а":"ов"))) << ". ";
-        os << "Другая часть страниц полностью заполнена изображениями с разрешением " << w << " на " << h << " точек. ";
-        os << "Известно, что страниц с текстом в " << text_img_ratio << " раз больше, чем страниц с изображениями. ";
-        os << "Сколько цветов максимально может быть в палитре изображений, если известно, что кодировка предполагает, что для хранения каждого текстового символа отводится " << bytes_per_symbol << " байта? Используется попиксельное кодирование, для хранения каждого пикселя отводится одинаковое целое число бит. Ответ запишите в виде целого числа." << endl;
-        int ans = (1<<bits_per_pixel);
+        if (type == 1)
+        {
+            os << "Книга, состоящая из " << pages_total << " страниц" << (pages_total%100!=11 and pages_total%10==1?"ы":"");
+            os << ", занимает объем " << total_mb << " мебибайт" << (((total_mb%100>10 and total_mb%100<20) or total_mb%10<2 or total_mb%10>4)?"":"а");
+            os << ". Часть страниц книги полностью заняты текстом. Каждая такая страница содержит ровно ";
+            os << lines << " строк" << (lines%100>10 and lines%100<20?"":(lines%10==1?"а":(lines%10>1 and lines%10<5?"и":"")));
+            os <<", в каждой строке ровно "<< symbols_per_line <<" символ" << (symbols_per_line%100>10 and symbols_per_line%100<20?"ов":(symbols_per_line%10==1?"":(symbols_per_line%10>1 and symbols_per_line%10<5?"а":"ов"))) << ". ";
+            os << "Другая часть страниц полностью заполнена изображениями с разрешением " << w << " на " << h << " точек. ";
+            os << "Известно, что страниц с текстом в " << text_img_ratio << " раз больше, чем страниц с изображениями. ";
+            os << "Сколько цветов максимально может быть в палитре изображений, если известно, что кодировка предполагает, что для хранения каждого текстового символа отводится " << bytes_per_symbol << " байта? Используется попиксельное кодирование, для хранения каждого пикселя отводится одинаковое целое число бит. Ответ запишите в виде целого числа." << endl;
+            q = os.str();
+            return (1<<bits_per_pixel);
+        }
+        else if (type == 2)
+        {
+            os << "Книга, состоящая из " << pages_total << " страниц" << (pages_total%100!=11 and pages_total%10==1?"ы":"");
+            os << ", занимает объем " << total_mb << " мебибайт" << (((total_mb%100>10 and total_mb%100<20) or total_mb%10<2 or total_mb%10>4)?"":"а");
+            os << ". Часть страниц книги полностью заняты текстом. Каждая такая страница содержит ровно ";
+            os << lines << " строк" << (lines%100>10 and lines%100<20?"":(lines%10==1?"а":(lines%10>1 and lines%10<5?"и":"")));
+            os << ". Другая часть страниц полностью заполнена изображениями с разрешением " << w << " на " << h << " точек. ";
+            os << "Максимальное возможное количество цветов в палитре каждого изображения - " << (1<<bits_per_pixel);
+            os << ". Используется попиксельное кодирование, для хранения каждого пикселя отводится одинаковое целое число бит. ";
+            os << "Известно, что страниц с текстом в " << text_img_ratio << " раз больше, чем страниц с изображениями. ";
+            os << "Сколько символов в каждой строке книги, если известно, что кодировка предполагает, что для хранения каждого текстового символа отводится " << bytes_per_symbol << " байта? Ответ запишите в виде целого числа." << endl;
+            q = os.str();
+            return symbols_per_line;
+        }
+        else if (type == 3)
+        {
+            os << "Книга, состоящая из " << pages_total << " страниц" << (pages_total%100!=11 and pages_total%10==1?"ы":"");
+            os << ", занимает объем " << total_mb << " мебибайт" << (((total_mb%100>10 and total_mb%100<20) or total_mb%10<2 or total_mb%10>4)?"":"а");
+            os << ". Часть страниц книги полностью заняты текстом. Каждая такая страница содержит ровно ";
+            os << lines << " строк" << (lines%100>10 and lines%100<20?"":(lines%10==1?"а":(lines%10>1 and lines%10<5?"и":"")));
+            os <<", в каждой строке ровно "<< symbols_per_line <<" символ" << (symbols_per_line%100>10 and symbols_per_line%100<20?"ов":(symbols_per_line%10==1?"":(symbols_per_line%10>1 and symbols_per_line%10<5?"а":"ов"))) << ". ";
+            os << ". Другая часть страниц полностью заполнена изображениями с разрешением " << w << " на " << h << " точек. ";
+            os << "Максимальное возможное количество цветов в палитре каждого изображения - " << (1<<bits_per_pixel);
+            os << ". Используется попиксельное кодирование, для хранения каждого пикселя отводится одинаковое целое число бит. ";
+            os << "Кодировка предполагает, что для хранения каждого текстового символа отводится " << bytes_per_symbol << " байта. Во сколько раз страниц с текстом больше, чем страниц с изображениями? Ответ запишите в виде целого числа." << endl;
+            q = os.str();
+            return text_img_ratio;
+        }
+        return 0;
+
+    }
+
+}
+
+int g06_04_01_01(int task_qtty, ofstream &ofs)
+{
+
+
+    int done(0);
+    string q;
+    int a;
+    while(done<task_qtty)
+    {
+        a = g06_04_01(1, q);
 
         #if moodle
 
-        moodle_write_question(ofs,done,os.str(), to_string(ans));
+        moodle_write_question(ofs,done,q, to_string(a));
         #else
-        cout << os.str() << endl <<ans <<endl;
+        cout << q << endl <<a <<endl;
+        #endif
+        done++;
+    }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
+}
+int g06_04_01_02(int task_qtty, ofstream &ofs)
+{
+
+
+    int done(0);
+    string q;
+    int a;
+    while(done<task_qtty)
+    {
+        a = g06_04_01(2, q);
+
+        #if moodle
+
+        moodle_write_question(ofs,done,q, to_string(a));
+        #else
+        cout << q << endl <<a <<endl;
+        #endif
+        done++;
+    }
+    #if moodle
+    ofs << "</quiz>" << endl;
+    #endif
+}
+int g06_04_01_03(int task_qtty, ofstream &ofs)
+{
+
+
+    int done(0);
+    string q;
+    int a;
+    while(done<task_qtty)
+    {
+        a = g06_04_01(3, q);
+
+        #if moodle
+
+        moodle_write_question(ofs,done,q, to_string(a));
+        #else
+        cout << q << endl <<a <<endl;
         #endif
         done++;
     }
@@ -518,12 +604,13 @@ int g06_04_01_01(int task_qtty, ofstream &ofs)
 
 int main()
 {
+    mt = mt19937(time(0));
     ofstream ofs("data.xml");
     #if moodle
     moodle_header(ofs);
     #endif
     setlocale(LC_ALL,"Russian");
-    g06_04_01_01(50,ofs);
+    g06_03_02_01_01(50,ofs);
     //g10_1_1(50, ofs);
     //g7_2_1_1_1(10, ofs);
     //g8_1_1_2(10,ofs,5);
