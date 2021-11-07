@@ -464,9 +464,18 @@ int g06_04_01(int type,string &q)
     while (attempts--)
     {
         ostringstream os;
-        pages_text = (1<<uid(7,9)(mt));
-        text_img_ratio = (1<<uid(3,4)(mt));
-        pages_img = pages_text/text_img_ratio;
+        if (type == 3)
+        {
+            pages_img = (1<<uid(3,6)(mt));
+            text_img_ratio = uid(11,16)(mt);
+            pages_text = pages_img * text_img_ratio;
+        }
+        else
+        {
+            pages_text = (1<<uid(7,9)(mt));
+            text_img_ratio = (1<<uid(3,4)(mt));
+            pages_img = pages_text/text_img_ratio;
+        }
         bytes_per_symbol = uid(2,4)(mt);
         pages_total = pages_text+pages_img;
         lines = (1<<uid(3,5)(mt))*primes[uid(0, primes.size()-1)(mt)];
@@ -518,7 +527,7 @@ int g06_04_01(int type,string &q)
             os << ", занимает объем " << total_mb << " мебибайт" << (((total_mb%100>10 and total_mb%100<20) or total_mb%10<2 or total_mb%10>4)?"":"а");
             os << ". „асть страниц книги полностью зан€ты текстом.  ажда€ така€ страница содержит ровно ";
             os << lines << " строк" << (lines%100>10 and lines%100<20?"":(lines%10==1?"а":(lines%10>1 and lines%10<5?"и":"")));
-            os <<", в каждой строке ровно "<< symbols_per_line <<" символ" << (symbols_per_line%100>10 and symbols_per_line%100<20?"ов":(symbols_per_line%10==1?"":(symbols_per_line%10>1 and symbols_per_line%10<5?"а":"ов"))) << ". ";
+            os <<", в каждой строке ровно "<< symbols_per_line <<" символ" << (symbols_per_line%100>10 and symbols_per_line%100<20?"ов":(symbols_per_line%10==1?"":(symbols_per_line%10>1 and symbols_per_line%10<5?"а":"ов")));
             os << ". ƒруга€ часть страниц полностью заполнена изображени€ми с разрешением " << w << " на " << h << " точек. ";
             os << "ћаксимальное возможное количество цветов в палитре каждого изображени€ - " << (1<<bits_per_pixel);
             os << ". »спользуетс€ попиксельное кодирование, дл€ хранени€ каждого пиксел€ отводитс€ одинаковое целое число бит. ";
@@ -610,7 +619,7 @@ int main()
     moodle_header(ofs);
     #endif
     setlocale(LC_ALL,"Russian");
-    g06_03_02_01_01(50,ofs);
+    g06_04_01_03(50,ofs);
     //g10_1_1(50, ofs);
     //g7_2_1_1_1(10, ofs);
     //g8_1_1_2(10,ofs,5);
