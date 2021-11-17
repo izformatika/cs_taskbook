@@ -77,17 +77,17 @@ def gen_task(f, div_qtty, num_qtty):
                     return ans
     return []
      
-answers = []
+answers = {}
+done = 0
 file = open("data.xml", 'a', encoding='utf-8')
 for f in range(200000000, 500000000, 1000000):
     for div_qtty in range(5, 8):
         for num_qtty in range(5, 8):
-            print(num_qtty)
             ans_i=gen_task(f, div_qtty, num_qtty)
             if ans_i is None or len(ans_i)<num_qtty:
                 continue
             ending = ans_i[0]%modby
-            if ending in answers:
+            if ending in answers.keys() and answers[ending]>5:
                 continue            
             
             task_txt = f"Пусть M (N) – произведение {div_qtty} наименьших различных натуральных делителей натурального числа N, не считая единицы. Если у числа N меньше {div_qtty} таких делителей, то M (N) считается равным нулю.<br/>\nНайдите {num_qtty} наименьших натуральных чисел, превышающих {f}, для которых 0 < M (N) < N, и M(N) заканчивается на {ending:0>{ending_len}}. <br/>\nВ ответе запишите через пробел только найденные значения M (N) в порядке возрастания соответствующих им чисел N (но не обязательно в порядке возрастания M (N)).<br/>\n<i>Источник задания: диагностическая работа Статград по информатике 27.11.2021, сборник К.Ю. Полякова №25.183.</i>"
@@ -98,16 +98,21 @@ for f in range(200000000, 500000000, 1000000):
                     bad = False
                     break
             if bad: continue
-            answers.append(ending)
+            if ending not in answers.keys():
+                answers[ending] = 1
+            else:
+                answers[ending]+=1
             ans = ' '.join(list(map(str, ans_i)))
-            shortanswer(f'{len(answers):0>2}', task_txt, ans, file)
+            shortanswer(f'{done:0>2}', task_txt, ans, file)
+            done+=1
+            print(done)
             file.flush()
-            winsound.Beep(2500, 1000)
-            if len(answers) >= 30:
+            #winsound.Beep(2500, 1000)
+            if done >= 30:
                 break          
-        if len(answers) >= 30:
+        if done >= 30:
             break               
-    if len(answers) >= 30:
+    if done >= 30:
         break
 file.close()
 
