@@ -39,7 +39,6 @@ else:
   numbers[7]*=seven
   numbers[8]=five
   print()
-  print(five, seven)
   print(10, *numbers, sep = '\n')
   subseq = [[], [], []]
   for i in range(len(numbers)):

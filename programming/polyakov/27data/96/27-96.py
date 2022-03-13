@@ -1,7 +1,7 @@
 #coding:utf-8
-gen = True
-example = True
-two = True
+gen = False
+example = False
+two = False
 from random import randint, shuffle
 
 if gen:
@@ -25,8 +25,8 @@ if gen:
 if not example:
   numbers = [2,3,5,7,11,13,17,19,23,29,31,37]
   shuffle(numbers)
-  five = numbers.pop()
-  seven = numbers.pop()
+  five = 7#numbers.pop()
+  seven = 2#numbers.pop()
 else:
   numbers = [2,3,5,7,11,13,17,19,23,29,31,37]
   shuffle(numbers)
@@ -69,5 +69,7 @@ for iii in (1,2):
         tailMinSum[count5-count7] = totalSum
   
   print( maxSum , totalSum, count5, count7)
-  if (maxSum < totalSum*0.3 and n < 1000) or maxSum > totalSum*0.67 or count5 < 4 or count7 < 4:
+  if (maxSum < totalSum*0.3 and N < 1000) or maxSum > totalSum*0.67 or count5 < 4 or count7 < 4:
     print("generate again")  
+  if not two:
+    break
