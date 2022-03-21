@@ -1,5 +1,5 @@
 gen = False
-reverse_task = False
+reverse_task = True
 if gen:
   #with open('27.txt') as F:
   f = open("1.txt", "w")
@@ -35,7 +35,7 @@ for iii in (1,2):
     count += tailCount[r]
     tailCount[r] += 1
   if reverse_task:
-    count = x*(x+1)//2 - count
+    count = (x+1)*(x+2)//2 - count
   print( count )
-  if count == N*(N+1)//2 or count == 0:
+  if count == (N+1)*(N+2)//2 or count == 0:
     print("generate again")
